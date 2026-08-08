@@ -8,16 +8,16 @@
   <title>Info & Datenschutz · LigaKompakt</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=1.2.0">
+  <link rel="stylesheet" href="styles.css?v=1.2.1">
 </head>
 <body class="legal-page">
   <main class="legal-wrap">
-    <a class="legal-back" href="./">‹ Zurück zu LigaKompakt</a>
+    <a class="legal-back" href="index.html" data-app-home>‹ Zurück zu LigaKompakt</a>
     <header class="card legal-hero">
       <div class="eyebrow">TRANSPARENZ</div>
       <h1>Info &amp; Datenschutz</h1>
       <p class="muted">LigaKompakt · entwickelt von Andreas Binder</p>
-      <span class="legal-version">Version 1.2.0 · Stand 08.08.2026</span>
+      <span class="legal-version">Version 1.2.1 · Stand 08.08.2026</span>
     </header>
 
     <section class="card legal-section">
@@ -52,7 +52,8 @@
       <p>Andreas Binder · Developer von LigaKompakt<br>Kontakt und technische Rückmeldungen über das <a href="https://github.com/catbinderson/Bundesliga-Kompakt/issues" target="_blank" rel="noopener">GitHub-Projekt</a>.</p>
     </section>
 
-    <a class="primary-btn legal-back" href="./">LigaKompakt öffnen</a>
+    <a class="primary-btn legal-back" href="index.html" data-app-home>LigaKompakt öffnen</a>
   </main>
+  <script>document.querySelectorAll("[data-app-home]").forEach(link=>link.addEventListener("click",event=>{event.preventDefault();location.replace(`index.html?t=${Date.now()}`)}));</script>
 </body>
 </html>

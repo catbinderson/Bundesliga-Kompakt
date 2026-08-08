@@ -1,4 +1,4 @@
-const CACHE="ligakompakt-v1.2.0",ASSETS=["./","index.html","info.html","einladen.html","styles.css?v=1.2.0","app.js?v=1.2.0","manifest.webmanifest","icon.svg","icon-192.png","icon-512.png","icon-maskable-512.png","apple-touch-icon.png","qr-ligakompakt.png","version.json"];
+const CACHE="ligakompakt-v1.2.1",ASSETS=["./","index.html","info.html","einladen.html","styles.css?v=1.2.1","app.js?v=1.2.1","manifest.webmanifest","icon.svg","icon-192.png","icon-512.png","icon-maskable-512.png","apple-touch-icon.png","qr-ligakompakt.png","version.json"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener("activate",e=>e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))])));
 self.addEventListener("message",e=>{if(e.data?.type==="SKIP_WAITING")self.skipWaiting()});
