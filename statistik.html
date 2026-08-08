@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css?v=1.0.0-fix1">
   <style>
-    .stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}.stat-box{text-align:center}.stat-box strong{display:block;font-size:38px;color:var(--accent);margin-bottom:4px}.stat-box span{display:block;font-weight:800}.stat-box small{display:block;color:var(--muted);margin-top:6px;line-height:1.4}.stats-status{text-align:center;margin-top:12px;color:var(--muted);font-size:12px}.stats-actions{display:grid;gap:10px;margin-top:14px}.stats-actions a{text-align:center;text-decoration:none}@media(max-width:520px){.stats-grid{grid-template-columns:1fr}}
+    .stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}.period-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}.stat-box{text-align:center}.stat-box strong{display:block;font-size:38px;color:var(--accent);margin-bottom:4px}.period-box strong{display:block;font-size:30px;color:var(--blue);margin-bottom:4px}.stat-box span,.period-box span{display:block;font-weight:800}.stat-box small,.period-box small{display:block;color:var(--muted);margin-top:6px;line-height:1.4}.chart-card{margin-top:12px}.chart-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px}.chart-head p{color:var(--muted);font-size:11px}.chart-scroll{overflow-x:auto;padding-bottom:6px}.chart{height:220px;min-width:680px;display:flex;align-items:end;gap:7px;border-bottom:1px solid var(--line);padding:12px 2px 0}.bar-wrap{height:100%;flex:1;min-width:15px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:5px}.bar-value{font-size:9px;color:#dce8f7;min-height:12px}.bar{width:100%;max-width:26px;min-height:3px;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,var(--accent),var(--blue));box-shadow:0 5px 14px rgba(57,219,134,.12)}.bar-label{font-size:8px;color:var(--muted);white-space:nowrap;transform:rotate(-45deg);transform-origin:center;margin:9px 0 3px}.stats-status{text-align:center;margin-top:12px;color:var(--muted);font-size:12px}.stats-actions{display:grid;gap:10px;margin-top:14px}.stats-actions a{text-align:center;text-decoration:none}.trend-note{color:var(--muted);font-size:11px;margin-top:10px;line-height:1.5}@media(max-width:520px){.stats-grid{grid-template-columns:1fr 1fr}.period-grid{grid-template-columns:1fr}.stat-box strong{font-size:32px}}
   </style>
 </head>
 <body class="legal-page">
@@ -25,20 +25,32 @@
     <section class="stats-grid">
       <div class="card stat-box">
         <strong id="devices">–</strong>
-        <span>erstmals gezählte Geräte</span>
-        <small>Ein Browser bzw. eine App-Installation wird auf diesem Gerät nur einmal gezählt.</small>
+        <span>gezählte Geräte</span>
+        <small>Näherungswert für bisherige Nutzer.</small>
       </div>
       <div class="card stat-box">
         <strong id="opens">–</strong>
-        <span>App-Aufrufe</span>
-        <small>Jeder Start bzw. erneute Seitenaufruf von LigaKompakt wird gezählt.</small>
+        <span>App-Aufrufe gesamt</span>
+        <small>Alle seit Start der Statistik gezählten Aufrufe.</small>
       </div>
     </section>
 
+    <section class="period-grid">
+      <div class="card period-box"><strong id="today">–</strong><span>Heute</span><small>App-Aufrufe am heutigen Tag</small></div>
+      <div class="card period-box"><strong id="week">–</strong><span>Letzte 7 Tage</span><small>Summe der App-Aufrufe</small></div>
+      <div class="card period-box"><strong id="month">–</strong><span>Letzte 30 Tage</span><small>Summe der App-Aufrufe</small></div>
+    </section>
+
+    <section class="card chart-card">
+      <div class="chart-head"><div><div class="eyebrow">VERLAUF</div><h2>App-Aufrufe der letzten 30 Tage</h2></div><p id="bestDay">Bester Tag: –</p></div>
+      <div class="chart-scroll"><div id="chart" class="chart" aria-label="Balkendiagramm der App-Aufrufe"></div></div>
+      <p class="trend-note">Die Zeitreihe beginnt mit der Aktivierung der Nutzungsstatistik. Tage vor diesem Zeitpunkt erscheinen deshalb mit 0 Aufrufen.</p>
+    </section>
+
     <section class="card legal-section">
-      <h2>Was bedeutet die Zahl?</h2>
-      <p>„Erstmals gezählte Geräte“ ist eine gute Annäherung an die Zahl der Nutzer, aber keine exakte Personenzahl. Derselbe Mensch kann mit mehreren Geräten oder Browsern mehrfach erscheinen. Wird der lokale Browserspeicher gelöscht, kann ein Gerät später erneut als neu gezählt werden.</p>
-      <p>Die Zähler sind öffentlich abrufbar und dienen als einfache Reichweitenanzeige. Sie sind nicht als manipulationssichere oder abrechnungsrelevante Statistik gedacht.</p>
+      <h2>Was bedeuten die Zahlen?</h2>
+      <p>„Gezählte Geräte“ ist eine gute Annäherung an die Zahl der Nutzer, aber keine exakte Personenzahl. Derselbe Mensch kann mit mehreren Geräten oder Browsern mehrfach erscheinen. Wird der lokale Browserspeicher gelöscht, kann ein Gerät später erneut als neu gezählt werden.</p>
+      <p>Heute, 7 Tage, 30 Tage und der Verlauf basieren auf den anonymen Zeitdaten des App-Aufrufzählers. Die Zähler sind öffentlich abrufbar und dienen als einfache Reichweitenanzeige.</p>
     </section>
 
     <p id="status" class="stats-status">Statistik wird geladen …</p>
@@ -50,34 +62,71 @@
 
   <script>
     const BASE="https://api.counterapi.dev/v1/ligakompakt-andreas-binder-2026";
+    const pad=n=>String(n).padStart(2,"0");
+    const dayKey=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
     const valueOf=data=>{
       if(typeof data==="number")return data;
       if(!data||typeof data!=="object")return null;
       for(const key of ["count","value","data"]){
         const value=data[key];
         if(typeof value==="number")return value;
-        if(value&&typeof value==="object"){
-          for(const nested of ["count","value"]){if(typeof value[nested]==="number")return value[nested]}
-        }
+        if(value&&typeof value==="object")for(const nested of ["count","value"]){if(typeof value[nested]==="number")return value[nested]}
       }
       return null;
     };
-    async function getCounter(name){
-      const response=await fetch(`${BASE}/${name}`,{cache:"no-store",mode:"cors"});
-      if(!response.ok)throw new Error(`HTTP ${response.status}`);
-      return valueOf(await response.json());
+    async function getJson(url){const r=await fetch(url,{cache:"no-store",mode:"cors"});if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()}
+    async function getCounter(name){return valueOf(await getJson(`${BASE}/${name}`))}
+    function locateArray(data){
+      if(Array.isArray(data))return data;
+      if(!data||typeof data!=="object")return [];
+      for(const key of ["data","counts","results","items","history"]){if(Array.isArray(data[key]))return data[key]}
+      for(const value of Object.values(data)){const found=locateArray(value);if(found.length)return found}
+      return [];
+    }
+    function historyRows(data){
+      return locateArray(data).map(item=>{
+        if(!item||typeof item!=="object")return null;
+        const rawDate=item.date??item.day??item.timestamp??item.created_at??item.createdAt??item.time??item.key;
+        const rawCount=item.count??item.value??item.total??item.increment??item.counts;
+        const count=typeof rawCount==="number"?rawCount:Number(rawCount);
+        if(!rawDate||!Number.isFinite(count))return null;
+        const date=new Date(rawDate);
+        if(Number.isNaN(date.getTime()))return null;
+        return {date:dayKey(date),count};
+      }).filter(Boolean);
+    }
+    async function getHistory(){return historyRows(await getJson(`${BASE}/app-opens-v1/list?group_by=day&order_by=asc`))}
+    function buildDays(rows){
+      const map=new Map();rows.forEach(r=>map.set(r.date,(map.get(r.date)||0)+r.count));
+      const days=[];const today=new Date();today.setHours(12,0,0,0);
+      for(let i=29;i>=0;i--){const d=new Date(today);d.setDate(d.getDate()-i);const key=dayKey(d);days.push({date:d,key,count:map.get(key)||0})}
+      return days;
+    }
+    function renderChart(days){
+      const chart=document.getElementById("chart");chart.innerHTML="";const max=Math.max(1,...days.map(d=>d.count));
+      days.forEach((d,index)=>{
+        const wrap=document.createElement("div");wrap.className="bar-wrap";wrap.title=`${d.date.toLocaleDateString("de-DE")}: ${d.count} Aufrufe`;
+        const value=document.createElement("span");value.className="bar-value";value.textContent=d.count?d.count:"";
+        const bar=document.createElement("div");bar.className="bar";bar.style.height=`${Math.max(3,Math.round((d.count/max)*155))}px`;
+        const label=document.createElement("span");label.className="bar-label";label.textContent=(index%3===0||index===days.length-1)?`${pad(d.date.getDate())}.${pad(d.date.getMonth()+1)}.`:"";
+        wrap.append(value,bar,label);chart.appendChild(wrap);
+      });
+      const best=days.reduce((a,b)=>b.count>a.count?b:a,days[0]);
+      document.getElementById("bestDay").textContent=`Bester Tag: ${best.date.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"})} · ${best.count} Aufrufe`;
     }
     async function loadStats(){
-      const status=document.getElementById("status");
-      status.textContent="Statistik wird geladen …";
+      const status=document.getElementById("status");status.textContent="Statistik wird geladen …";
       try{
-        const [devices,opens]=await Promise.all([getCounter("unique-devices-v1"),getCounter("app-opens-v1")]);
+        const [devices,opens,history]=await Promise.all([getCounter("unique-devices-v1"),getCounter("app-opens-v1"),getHistory()]);
+        const days=buildDays(history);const sum=n=>days.slice(-n).reduce((s,d)=>s+d.count,0);
         document.getElementById("devices").textContent=devices??"0";
         document.getElementById("opens").textContent=opens??"0";
+        document.getElementById("today").textContent=days.at(-1)?.count??0;
+        document.getElementById("week").textContent=sum(7);
+        document.getElementById("month").textContent=sum(30);
+        renderChart(days);
         status.textContent=`Zuletzt aktualisiert: ${new Date().toLocaleString("de-DE")}`;
-      }catch(error){
-        status.textContent="Die Statistik konnte gerade nicht geladen werden.";
-      }
+      }catch(error){console.warn(error);status.textContent="Die Statistik konnte gerade nicht vollständig geladen werden."}
     }
     document.getElementById("refreshStats").addEventListener("click",loadStats);
     document.querySelectorAll("[data-app-home]").forEach(link=>link.addEventListener("click",event=>{event.preventDefault();location.replace(`index.html?t=${Date.now()}`)}));
