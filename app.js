@@ -4,9 +4,12 @@ const $=s=>document.querySelector(s);
 
 function escapeHtml(value=""){return String(value).replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]))}
 function finalScore(m){const results=(m.matchResults||[]).filter(x=>x.resultTypeID===2||x.resultName==="Endergebnis");const r=results.at(-1)||(m.matchResults||[]).at(-1);return r?`${r.pointsTeam1}:${r.pointsTeam2}`:"–"}
+function finalResult(m){const results=(m.matchResults||[]).filter(x=>x.resultTypeID===2||x.resultName==="Endergebnis");return results.at(-1)||(m.matchResults||[]).at(-1)}
 function dateText(s){return s?new Intl.DateTimeFormat("de-DE",{weekday:"short",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}).format(new Date(s)):""}
 function skeletons(el,count=3){el.innerHTML=Array.from({length:count},()=>'<div class="card skeleton"><i></i><i></i><i></i></div>').join("")}
 async function get(path){const r=await fetch(API+path,{cache:"no-store"});if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()}
+function clubColors(name=""){const n=name.toLowerCase(),sets=[["dortmund","#fdeb19","#111111"],["bremen","#00864a","#ffffff"],["wolfsburg","#65b32e","#ffffff"],["gladbach","#15a05c","#111111"],["augsburg","#ba3733","#46714b"],["st. pauli","#6f4e37","#ffffff"],["hamburg","#005aaa","#ffffff"],["hoffenheim","#1961a9","#ffffff"],["heidenheim","#e30613","#184b91"],["freiburg","#e30613","#111111"],["mainz","#c3142d","#ffffff"],["frankfurt","#e1000f","#111111"],["leverkusen","#e32221","#111111"],["leipzig","#dd0741","#ffffff"],["stuttgart","#e32219","#ffffff"],["bayern","#dc052d","#0066b2"],["union","#e30613","#ffffff"],["köln","#ed1c24","#ffffff"]];return sets.find(([key])=>n.includes(key))?.slice(1)||["#39db86","#4fa3ff"]}
+function formFor(matches,teamId){return matches.filter(m=>m.matchIsFinished).sort((a,b)=>new Date(b.matchDateTime)-new Date(a.matchDateTime)).slice(0,5).reverse().map(m=>{const r=finalResult(m);if(!r)return"–";const home=String(m.team1?.teamId)===String(teamId),own=home?r.pointsTeam1:r.pointsTeam2,other=home?r.pointsTeam2:r.pointsTeam1;return own>other?"S":own<other?"N":"U"})}
 
 function matchCard(m){
   const node=$("#matchTpl").content.firstElementChild.cloneNode(true), kickoff=new Date(m.matchDateTime), now=new Date();
@@ -29,12 +32,16 @@ async function loadClub(teamId,save=true){
   if(!teamId){$("#clubHeader").innerHTML="";$("#clubContent").innerHTML="";renderFavoriteHero("");return}
   if(save){localStorage.setItem("ligakompakt.favorite",teamId);localStorage.setItem("ligakompakt.onboarded","1")}
   $("#teamSelect").value=teamId;$("#onboardingTeam").value=teamId;renderFavoriteHero(teamId);
-  const team=teams.find(t=>String(t.teamId)===String(teamId));$("#clubHeader").innerHTML=`<div class="card club-hero"><img src="${escapeHtml(team?.teamIconUrl||"")}" alt=""><div><div class="eyebrow">MEIN VEREIN</div><h2>${escapeHtml(team?.teamName||"")}</h2></div></div>`;
-  $("#clubContent").innerHTML='<div class="section-head compact"><h3>Spiele werden geladen …</h3></div>';const matches=await get(`/getmatchesbyteamid/${teamId}/3/3`),now=new Date();
+  const team=teams.find(t=>String(t.teamId)===String(teamId)),[primary,secondary]=clubColors(team?.teamName),style=`--club-primary:${primary};--club-secondary:${secondary}`;
+  $("#clubHeader").innerHTML='<div class="card club-dashboard skeleton"><i></i><i></i><i></i></div>';
+  $("#clubContent").innerHTML='<div class="section-head compact"><h3>Spiele werden geladen …</h3></div>';
+  const [matches,table]=await Promise.all([get(`/getmatchesbyteamid/${teamId}/5/3`),get(`/getbltable/${LEAGUE}/${SEASON}`)]),now=new Date();
   const upcoming=matches.filter(m=>!m.matchIsFinished&&new Date(m.matchDateTime)>=now).sort((a,b)=>new Date(a.matchDateTime)-new Date(b.matchDateTime)).slice(0,3);
-  const past=matches.filter(m=>m.matchIsFinished).sort((a,b)=>new Date(b.matchDateTime)-new Date(a.matchDateTime)).slice(0,3);
-  $("#clubContent").innerHTML='<div class="section-head compact"><div><div class="eyebrow">AUSBLICK</div><h3>Nächste Spiele</h3></div></div><div id="clubUpcoming" class="stack"></div><div class="section-head compact"><div><div class="eyebrow">RÜCKBLICK</div><h3>Letzte Ergebnisse</h3></div></div><div id="clubPast" class="stack"></div>';
-  renderMatches($("#clubUpcoming"),upcoming);renderMatches($("#clubPast"),past);
+  const past=matches.filter(m=>m.matchIsFinished).sort((a,b)=>new Date(b.matchDateTime)-new Date(a.matchDateTime)).slice(0,3),standing=table.find(t=>String(t.teamInfoId)===String(teamId)||String(t.teamId)===String(teamId)),position=Math.max(1,table.indexOf(standing)+1),form=formFor(matches,teamId);
+  $("#clubHeader").innerHTML=`<div class="card club-dashboard" style="${style}"><div class="club-identity"><img src="${escapeHtml(team?.teamIconUrl||"")}" alt=""><div><div class="eyebrow">MEIN VEREIN</div><h2>${escapeHtml(team?.teamName||"")}</h2><div class="form-row" aria-label="Form der letzten Spiele">${form.length?form.map(x=>`<span class="form-${x}">${x}</span>`).join(""):'<small>Noch keine Ergebnisse</small>'}</div></div></div><div class="club-stats"><div><strong>${standing?position:"–"}</strong><span>Platz</span></div><div><strong>${standing?.points??"–"}</strong><span>Punkte</span></div><div><strong>${standing?(standing.goalDiff>=0?"+":"")+standing.goalDiff:"–"}</strong><span>Tordifferenz</span></div></div></div>`;
+  $("#clubContent").innerHTML='<div class="section-head compact"><div><div class="eyebrow">AUSBLICK</div><h3>Nächstes Spiel</h3></div></div><div id="clubNext" class="stack next-match"></div><div class="section-head compact"><div><div class="eyebrow">WEITERE TERMINE</div><h3>Danach</h3></div></div><div id="clubUpcoming" class="stack"></div><div class="section-head compact"><div><div class="eyebrow">RÜCKBLICK</div><h3>Letzte Ergebnisse</h3></div></div><div id="clubPast" class="stack"></div>';
+  renderMatches($("#clubNext"),upcoming.slice(0,1));
+  renderMatches($("#clubUpcoming"),upcoming.slice(1));renderMatches($("#clubPast"),past);
 }
 function setupMatchdays(){const s=$("#matchdaySelect");s.innerHTML=Array.from({length:34},(_,i)=>`<option value="${i+1}">${i+1}. Spieltag</option>`).join("");s.value=String(currentGroup);s.onchange=e=>loadFixtures(Number(e.target.value)).catch(showError)}
 function showError(e){console.error(e);$("#todayMatches").innerHTML='<div class="error">Daten konnten nicht geladen werden. Bitte später erneut versuchen.</div>';$("#liveDot").textContent=navigator.onLine?"Fehler":"Offline"}
