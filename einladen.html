@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07101f">
+  <meta name="description" content="LigaKompakt kostenlos öffnen und auf iPhone oder Android installieren.">
+  <title>LigaKompakt kostenlos installieren</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css?v=1.1.0">
+</head>
+<body class="invite-page">
+  <main class="invite-wrap">
+    <a class="legal-back" href="./">‹ Zurück zu LigaKompakt</a>
+    <section class="card invite-hero">
+      <img class="invite-logo" src="icon-192.png" alt="LigaKompakt App-Symbol">
+      <div class="eyebrow">DEINE BUNDESLIGA-APP</div>
+      <h1>LigaKompakt</h1>
+      <p class="invite-lead">Spielplan, Tabelle, Lieblingsverein, Spielalarm, Kalender und Tipps – kompakt auf deinem Handy.</p>
+      <span class="invite-free">100 % kostenlos · ohne Anmeldung</span>
+    </section>
+
+    <div class="invite-main">
+      <section class="card qr-card">
+        <img src="qr-ligakompakt.png" alt="QR-Code zum Öffnen von LigaKompakt">
+        <strong>Mit der Handykamera scannen</strong>
+        <small>Der QR-Code öffnet LigaKompakt direkt im Browser.</small>
+        <div class="invite-actions">
+          <a class="invite-cta" href="./">LigaKompakt kostenlos öffnen</a>
+          <a class="whatsapp-btn" href="https://wa.me/?text=LigaKompakt%20%E2%9A%BD%20kostenlos%20%C3%B6ffnen%20und%20installieren%3A%20https%3A%2F%2Fcatbinderson.github.io%2FBundesliga-Kompakt%2Feinladen.html" target="_blank" rel="noopener">Über WhatsApp teilen</a>
+          <button id="shareInvite" class="share-native" type="button">Mit anderen Apps teilen</button>
+        </div>
+      </section>
+
+      <div class="install-guides">
+        <section class="card install-guide">
+          <span class="platform-mark"></span>
+          <h2>Auf dem iPhone</h2>
+          <ol>
+            <li>Diese Seite in <strong>Safari</strong> öffnen.</li>
+            <li>Unten auf <strong>Teilen</strong> tippen.</li>
+            <li><strong>Zum Home-Bildschirm</strong> auswählen.</li>
+            <li>Oben rechts auf <strong>Hinzufügen</strong> tippen.</li>
+          </ol>
+        </section>
+        <section class="card install-guide">
+          <span class="platform-mark">A</span>
+          <h2>Auf Android</h2>
+          <ol>
+            <li>Diese Seite in <strong>Chrome</strong> öffnen.</li>
+            <li>Oben rechts das Menü <strong>⋮</strong> öffnen.</li>
+            <li><strong>App installieren</strong> oder <strong>Zum Startbildschirm</strong> wählen.</li>
+            <li>Mit <strong>Installieren</strong> bestätigen.</li>
+          </ol>
+        </section>
+      </div>
+    </div>
+
+    <section class="invite-benefits">
+      <div class="card"><b>✓</b><strong>Immer aktuell</strong><small>Neue App-Versionen werden automatisch geladen.</small></div>
+      <div class="card"><b>★</b><strong>Dein Verein</strong><small>Jeder Nutzer wählt seinen eigenen Lieblingsverein.</small></div>
+      <div class="card"><b>↻</b><strong>iPhone &amp; Android</strong><small>Funktioniert ohne App-Store-Konto auf beiden Systemen.</small></div>
+    </section>
+    <aside class="card invite-disclaimer"><strong>Hinweis zur Nutzung</strong><p>Die Nutzung von LigaKompakt erfolgt ohne Gewähr. Trotz sorgfältiger Umsetzung wird keine Garantie für Richtigkeit, Vollständigkeit oder rechtzeitige Aktualisierung von Ergebnissen, Spielverlegungen, Benachrichtigungen und Kalenderterminen übernommen. Bitte wichtige Termine zusätzlich bei offiziellen Quellen prüfen.</p></aside>
+    <p class="invite-note">LigaKompakt ist eine unabhängige, inoffizielle Anwendung · Developer: Andreas Binder · <a href="info.html">Info &amp; Datenschutz</a></p>
+  </main>
+  <script>
+    document.getElementById("shareInvite").addEventListener("click",async event=>{const data={title:"LigaKompakt",text:"LigaKompakt ⚽ kostenlos öffnen und auf dem Handy installieren",url:location.href};try{if(navigator.share){await navigator.share(data)}else{await navigator.clipboard.writeText(`${data.text}\n${data.url}`);event.currentTarget.textContent="Link kopiert ✓"}}catch(error){if(error.name!=="AbortError")location.href=`mailto:?subject=${encodeURIComponent(data.title)}&body=${encodeURIComponent(`${data.text}\n${data.url}`)}`)}});
+  </script>
+</body>
+</html>
