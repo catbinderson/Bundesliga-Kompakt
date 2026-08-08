@@ -11,12 +11,12 @@
   <title>LigaKompakt · Bundesliga Live</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=0.8.0">
+  <link rel="stylesheet" href="styles.css?v=0.9.0">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <div class="brand-wrap"><img class="brand-icon" src="icon.svg" alt=""><div><div class="eyebrow">Bundesliga</div><h1>LigaKompakt</h1><div class="developer-line"><span>Developer: Andreas Binder</span><b>v0.8.0</b></div></div></div>
+      <div class="brand-wrap"><img class="brand-icon" src="icon.svg" alt=""><div><div class="eyebrow">Bundesliga</div><h1>LigaKompakt</h1><div class="developer-line"><span>Developer: Andreas Binder</span><b>v0.9.0</b></div></div></div>
       <button id="refreshBtn" class="icon-btn" aria-label="Daten aktualisieren">↻</button>
     </header>
     <div id="networkBanner" class="network-banner hidden">Offline – gespeicherte Daten werden angezeigt</div>
@@ -36,6 +36,9 @@
         <div class="section-head"><div><div class="eyebrow">BUNDESLIGA</div><h2>Tabelle</h2></div></div>
         <div class="legend-row"><span><i class="dot cl"></i>Champions League</span><span><i class="dot rel"></i>Abstieg</span></div>
         <div class="table-wrap card"><table><thead><tr><th>#</th><th>Verein</th><th>Sp</th><th class="wide-col">S</th><th class="wide-col">U</th><th class="wide-col">N</th><th>TD</th><th>Pkt</th></tr></thead><tbody id="tableBody"></tbody></table></div>
+        <div class="section-head compact"><div><div class="eyebrow">DIREKTVERGLEICH</div><h3>Verein gegen Verein</h3></div></div>
+        <div class="card compare-controls"><div><label for="compareTeamA">Verein 1</label><select id="compareTeamA"></select></div><span class="versus">VS</span><div><label for="compareTeamB">Verein 2</label><select id="compareTeamB"></select></div><button id="compareBtn" class="primary-btn">Jetzt vergleichen</button></div>
+        <div id="comparisonResult"></div>
       </section>
       <section id="fixtures" class="view">
         <div class="section-head"><div><div class="eyebrow">SPIELE</div><h2 id="matchdayTitle">Aktueller Spieltag</h2></div><select id="matchdaySelect" aria-label="Spieltag"></select></div>
@@ -57,6 +60,6 @@
   </div>
   <div id="onboarding" class="modal hidden"><div class="modal-card"><img class="onboarding-icon" src="icon.svg" alt=""><div class="eyebrow">WILLKOMMEN</div><h2>Dein Verein. Deine App.</h2><p>Wähle deinen Lieblingsverein. LigaKompakt zeigt dir ihn künftig ganz oben.</p><select id="onboardingTeam"></select><button id="saveFavorite" class="primary-btn">Los geht's</button><button id="skipFavorite" class="text-btn">Später auswählen</button></div></div>
   <template id="matchTpl"><article class="match card"><div class="match-top"><div class="match-meta"></div><div class="match-state"></div></div><div class="team-row"><div class="team home"><img alt=""><span></span></div><div class="score-wrap"><div class="score"></div><div class="kickoff"></div></div><div class="team away"><span></span><img alt=""></div></div></article></template>
-  <script src="app.js?v=0.8.0"></script>
+  <script src="app.js?v=0.9.0"></script>
 </body>
 </html>
