@@ -1,4 +1,4 @@
-const APP_VERSION="1.4.0", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
+const APP_VERSION="1.4.1", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
 let currentGroup=1, teams=[],leagueTable=[],notificationTimer=null,liveTimer=null,countdownTimer=null,currentMatches=[],previousScores=new Map(),changedMatches=new Set();
 const $=s=>document.querySelector(s);
 
@@ -13,7 +13,7 @@ async function deliverCalendarFile(events,name,title){const ics=["BEGIN:VCALENDA
 async function saveMatchToCalendar(m){
   const home=m.team1?.teamName||"Heimteam",away=m.team2?.teamName||"Auswärtsteam";await deliverCalendarFile([m],`LigaKompakt-${home}-${away}.ics`,`${home} – ${away}`)
 }
-function subscribeTeamCalendar(teamId){location.href=`webcal://catbinderson.github.io/Bundesliga-Kompakt/calendars/${encodeURIComponent(teamId)}.ics`}
+function subscribeTeamCalendar(teamId){const calendarUrl=`https://catbinderson.github.io/Bundesliga-Kompakt/calendars/${encodeURIComponent(teamId)}.ics`;if(/Android/i.test(navigator.userAgent)){location.href=`https://calendar.google.com/calendar/render?cid=${encodeURIComponent(calendarUrl)}`;return}location.href=calendarUrl.replace(/^https:/,"webcal:")}
 async function shareMatch(m){
   const home=m.team1?.teamName||"Heimteam",away=m.team2?.teamName||"Auswärtsteam",title=`${home} – ${away}`,detail=m.matchIsFinished?`Endstand: ${finalScore(m)}`:`Anstoß: ${dateText(m.matchDateTime)}`,text=`⚽ ${title}\n${detail}\nLigaKompakt`,url=new URL("./",location.href).href;
   if(navigator.share){await navigator.share({title,text,url});return}
