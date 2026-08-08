@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#07101f">
   <meta name="description" content="LigaKompakt kostenlos öffnen und auf iPhone oder Android installieren.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="LigaKompakt">
+  <meta property="og:title" content="LigaKompakt · Bundesliga Live">
+  <meta property="og:description" content="Live-Spielstände, Ergebnisse, Tabelle, Tippspiel und dein Lieblingsverein – kompakt in einer App.">
+  <meta property="og:url" content="https://catbinderson.github.io/Bundesliga-Kompakt/?v=2">
+  <meta property="og:image" content="https://catbinderson.github.io/Bundesliga-Kompakt/social-preview.jpg?v=2">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="LigaKompakt – Bundesliga Live">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LigaKompakt · Bundesliga Live">
+  <meta name="twitter:description" content="Live-Spielstände, Ergebnisse, Tabelle, Tippspiel und dein Lieblingsverein – kompakt in einer App.">
+  <meta name="twitter:image" content="https://catbinderson.github.io/Bundesliga-Kompakt/social-preview.jpg?v=2">
   <title>LigaKompakt kostenlos installieren</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -28,7 +43,7 @@
         <small>Der QR-Code öffnet LigaKompakt direkt im Browser.</small>
         <div class="invite-actions">
           <a class="invite-cta" href="index.html" data-app-home>LigaKompakt kostenlos öffnen</a>
-          <a class="whatsapp-btn" href="https://wa.me/?text=LigaKompakt%20%E2%9A%BD%20kostenlos%20%C3%B6ffnen%20und%20installieren%3A%20https%3A%2F%2Fcatbinderson.github.io%2FBundesliga-Kompakt%2Feinladen.html" target="_blank" rel="noopener">Über WhatsApp teilen</a>
+          <a class="whatsapp-btn" href="https://wa.me/?text=LigaKompakt%20%E2%9A%BD%20kostenlos%20%C3%B6ffnen%20und%20installieren%3A%20https%3A%2F%2Fcatbinderson.github.io%2FBundesliga-Kompakt%2F%3Fv%3D2" target="_blank" rel="noopener">Über WhatsApp teilen</a>
           <button id="shareInvite" class="share-native" type="button">Mit anderen Apps teilen</button>
         </div>
       </section>
@@ -38,7 +53,7 @@
           <span class="platform-mark"></span>
           <h2>Auf dem iPhone</h2>
           <ol>
-            <li>Diese Seite in <strong>Safari</strong> öffnen.</li>
+            <li>LigaKompakt in <strong>Safari</strong> öffnen.</li>
             <li>Unten auf <strong>Teilen</strong> tippen.</li>
             <li><strong>Zum Home-Bildschirm</strong> auswählen.</li>
             <li>Oben rechts auf <strong>Hinzufügen</strong> tippen.</li>
@@ -48,7 +63,7 @@
           <span class="platform-mark">A</span>
           <h2>Auf Android</h2>
           <ol>
-            <li>Diese Seite in <strong>Chrome</strong> öffnen.</li>
+            <li>LigaKompakt in <strong>Chrome</strong> öffnen.</li>
             <li>Oben rechts das Menü <strong>⋮</strong> öffnen.</li>
             <li><strong>App installieren</strong> oder <strong>Zum Startbildschirm</strong> wählen.</li>
             <li>Mit <strong>Installieren</strong> bestätigen.</li>
@@ -66,8 +81,9 @@
     <p class="invite-note">LigaKompakt ist eine unabhängige, inoffizielle Anwendung · Developer: Andreas Binder · <a href="info.html">Info &amp; Datenschutz</a></p>
   </main>
   <script>
+    const SHARE_URL="https://catbinderson.github.io/Bundesliga-Kompakt/?v=2";
     document.querySelectorAll("[data-app-home]").forEach(link=>link.addEventListener("click",event=>{event.preventDefault();location.replace(`index.html?t=${Date.now()}`)}));
-    document.getElementById("shareInvite").addEventListener("click",async event=>{const data={title:"LigaKompakt",text:"LigaKompakt ⚽ kostenlos öffnen und auf dem Handy installieren",url:location.href};try{if(navigator.share){await navigator.share(data)}else{await navigator.clipboard.writeText(`${data.text}\n${data.url}`);event.currentTarget.textContent="Link kopiert ✓"}}catch(error){if(error.name!=="AbortError")location.href=`mailto:?subject=${encodeURIComponent(data.title)}&body=${encodeURIComponent(`${data.text}\n${data.url}`)}`)}});
+    document.getElementById("shareInvite").addEventListener("click",async event=>{const data={title:"LigaKompakt",text:"LigaKompakt ⚽ Bundesliga live, Tabelle, Spieltermine, Tipps und dein Lieblingsverein.",url:SHARE_URL};try{if(navigator.share){await navigator.share(data)}else{await navigator.clipboard.writeText(`${data.text}\n${data.url}`);event.currentTarget.textContent="Link kopiert ✓"}}catch(error){if(error.name!=="AbortError")location.href=`mailto:?subject=${encodeURIComponent(data.title)}&body=${encodeURIComponent(`${data.text}\n${data.url}`)}`)}});
   </script>
 </body>
 </html>
