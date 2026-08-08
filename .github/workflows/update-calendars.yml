@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   update:
@@ -21,9 +22,11 @@ jobs:
       - name: Kalender neu erzeugen
         run: python scripts/update_calendars.py
       - name: Änderungen speichern
+        id: changes
         run: |
           if git diff --quiet -- calendars; then
             echo "Keine Terminänderungen vorhanden."
+            echo "updated=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "LigaKompakt Kalenderbot"
@@ -31,3 +34,9 @@ jobs:
           git add calendars
           git commit -m "Aktualisiere Spieltermine automatisch [skip ci]"
           git push
+          echo "updated=true" >> "$GITHUB_OUTPUT"
+      - name: GitHub Pages neu veröffentlichen
+        if: steps.changes.outputs.updated == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${{ github.repository }}/pages/builds"
