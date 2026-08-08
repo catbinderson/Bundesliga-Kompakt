@@ -50,7 +50,6 @@ jobs:
                   if Path(p).exists(): return ImageFont.truetype(p,size)
               return ImageFont.load_default()
 
-          # echtes LigaKompakt-App-Icon
           icon=Image.open('icon-512.png').convert('RGBA').resize((190,190),Image.Resampling.LANCZOS)
           im.paste(icon,(105,165),icon)
 
@@ -67,14 +66,14 @@ jobs:
       - name: Änderungen speichern
         id: changes
         run: |
-          if git diff --quiet -- calendars facebook-preview-v6.jpg; then
+          git config user.name "LigaKompakt Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add calendars facebook-preview-v6.jpg
+          if git diff --cached --quiet; then
             echo "Keine Änderungen vorhanden."
             echo "updated=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git config user.name "LigaKompakt Bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add calendars facebook-preview-v6.jpg
           git commit -m "Aktualisiere LigaKompakt Daten und Vorschau [skip ci]"
           git push
           echo "updated=true" >> "$GITHUB_OUTPUT"
