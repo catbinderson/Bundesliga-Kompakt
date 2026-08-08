@@ -1,0 +1,9 @@
+{
+  "name": "LigaKompakt",
+  "short_name": "LigaKompakt",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07101f",
+  "theme_color": "#0b1326",
+  "icons": []
+}
