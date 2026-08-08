@@ -20,7 +20,28 @@
     }
   }
 
+  function addStatsEntry() {
+    if (document.getElementById("usageStatsCard")) return;
+    const liveCenter = document.getElementById("liveCenter");
+    if (!liveCenter) return;
+
+    const card = document.createElement("a");
+    card.id = "usageStatsCard";
+    card.href = "statistik.html";
+    card.setAttribute("aria-label", "LigaKompakt Nutzungsstatistik öffnen");
+    card.style.cssText = "display:flex;align-items:center;gap:13px;margin:0 0 14px;padding:15px 16px;text-decoration:none;color:var(--text);background:linear-gradient(135deg,rgba(79,163,255,.13),rgba(57,219,134,.09));border:1px solid rgba(79,163,255,.25);border-radius:20px;box-shadow:var(--shadow)";
+    card.innerHTML = `
+      <span style="display:grid;place-items:center;width:44px;height:44px;flex:0 0 44px;border-radius:14px;background:rgba(79,163,255,.14);font-size:22px">📊</span>
+      <span style="min-width:0;flex:1">
+        <strong style="display:block;font-size:14px">Nutzungsstatistik</strong>
+        <small style="display:block;margin-top:3px;color:var(--muted);font-size:11px">Besucher, Aufrufe und 30-Tage-Verlauf ansehen</small>
+      </span>
+      <span style="color:var(--blue);font-size:22px;font-weight:800">›</span>`;
+    liveCenter.insertAdjacentElement("afterend", card);
+  }
+
   countUsage();
+  addStatsEntry();
 
   const button = document.getElementById("shareAppBtn");
   if (!button) return;
