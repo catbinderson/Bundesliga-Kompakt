@@ -11,12 +11,12 @@
   <title>LigaKompakt · Bundesliga Live</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2.13.0">
+  <link rel="stylesheet" href="styles.css?v=2.14.0">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <div class="brand-wrap"><img class="brand-icon" src="icon.svg" alt=""><div><div class="eyebrow">Bundesliga</div><h1>LigaKompakt</h1><div class="developer-line"><span>Developer: Andreas Binder</span><b>v2.13.0</b></div><div id="personalHeader" class="personal-header hidden"></div></div></div>
+      <div class="brand-wrap"><img class="brand-icon" src="icon.svg" alt=""><div><div class="eyebrow">Bundesliga</div><h1>LigaKompakt</h1><div class="developer-line"><span>Developer: Andreas Binder</span><b>v2.14.0</b></div><div id="personalHeader" class="personal-header hidden"></div></div></div>
       <div class="topbar-actions"><button id="shareAppBtn" class="icon-btn" aria-label="App teilen">↗</button><button id="refreshBtn" class="icon-btn" aria-label="Daten aktualisieren">↻</button></div>
     </header>
     <div id="networkBanner" class="network-banner hidden">Offline – gespeicherte Daten werden angezeigt</div>
@@ -53,6 +53,7 @@
       <section id="club" class="view">
         <div class="section-head"><div><div class="eyebrow">FAVORIT</div><h2>Mein Verein</h2></div><button id="openProfile" class="ghost-btn">☺ Profil</button></div>
         <div class="card favorite-card"><label for="teamSelect">Lieblingsverein</label><select id="teamSelect"></select><p class="muted">Die Auswahl wird nur auf diesem Gerät gespeichert.</p></div>
+        <div class="card appearance-card"><div><span class="appearance-icon">Aa</span><div><strong>Darstellung</strong><p class="muted">Größere Schrift für bessere Lesbarkeit auf kleinen Displays.</p></div></div><button id="textSizeToggle" class="setting-toggle" type="button" aria-pressed="false"><span></span><b>Große Schrift aus</b></button></div>
         <div class="card backup-card"><div class="backup-copy"><span>⇄</span><div><strong>Datensicherung</strong><p class="muted">Name, Lieblingsverein und Tipps sichern oder auf ein anderes Gerät übertragen.</p></div></div><div class="backup-actions"><button id="exportData" class="primary-btn compact-btn">Sicherung exportieren</button><button id="importData" class="ghost-btn">Sicherung importieren</button><input id="importDataFile" class="hidden" type="file" accept="application/json,.json"></div><p id="backupStatus" class="muted"></p></div>
         <div class="card notification-card">
           <div class="notification-copy"><div class="notification-icon">🔔</div><div><strong>Spielalarm</strong><p id="notificationStatus" class="muted">Benachrichtigungen sind ausgeschaltet.</p></div></div>
@@ -70,6 +71,6 @@
   <div id="profileModal" class="modal hidden"><div class="modal-card"><div class="profile-copy"><span class="profile-icon">☺</span><div><div class="eyebrow">OPTIONAL</div><h2>App personalisieren</h2></div></div><p id="profileStatus">Wenn du möchtest, kennzeichnet dein Name diese App als deine persönliche LigaKompakt App. Er wird nur auf diesem Gerät gespeichert.</p><div class="profile-form"><input id="profileName" type="text" maxlength="40" autocomplete="name" placeholder="Dein Name"><button id="saveProfile" class="primary-btn compact-btn">Speichern</button></div><button id="deleteProfile" class="text-btn compact-text hidden">Namen entfernen</button><button id="closeProfile" class="text-btn">Schließen</button></div></div>
   <div id="seasonTipModal" class="modal hidden"><div class="modal-card season-tip-modal"><div class="eyebrow">MEINE TIPPS</div><h2>Saisonbilanz</h2><p id="seasonTipStatus">Die Ergebnisse werden geladen …</p><div class="season-tip-grid"><div><strong id="seasonTips">0</strong><span>Tipps</span></div><div><strong id="seasonExact">0</strong><span>Volltreffer</span></div><div><strong id="seasonTrend">0</strong><span>Tendenz</span></div><div><strong id="seasonPoints">0</strong><span>Punkte</span></div></div><div class="season-insights"><div><small>ERFOLGSQUOTE</small><strong id="seasonRate">–</strong></div><div><small>Ø PUNKTE PRO TIPP</small><strong id="seasonAverage">–</strong></div><div><small>BESTER SPIELTAG</small><strong id="seasonBest">–</strong></div></div><p class="season-tip-rule">Wertung: 3 Punkte für das exakte Ergebnis · 1 Punkt für die richtige Tendenz.</p><button id="closeSeasonTipStats" class="primary-btn">Schließen</button></div></div>
   <template id="matchTpl"><article class="match card"><div class="match-top"><div class="match-meta"></div><div class="match-state"></div></div><div class="team-row"><div class="team home"><img alt=""><span></span></div><div class="score-wrap"><div class="score"></div><div class="kickoff"></div></div><div class="team away"><span></span><img alt=""></div></div></article></template>
-  <script src="app.js?v=2.13.0"></script>
+  <script src="app.js?v=2.14.0"></script>
 </body>
 </html>
