@@ -9,12 +9,14 @@
   <meta name="apple-mobile-web-app-title" content="WeizenZähler">
   <title>WeizenZähler</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=1">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
   <main class="app">
     <header class="topbar">
-      <div><span class="eyebrow">HEFEWEIZEN</span><h1>WeizenZähler</h1></div>
+      <div class="brand"><img src="icon.svg" alt=""><div><span class="eyebrow">HEFEWEIZEN</span><h1>WeizenZähler</h1></div></div>
       <button id="openSettings" class="icon-btn" aria-label="Einstellungen">⚙︎</button>
     </header>
 
@@ -25,10 +27,7 @@
       <div class="unit">Hefeweizen</div>
       <div id="runningTotal" class="money">0,00 €</div>
       <div id="currentPrice" class="muted">Aktueller Preis: 4,40 €</div>
-      <div class="counter-actions">
-        <button id="minusBtn" class="minus">−1</button>
-        <button id="plusBtn" class="plus">+1 Bier</button>
-      </div>
+      <div class="counter-actions"><button id="minusBtn" class="minus">−1</button><button id="plusBtn" class="plus">+1 Bier</button></div>
       <button id="closeDayBtn" class="close-day">Tagesabschluss</button>
     </section>
 
@@ -43,8 +42,7 @@
 
     <section class="card filters">
       <div><label for="weekSelect">Kalenderwoche</label><input id="weekSelect" type="week"></div>
-      <div id="weekResult" class="period-result"></div>
-      <hr>
+      <div id="weekResult" class="period-result"></div><hr>
       <div><label for="monthSelect">Monat</label><input id="monthSelect" type="month"></div>
       <div id="monthResult" class="period-result"></div>
     </section>
@@ -66,6 +64,14 @@
       <button id="savePrice" class="primary">Preis speichern</button>
       <h3>Preishistorie</h3>
       <div id="priceHistory" class="price-history"></div>
+
+      <div class="settings-divider"></div>
+      <div class="eyebrow">DATENSICHERUNG</div>
+      <h2>Sichern &amp; Wiederherstellen</h2>
+      <p class="muted">Sichert Tagesverlauf, aktuellen Zähler und die komplette Preishistorie als JSON-Datei.</p>
+      <div class="backup-actions"><button id="exportBackup" class="primary">Sicherung exportieren</button><button id="importBackup" class="secondary">Sicherung importieren</button></div>
+      <input id="backupFile" class="hidden" type="file" accept="application/json,.json">
+      <p id="backupStatus" class="muted backup-status"></p>
     </div>
   </div>
 
@@ -78,6 +84,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=1"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>
