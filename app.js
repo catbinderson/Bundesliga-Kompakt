@@ -17,7 +17,7 @@ function matchDetails(m){
   if(half)rows.push(`<div class="detail-line"><span>◐</span><div><small>HALBZEIT</small><strong>${half.pointsTeam1}:${half.pointsTeam2}</strong></div></div>`);
   if(goals.length)rows.push(`<div class="goal-list"><small>TORE</small>${goals.map(g=>`<div><b>${g.scoreTeam1}:${g.scoreTeam2}</b><span>${escapeHtml(g.goalGetterName||"Torschütze unbekannt")}${g.matchMinute?` · ${g.matchMinute}. Min.`:""}${g.isPenalty?" · Elfmeter":""}${g.isOwnGoal?" · Eigentor":""}</span></div>`).join("")}</div>`);
   if(!rows.length)rows.push('<p class="muted">Weitere Spieldetails sind noch nicht verfügbar.</p>');
-  return `<div class="match-details"><div class="detail-inner">${rows.join("")}</div></div><div class="details-hint"><span>Details anzeigen</span><b>⌄</b></div>`;
+  return `<div class="match-details"><div class="detail-inner">${rows.join("")}</div></div><button type="button" class="details-toggle" aria-expanded="false"><span>Spieldetails öffnen</span><b>⌄</b></button>`;
 }
 
 function matchCard(m){
@@ -29,9 +29,8 @@ function matchCard(m){
   if(m.matchIsFinished){node.querySelector(".score").textContent=finalScore(m);node.querySelector(".kickoff").textContent="Endstand";state.textContent="BEENDET";state.classList.add("done")}
   else if(isLive){node.querySelector(".score").textContent=finalScore(m)==="–"?"LIVE":finalScore(m);node.querySelector(".kickoff").textContent="läuft";state.textContent="LIVE";state.classList.add("live")}
   else{node.querySelector(".score").textContent=new Intl.DateTimeFormat("de-DE",{hour:"2-digit",minute:"2-digit"}).format(kickoff);node.querySelector(".kickoff").textContent=new Intl.DateTimeFormat("de-DE",{day:"2-digit",month:"2-digit"}).format(kickoff);state.textContent="ANSTEHEND"}
-  node.insertAdjacentHTML("beforeend",matchDetails(m));node.tabIndex=0;node.setAttribute("role","button");node.setAttribute("aria-expanded","false");
-  const toggle=()=>{const open=node.classList.toggle("details-open");node.setAttribute("aria-expanded",String(open));node.querySelector(".details-hint span").textContent=open?"Details schließen":"Details anzeigen"};
-  node.addEventListener("click",toggle);node.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}});
+  node.insertAdjacentHTML("beforeend",matchDetails(m));const button=node.querySelector(".details-toggle");
+  button.addEventListener("click",e=>{e.stopPropagation();const open=node.classList.toggle("details-open");button.setAttribute("aria-expanded",String(open));button.querySelector("span").textContent=open?"Spieldetails schließen":"Spieldetails öffnen"});
   return node;
 }
 function renderMatches(el,matches){el.innerHTML="";if(!matches.length){el.innerHTML='<div class="card muted">Keine Spiele gefunden.</div>';return}matches.forEach(m=>el.appendChild(matchCard(m)))}
