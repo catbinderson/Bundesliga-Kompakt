@@ -1,9 +1,10 @@
 {
-  "name": "LigaKompakt",
+  "name": "LigaKompakt Bundesliga",
   "short_name": "LigaKompakt",
+  "description": "Bundesliga-App mit Tabelle, Spielplan und Lieblingsverein.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#07101f",
-  "theme_color": "#0b1326",
+  "theme_color": "#07101f",
   "icons": []
 }

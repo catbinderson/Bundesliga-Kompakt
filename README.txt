@@ -1,29 +1,14 @@
-LigaKompakt v0.1
+LigaKompakt v0.3 Ultra
 
-Eine einfache installierbare Handy-Web-App (PWA) für die 1. Fußball-Bundesliga.
+Neu:
+- noch hochwertigeres UI mit Glas-Effekt
+- animierter Live-Status
+- Premium-Navigation
+- onboarding für Lieblingsverein
+- Lieblingsverein direkt auf der Startseite
+- optimierte Tabelle mit visuellen Zonen
+- überarbeitete Spielkarten
+- feinere Animationen und mobile Details
+- weiterhin ohne Login nutzbar
 
-Bereiche:
-- Heute
-- Tabelle
-- Spielplan
-- Mein Verein
-
-Datenquelle:
-OpenLigaDB (https://www.openligadb.de/)
-Die API ist ohne Authentifizierung nutzbar. Datenlizenz: ODbL.
-
-Start lokal:
-Einfach die Dateien über einen kleinen Webserver ausliefern, z.B.
-python3 -m http.server 8080
-
-Dann im Browser:
-http://localhost:8080
-
-Auf iPhone:
-Safari öffnen -> Teilen -> Zum Home-Bildschirm
-
-Deployment:
-Die Dateien können direkt in ein GitHub-Pages-Repository hochgeladen werden.
-
-Hinweis:
-Dies ist ein erster funktionsfähiger Prototyp. Push-Nachrichten, News und App-Store-Veröffentlichung sind noch nicht enthalten.
+Datenquelle: OpenLigaDB
