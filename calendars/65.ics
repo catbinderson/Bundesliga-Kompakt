@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · 1. FC Köln
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81863@andreas-binder
+DTSTAMP:20260705T093939Z
+DTSTART:20260824T160000Z
+DTEND:20260824T180000Z
+SUMMARY:Würzburger Kickers – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83163@andreas-binder
+DTSTAMP:20260703T053705Z
+DTSTART:20260829T133000Z
+DTEND:20260829T153000Z
+SUMMARY:1. FC Köln – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83165@andreas-binder
+DTSTAMP:20260715T094528Z
+DTSTART:20260904T183000Z
+DTEND:20260904T203000Z
+SUMMARY:VfB Stuttgart – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83181@andreas-binder
+DTSTAMP:20260715T094814Z
+DTSTART:20260912T163000Z
+DTEND:20260912T183000Z
+SUMMARY:1. FC Köln – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83188@andreas-binder
+DTSTAMP:20260703T060107Z
+DTSTART:20260919T133000Z
+DTEND:20260919T153000Z
+SUMMARY:Hamburger SV – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83199@andreas-binder
+DTSTAMP:20260703T060403Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:1. FC Köln – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83203@andreas-binder
+DTSTAMP:20260703T060529Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:Eintracht Frankfurt – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83217@andreas-binder
+DTSTAMP:20260703T060844Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:1. FC Köln – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83223@andreas-binder
+DTSTAMP:20260703T061040Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:1. FC Union Berlin – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83235@andreas-binder
+DTSTAMP:20260703T061440Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:1. FC Köln – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83237@andreas-binder
+DTSTAMP:20260703T061530Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:FC Bayern München – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83252@andreas-binder
+DTSTAMP:20260703T061917Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:1. FC Köln – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83260@andreas-binder
+DTSTAMP:20260703T062108Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:FC Augsburg – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83270@andreas-binder
+DTSTAMP:20260703T062321Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:1. FC Köln – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83278@andreas-binder
+DTSTAMP:20260703T062528Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:1. FSV Mainz 05 – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83288@andreas-binder
+DTSTAMP:20260703T062730Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:1. FC Köln – SC Freiburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83297@andreas-binder
+DTSTAMP:20260703T063115Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:1. FC Köln – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83308@andreas-binder
+DTSTAMP:20260703T063330Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:SC Paderborn 07 – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83310@andreas-binder
+DTSTAMP:20260703T064305Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:TSG Hoffenheim – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83325@andreas-binder
+DTSTAMP:20260703T064645Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:1. FC Köln – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83333@andreas-binder
+DTSTAMP:20260703T064815Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:SV Werder Bremen – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83343@andreas-binder
+DTSTAMP:20260703T065011Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:1. FC Köln – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83349@andreas-binder
+DTSTAMP:20260703T065137Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:Borussia Mönchengladbach – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83361@andreas-binder
+DTSTAMP:20260703T065405Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:1. FC Köln – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83370@andreas-binder
+DTSTAMP:20260703T065610Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:FC Schalke 04 – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83379@andreas-binder
+DTSTAMP:20260703T065804Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:1. FC Köln – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83382@andreas-binder
+DTSTAMP:20260703T070627Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:Bayer 04 Leverkusen – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83397@andreas-binder
+DTSTAMP:20260703T070934Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:1. FC Köln – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

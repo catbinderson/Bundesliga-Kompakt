@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · Borussia Mönchengladbach
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81837@andreas-binder
+DTSTAMP:20260705T093639Z
+DTSTART:20260823T133000Z
+DTEND:20260823T153000Z
+SUMMARY:TSV Schott Mainz – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83158@andreas-binder
+DTSTAMP:20260703T053556Z
+DTSTART:20260829T133000Z
+DTEND:20260829T153000Z
+SUMMARY:RB Leipzig – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83169@andreas-binder
+DTSTAMP:20260703T055738Z
+DTSTART:20260905T133000Z
+DTEND:20260905T153000Z
+SUMMARY:Borussia Mönchengladbach – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83177@andreas-binder
+DTSTAMP:20260703T055824Z
+DTSTART:20260912T133000Z
+DTEND:20260912T153000Z
+SUMMARY:SC Freiburg – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83187@andreas-binder
+DTSTAMP:20260703T060057Z
+DTSTART:20260919T133000Z
+DTEND:20260919T153000Z
+SUMMARY:Borussia Mönchengladbach – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83199@andreas-binder
+DTSTAMP:20260703T060403Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:1. FC Köln – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83205@andreas-binder
+DTSTAMP:20260703T060551Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:Borussia Mönchengladbach – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83212@andreas-binder
+DTSTAMP:20260703T060748Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:VfB Stuttgart – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83224@andreas-binder
+DTSTAMP:20260703T061053Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:Borussia Mönchengladbach – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83234@andreas-binder
+DTSTAMP:20260703T061428Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:Hamburger SV – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83242@andreas-binder
+DTSTAMP:20260703T061635Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:Borussia Mönchengladbach – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83253@andreas-binder
+DTSTAMP:20260703T061927Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:SV Werder Bremen – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83257@andreas-binder
+DTSTAMP:20260703T062032Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:Bayer 04 Leverkusen – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83268@andreas-binder
+DTSTAMP:20260703T062306Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:Borussia Mönchengladbach – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83280@andreas-binder
+DTSTAMP:20260703T062546Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:FC Schalke 04 – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83286@andreas-binder
+DTSTAMP:20260703T062713Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:Borussia Mönchengladbach – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83294@andreas-binder
+DTSTAMP:20260703T063050Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:FC Augsburg – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83305@andreas-binder
+DTSTAMP:20260703T063259Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:Borussia Mönchengladbach – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83313@andreas-binder
+DTSTAMP:20260703T064337Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:Borussia Mönchengladbach – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83326@andreas-binder
+DTSTAMP:20260703T064652Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:SV 07 Elversberg – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83331@andreas-binder
+DTSTAMP:20260703T064758Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:Borussia Mönchengladbach – SC Freiburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83341@andreas-binder
+DTSTAMP:20260703T064952Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:1. FSV Mainz 05 – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83349@andreas-binder
+DTSTAMP:20260703T065137Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:Borussia Mönchengladbach – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83357@andreas-binder
+DTSTAMP:20260703T065324Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:TSG Hoffenheim – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83367@andreas-binder
+DTSTAMP:20260703T065544Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:Borussia Mönchengladbach – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83380@andreas-binder
+DTSTAMP:20260703T065813Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:SC Paderborn 07 – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83386@andreas-binder
+DTSTAMP:20260703T070707Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:Borussia Mönchengladbach – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83390@andreas-binder
+DTSTAMP:20260703T070803Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:Borussia Dortmund – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

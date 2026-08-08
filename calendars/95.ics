@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · FC Augsburg
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81844@andreas-binder
+DTSTAMP:20260705T093133Z
+DTSTART:20260822T110000Z
+DTEND:20260822T130000Z
+SUMMARY:Energie Cottbus – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83160@andreas-binder
+DTSTAMP:20260715T094505Z
+DTSTART:20260830T153000Z
+DTEND:20260830T173000Z
+SUMMARY:FC Augsburg – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83168@andreas-binder
+DTSTAMP:20260715T094610Z
+DTSTART:20260906T153000Z
+DTEND:20260906T173000Z
+SUMMARY:Eintracht Frankfurt – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83178@andreas-binder
+DTSTAMP:20260703T055847Z
+DTSTART:20260912T133000Z
+DTEND:20260912T153000Z
+SUMMARY:FC Augsburg – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83189@andreas-binder
+DTSTAMP:20260703T060116Z
+DTSTART:20260919T133000Z
+DTEND:20260919T153000Z
+SUMMARY:SV Werder Bremen – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83196@andreas-binder
+DTSTAMP:20260703T060329Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:FC Augsburg – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83209@andreas-binder
+DTSTAMP:20260703T060632Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:SV 07 Elversberg – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83215@andreas-binder
+DTSTAMP:20260703T060824Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:FC Augsburg – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83222@andreas-binder
+DTSTAMP:20260703T061025Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:FC Augsburg – SC Freiburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83229@andreas-binder
+DTSTAMP:20260703T061332Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:RB Leipzig – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83240@andreas-binder
+DTSTAMP:20260703T061617Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:FC Augsburg – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83248@andreas-binder
+DTSTAMP:20260703T061806Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:TSG Hoffenheim – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83260@andreas-binder
+DTSTAMP:20260703T062108Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:FC Augsburg – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83264@andreas-binder
+DTSTAMP:20260703T062224Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:Borussia Dortmund – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83277@andreas-binder
+DTSTAMP:20260703T062518Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:FC Augsburg – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83283@andreas-binder
+DTSTAMP:20260703T062638Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:VfB Stuttgart – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83294@andreas-binder
+DTSTAMP:20260703T063050Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:FC Augsburg – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83306@andreas-binder
+DTSTAMP:20260703T063309Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:Hamburger SV – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83316@andreas-binder
+DTSTAMP:20260703T064407Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:FC Schalke 04 – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83322@andreas-binder
+DTSTAMP:20260703T064617Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:FC Augsburg – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83329@andreas-binder
+DTSTAMP:20260703T064738Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:Bayer 04 Leverkusen – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83340@andreas-binder
+DTSTAMP:20260703T064943Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:FC Augsburg – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83345@andreas-binder
+DTSTAMP:20260703T065102Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:FC Bayern München – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83359@andreas-binder
+DTSTAMP:20260703T065349Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:FC Augsburg – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83366@andreas-binder
+DTSTAMP:20260703T065534Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:1. FC Union Berlin – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83376@andreas-binder
+DTSTAMP:20260703T065735Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:SC Freiburg – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83384@andreas-binder
+DTSTAMP:20260703T070649Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:FC Augsburg – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83395@andreas-binder
+DTSTAMP:20260703T070919Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:1. FSV Mainz 05 – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

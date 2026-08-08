@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · RB Leipzig
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81835@andreas-binder
+DTSTAMP:20260705T093403Z
+DTSTART:20260822T160000Z
+DTEND:20260822T180000Z
+SUMMARY:Eintracht Trier – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83158@andreas-binder
+DTSTAMP:20260703T053556Z
+DTSTART:20260829T133000Z
+DTEND:20260829T153000Z
+SUMMARY:RB Leipzig – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83171@andreas-binder
+DTSTAMP:20260703T055730Z
+DTSTART:20260905T133000Z
+DTEND:20260905T153000Z
+SUMMARY:SV Werder Bremen – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83175@andreas-binder
+DTSTAMP:20260715T094832Z
+DTSTART:20260913T133000Z
+DTEND:20260913T153000Z
+SUMMARY:RB Leipzig – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83185@andreas-binder
+DTSTAMP:20260715T094945Z
+DTSTART:20260920T133000Z
+DTEND:20260920T153000Z
+SUMMARY:Bayer 04 Leverkusen – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83193@andreas-binder
+DTSTAMP:20260703T060253Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:RB Leipzig – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83201@andreas-binder
+DTSTAMP:20260703T060455Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:FC Bayern München – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83211@andreas-binder
+DTSTAMP:20260703T060721Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:RB Leipzig – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83226@andreas-binder
+DTSTAMP:20260703T061159Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:FC Schalke 04 – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83229@andreas-binder
+DTSTAMP:20260703T061332Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:RB Leipzig – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83241@andreas-binder
+DTSTAMP:20260703T061626Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:1. FC Union Berlin – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83249@andreas-binder
+DTSTAMP:20260703T061819Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:SC Freiburg – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83256@andreas-binder
+DTSTAMP:20260703T062023Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:RB Leipzig – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83270@andreas-binder
+DTSTAMP:20260703T062321Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:1. FC Köln – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83274@andreas-binder
+DTSTAMP:20260703T062437Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:RB Leipzig – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83290@andreas-binder
+DTSTAMP:20260703T062748Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:SC Paderborn 07 – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83292@andreas-binder
+DTSTAMP:20260703T063027Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:RB Leipzig – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83302@andreas-binder
+DTSTAMP:20260703T063233Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:TSG Hoffenheim – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83313@andreas-binder
+DTSTAMP:20260703T064337Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:Borussia Mönchengladbach – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83320@andreas-binder
+DTSTAMP:20260703T064551Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:RB Leipzig – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83332@andreas-binder
+DTSTAMP:20260703T064807Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:Hamburger SV – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83337@andreas-binder
+DTSTAMP:20260703T064916Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:RB Leipzig – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83348@andreas-binder
+DTSTAMP:20260703T065128Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:Eintracht Frankfurt – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83355@andreas-binder
+DTSTAMP:20260703T065305Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:RB Leipzig – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83371@andreas-binder
+DTSTAMP:20260703T065619Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:SV 07 Elversberg – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83373@andreas-binder
+DTSTAMP:20260703T065702Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:RB Leipzig – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83384@andreas-binder
+DTSTAMP:20260703T070649Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:FC Augsburg – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83391@andreas-binder
+DTSTAMP:20260703T070815Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:RB Leipzig – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

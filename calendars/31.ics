@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · SC Paderborn 07
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81861@andreas-binder
+DTSTAMP:20260705T093847Z
+DTSTART:20260823T160000Z
+DTEND:20260823T180000Z
+SUMMARY:1. FC Phönix Lübeck – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83161@andreas-binder
+DTSTAMP:20260703T053640Z
+DTSTART:20260829T133000Z
+DTEND:20260829T153000Z
+SUMMARY:1. FSV Mainz 05 – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83173@andreas-binder
+DTSTAMP:20260703T055710Z
+DTSTART:20260905T133000Z
+DTEND:20260905T153000Z
+SUMMARY:SC Paderborn 07 – SC Freiburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83174@andreas-binder
+DTSTAMP:20260703T055757Z
+DTSTART:20260912T133000Z
+DTEND:20260912T153000Z
+SUMMARY:Borussia Dortmund – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83191@andreas-binder
+DTSTAMP:20260715T095019Z
+DTSTART:20260920T173000Z
+DTEND:20260920T193000Z
+SUMMARY:SC Paderborn 07 – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83200@andreas-binder
+DTSTAMP:20260703T060414Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:SC Paderborn 07 – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83207@andreas-binder
+DTSTAMP:20260703T060614Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:SV Werder Bremen – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83218@andreas-binder
+DTSTAMP:20260703T060859Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:SC Paderborn 07 – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83224@andreas-binder
+DTSTAMP:20260703T061053Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:Borussia Mönchengladbach – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83236@andreas-binder
+DTSTAMP:20260703T061449Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:SC Paderborn 07 – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83238@andreas-binder
+DTSTAMP:20260703T061541Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:Bayer 04 Leverkusen – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83254@andreas-binder
+DTSTAMP:20260703T061937Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:SC Paderborn 07 – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83255@andreas-binder
+DTSTAMP:20260703T062013Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:FC Bayern München – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83272@andreas-binder
+DTSTAMP:20260703T062348Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:SC Paderborn 07 – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83277@andreas-binder
+DTSTAMP:20260703T062518Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:FC Augsburg – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83290@andreas-binder
+DTSTAMP:20260703T062748Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:SC Paderborn 07 – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83296@andreas-binder
+DTSTAMP:20260703T063108Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:1. FC Union Berlin – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83308@andreas-binder
+DTSTAMP:20260703T063330Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:SC Paderborn 07 – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83317@andreas-binder
+DTSTAMP:20260703T064417Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:SC Paderborn 07 – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83321@andreas-binder
+DTSTAMP:20260703T064607Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:SC Freiburg – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83335@andreas-binder
+DTSTAMP:20260703T064831Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:SC Paderborn 07 – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83338@andreas-binder
+DTSTAMP:20260703T064924Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:TSG Hoffenheim – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83346@andreas-binder
+DTSTAMP:20260703T065112Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:VfB Stuttgart – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83362@andreas-binder
+DTSTAMP:20260703T065414Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:SC Paderborn 07 – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83368@andreas-binder
+DTSTAMP:20260703T065555Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:Hamburger SV – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83380@andreas-binder
+DTSTAMP:20260703T065813Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:SC Paderborn 07 – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83383@andreas-binder
+DTSTAMP:20260703T070638Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:Eintracht Frankfurt – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83398@andreas-binder
+DTSTAMP:20260703T070944Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:SC Paderborn 07 – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

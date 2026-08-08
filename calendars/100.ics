@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · Hamburger SV
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81854@andreas-binder
+DTSTAMP:20260705T093904Z
+DTSTART:20260824T160000Z
+DTEND:20260824T180000Z
+SUMMARY:SC Verl – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83157@andreas-binder
+DTSTAMP:20260715T094437Z
+DTSTART:20260829T163000Z
+DTEND:20260829T183000Z
+SUMMARY:Borussia Dortmund – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83170@andreas-binder
+DTSTAMP:20260715T094558Z
+DTSTART:20260906T133000Z
+DTEND:20260906T153000Z
+SUMMARY:Hamburger SV – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83175@andreas-binder
+DTSTAMP:20260715T094832Z
+DTSTART:20260913T133000Z
+DTEND:20260913T153000Z
+SUMMARY:RB Leipzig – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83188@andreas-binder
+DTSTAMP:20260703T060107Z
+DTSTART:20260919T133000Z
+DTEND:20260919T153000Z
+SUMMARY:Hamburger SV – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83194@andreas-binder
+DTSTAMP:20260703T060308Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:TSG Hoffenheim – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83206@andreas-binder
+DTSTAMP:20260703T060558Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:Hamburger SV – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83218@andreas-binder
+DTSTAMP:20260703T060859Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:SC Paderborn 07 – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83221@andreas-binder
+DTSTAMP:20260703T061014Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:Eintracht Frankfurt – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83234@andreas-binder
+DTSTAMP:20260703T061428Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:Hamburger SV – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83243@andreas-binder
+DTSTAMP:20260703T061644Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:SV Werder Bremen – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83251@andreas-binder
+DTSTAMP:20260703T061907Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:Hamburger SV – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83261@andreas-binder
+DTSTAMP:20260703T062128Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:1. FC Union Berlin – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83269@andreas-binder
+DTSTAMP:20260703T062314Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:Hamburger SV – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83281@andreas-binder
+DTSTAMP:20260703T062554Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:SV 07 Elversberg – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83287@andreas-binder
+DTSTAMP:20260703T062722Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:Hamburger SV – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83293@andreas-binder
+DTSTAMP:20260703T063041Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:SC Freiburg – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83306@andreas-binder
+DTSTAMP:20260703T063309Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:Hamburger SV – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83314@andreas-binder
+DTSTAMP:20260703T064350Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:Hamburger SV – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83323@andreas-binder
+DTSTAMP:20260703T064625Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:1. FSV Mainz 05 – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83332@andreas-binder
+DTSTAMP:20260703T064807Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:Hamburger SV – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83343@andreas-binder
+DTSTAMP:20260703T065011Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:1. FC Köln – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83350@andreas-binder
+DTSTAMP:20260703T065146Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:Hamburger SV – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83356@andreas-binder
+DTSTAMP:20260703T065316Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:VfB Stuttgart – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83368@andreas-binder
+DTSTAMP:20260703T065555Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:Hamburger SV – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83378@andreas-binder
+DTSTAMP:20260703T065755Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:Hamburger SV – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83386@andreas-binder
+DTSTAMP:20260703T070707Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:Borussia Mönchengladbach – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83396@andreas-binder
+DTSTAMP:20260703T070927Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:Hamburger SV – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

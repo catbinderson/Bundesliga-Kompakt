@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · SV Werder Bremen
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81853@andreas-binder
+DTSTAMP:20260705T093340Z
+DTSTART:20260822T133000Z
+DTEND:20260822T153000Z
+SUMMARY:Lüneburger SK Hansa – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83159@andreas-binder
+DTSTAMP:20260715T094451Z
+DTSTART:20260830T133000Z
+DTEND:20260830T153000Z
+SUMMARY:SC Freiburg – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83171@andreas-binder
+DTSTAMP:20260703T055730Z
+DTSTART:20260905T133000Z
+DTEND:20260905T153000Z
+SUMMARY:SV Werder Bremen – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83181@andreas-binder
+DTSTAMP:20260715T094814Z
+DTSTART:20260912T163000Z
+DTEND:20260912T183000Z
+SUMMARY:1. FC Köln – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83189@andreas-binder
+DTSTAMP:20260703T060116Z
+DTSTART:20260919T133000Z
+DTEND:20260919T153000Z
+SUMMARY:SV Werder Bremen – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83192@andreas-binder
+DTSTAMP:20260703T060241Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:Borussia Dortmund – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83207@andreas-binder
+DTSTAMP:20260703T060614Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:SV Werder Bremen – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83216@andreas-binder
+DTSTAMP:20260703T060834Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:1. FSV Mainz 05 – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83225@andreas-binder
+DTSTAMP:20260703T061142Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:SV Werder Bremen – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83230@andreas-binder
+DTSTAMP:20260703T061343Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:VfB Stuttgart – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83243@andreas-binder
+DTSTAMP:20260703T061644Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:SV Werder Bremen – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83253@andreas-binder
+DTSTAMP:20260703T061927Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:SV Werder Bremen – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83259@andreas-binder
+DTSTAMP:20260703T062055Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:Eintracht Frankfurt – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83271@andreas-binder
+DTSTAMP:20260703T062340Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:SV Werder Bremen – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83273@andreas-binder
+DTSTAMP:20260703T062421Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:FC Bayern München – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83289@andreas-binder
+DTSTAMP:20260703T062739Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:SV Werder Bremen – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83298@andreas-binder
+DTSTAMP:20260703T063124Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:FC Schalke 04 – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83307@andreas-binder
+DTSTAMP:20260703T063321Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:SV Werder Bremen – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83315@andreas-binder
+DTSTAMP:20260703T064359Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:SV Werder Bremen – SC Freiburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83320@andreas-binder
+DTSTAMP:20260703T064551Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:RB Leipzig – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83333@andreas-binder
+DTSTAMP:20260703T064815Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:SV Werder Bremen – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83340@andreas-binder
+DTSTAMP:20260703T064943Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:FC Augsburg – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83351@andreas-binder
+DTSTAMP:20260703T065156Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:SV Werder Bremen – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83362@andreas-binder
+DTSTAMP:20260703T065414Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:SC Paderborn 07 – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83369@andreas-binder
+DTSTAMP:20260703T065603Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:SV Werder Bremen – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83375@andreas-binder
+DTSTAMP:20260703T065725Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:TSG Hoffenheim – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83387@andreas-binder
+DTSTAMP:20260703T070717Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:SV Werder Bremen – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83396@andreas-binder
+DTSTAMP:20260703T070927Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:Hamburger SV – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

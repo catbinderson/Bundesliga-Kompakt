@@ -1,4 +1,4 @@
-const APP_VERSION="1.3.0", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
+const APP_VERSION="1.4.0", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
 let currentGroup=1, teams=[],leagueTable=[],notificationTimer=null,liveTimer=null,countdownTimer=null,currentMatches=[],previousScores=new Map(),changedMatches=new Set();
 const $=s=>document.querySelector(s);
 
@@ -13,7 +13,7 @@ async function deliverCalendarFile(events,name,title){const ics=["BEGIN:VCALENDA
 async function saveMatchToCalendar(m){
   const home=m.team1?.teamName||"Heimteam",away=m.team2?.teamName||"Auswärtsteam";await deliverCalendarFile([m],`LigaKompakt-${home}-${away}.ics`,`${home} – ${away}`)
 }
-async function saveTeamCalendar(teamId){const button=$("#saveSeasonCalendar"),team=teams.find(t=>String(t.teamId)===String(teamId)),old=button?.textContent;if(button){button.disabled=true;button.textContent="Termine werden geladen …"}try{const matches=await get(`/getmatchesbyteamid/${teamId}/0/34`),upcoming=matches.filter(m=>!m.matchIsFinished&&new Date(m.matchDateTime)>new Date()).sort((a,b)=>new Date(a.matchDateTime)-new Date(b.matchDateTime));if(!upcoming.length)throw new Error("Keine kommenden Spiele verfügbar");await deliverCalendarFile(upcoming,`LigaKompakt-${team?.shortName||team?.teamName||"Mein-Verein"}-Saison.ics`,`${upcoming.length} Termine · ${team?.teamName||"Mein Verein"}`)}finally{if(button){button.disabled=false;button.textContent=old}}}
+function subscribeTeamCalendar(teamId){location.href=`webcal://raw.githubusercontent.com/catbinderson/Bundesliga-Kompakt/main/calendars/${encodeURIComponent(teamId)}.ics`}
 async function shareMatch(m){
   const home=m.team1?.teamName||"Heimteam",away=m.team2?.teamName||"Auswärtsteam",title=`${home} – ${away}`,detail=m.matchIsFinished?`Endstand: ${finalScore(m)}`:`Anstoß: ${dateText(m.matchDateTime)}`,text=`⚽ ${title}\n${detail}\nLigaKompakt`,url=new URL("./",location.href).href;
   if(navigator.share){await navigator.share({title,text,url});return}
@@ -87,8 +87,8 @@ async function loadClub(teamId,save=true){
   const upcoming=matches.filter(m=>!m.matchIsFinished&&new Date(m.matchDateTime)>=now).sort((a,b)=>new Date(a.matchDateTime)-new Date(b.matchDateTime)).slice(0,3);
   const past=matches.filter(m=>m.matchIsFinished).sort((a,b)=>new Date(b.matchDateTime)-new Date(a.matchDateTime)).slice(0,3),standing=table.find(t=>String(t.teamInfoId)===String(teamId)||String(t.teamId)===String(teamId)),position=Math.max(1,table.indexOf(standing)+1),form=formFor(matches,teamId);
   $("#clubHeader").innerHTML=`<div class="card club-dashboard" style="${style}"><div class="club-identity"><img src="${escapeHtml(team?.teamIconUrl||"")}" alt=""><div><div class="eyebrow">MEIN VEREIN</div><h2>${escapeHtml(team?.teamName||"")}</h2><div class="form-row" aria-label="Form der letzten Spiele">${form.length?form.map(x=>`<span class="form-${x}">${x}</span>`).join(""):'<small>Noch keine Ergebnisse</small>'}</div></div></div><div class="club-stats"><div><strong>${standing?position:"–"}</strong><span>Platz</span></div><div><strong>${standing?.points??"–"}</strong><span>Punkte</span></div><div><strong>${standing?(standing.goalDiff>=0?"+":"")+standing.goalDiff:"–"}</strong><span>Tordifferenz</span></div></div></div>`;
-  $("#clubContent").innerHTML='<button id="saveSeasonCalendar" class="season-calendar-btn"><span>＋</span><span><strong>Alle Termine speichern</strong><small>Kommende Saisonspiele in den Kalender</small></span></button><div class="section-head compact"><div><div class="eyebrow">AUSBLICK</div><h3>Nächstes Spiel</h3></div></div><div id="clubNext" class="stack next-match"></div><div class="section-head compact"><div><div class="eyebrow">WEITERE TERMINE</div><h3>Danach</h3></div></div><div id="clubUpcoming" class="stack"></div><div class="section-head compact"><div><div class="eyebrow">RÜCKBLICK</div><h3>Letzte Ergebnisse</h3></div></div><div id="clubPast" class="stack"></div>';
-  $("#saveSeasonCalendar").onclick=()=>saveTeamCalendar(teamId).catch(error=>{if(error?.name!=="AbortError")showError(error)});
+  $("#clubContent").innerHTML='<button id="subscribeCalendar" class="season-calendar-btn"><span>＋</span><span><strong>Kalender abonnieren</strong><small>Alle Spiele automatisch im Kalender</small></span></button><div class="section-head compact"><div><div class="eyebrow">AUSBLICK</div><h3>Nächstes Spiel</h3></div></div><div id="clubNext" class="stack next-match"></div><div class="section-head compact"><div><div class="eyebrow">WEITERE TERMINE</div><h3>Danach</h3></div></div><div id="clubUpcoming" class="stack"></div><div class="section-head compact"><div><div class="eyebrow">RÜCKBLICK</div><h3>Letzte Ergebnisse</h3></div></div><div id="clubPast" class="stack"></div>';
+  $("#subscribeCalendar").onclick=()=>subscribeTeamCalendar(teamId);
   renderMatches($("#clubNext"),upcoming.slice(0,1));
   renderMatches($("#clubUpcoming"),upcoming.slice(1));renderMatches($("#clubPast"),past);startNotificationMonitor();
 }

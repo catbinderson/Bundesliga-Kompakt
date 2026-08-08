@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · TSG Hoffenheim
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81833@andreas-binder
+DTSTAMP:20260705T093158Z
+DTSTART:20260822T133000Z
+DTEND:20260822T153000Z
+SUMMARY:Erzgebirge Aue – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83163@andreas-binder
+DTSTAMP:20260703T053705Z
+DTSTART:20260829T133000Z
+DTEND:20260829T153000Z
+SUMMARY:1. FC Köln – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83166@andreas-binder
+DTSTAMP:20260703T053809Z
+DTSTART:20260905T133000Z
+DTEND:20260905T153000Z
+SUMMARY:TSG Hoffenheim – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83176@andreas-binder
+DTSTAMP:20260703T055812Z
+DTSTART:20260912T133000Z
+DTEND:20260912T153000Z
+SUMMARY:TSG Hoffenheim – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83191@andreas-binder
+DTSTAMP:20260715T095019Z
+DTSTART:20260920T173000Z
+DTEND:20260920T193000Z
+SUMMARY:SC Paderborn 07 – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83194@andreas-binder
+DTSTAMP:20260703T060308Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:TSG Hoffenheim – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83205@andreas-binder
+DTSTAMP:20260703T060551Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:Borussia Mönchengladbach – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83213@andreas-binder
+DTSTAMP:20260703T060800Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:TSG Hoffenheim – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83225@andreas-binder
+DTSTAMP:20260703T061142Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:SV Werder Bremen – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83231@andreas-binder
+DTSTAMP:20260703T061353Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:TSG Hoffenheim – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83239@andreas-binder
+DTSTAMP:20260703T061602Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:Eintracht Frankfurt – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83248@andreas-binder
+DTSTAMP:20260703T061806Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:TSG Hoffenheim – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83258@andreas-binder
+DTSTAMP:20260703T062043Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:SC Freiburg – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83266@andreas-binder
+DTSTAMP:20260703T062246Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:TSG Hoffenheim – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83279@andreas-binder
+DTSTAMP:20260703T062538Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:1. FC Union Berlin – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83284@andreas-binder
+DTSTAMP:20260703T062652Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:TSG Hoffenheim – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83295@andreas-binder
+DTSTAMP:20260703T063059Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:1. FSV Mainz 05 – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83302@andreas-binder
+DTSTAMP:20260703T063233Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:TSG Hoffenheim – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83310@andreas-binder
+DTSTAMP:20260703T064305Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:TSG Hoffenheim – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83319@andreas-binder
+DTSTAMP:20260703T064516Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:Borussia Dortmund – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83328@andreas-binder
+DTSTAMP:20260703T064728Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:VfB Stuttgart – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83338@andreas-binder
+DTSTAMP:20260703T064924Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:TSG Hoffenheim – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83350@andreas-binder
+DTSTAMP:20260703T065146Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:Hamburger SV – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83357@andreas-binder
+DTSTAMP:20260703T065324Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:TSG Hoffenheim – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83364@andreas-binder
+DTSTAMP:20260703T065515Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:Bayer 04 Leverkusen – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83375@andreas-binder
+DTSTAMP:20260703T065725Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:TSG Hoffenheim – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83388@andreas-binder
+DTSTAMP:20260703T070726Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:FC Schalke 04 – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83393@andreas-binder
+DTSTAMP:20260703T070844Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:TSG Hoffenheim – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · VfB Stuttgart
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81855@andreas-binder
+DTSTAMP:20260724T202321Z
+DTSTART:20260821T184500Z
+DTEND:20260821T204500Z
+SUMMARY:Hansa Rostock – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83156@andreas-binder
+DTSTAMP:20260703T053520Z
+DTSTART:20260828T183000Z
+DTEND:20260828T203000Z
+SUMMARY:FC Bayern München – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83165@andreas-binder
+DTSTAMP:20260715T094528Z
+DTSTART:20260904T183000Z
+DTEND:20260904T203000Z
+SUMMARY:VfB Stuttgart – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83176@andreas-binder
+DTSTAMP:20260703T055812Z
+DTSTART:20260912T133000Z
+DTEND:20260912T153000Z
+SUMMARY:TSG Hoffenheim – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83184@andreas-binder
+DTSTAMP:20260715T094928Z
+DTSTART:20260919T163000Z
+DTEND:20260919T183000Z
+SUMMARY:VfB Stuttgart – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83200@andreas-binder
+DTSTAMP:20260703T060414Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:SC Paderborn 07 – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83206@andreas-binder
+DTSTAMP:20260703T060558Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:Hamburger SV – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83212@andreas-binder
+DTSTAMP:20260703T060748Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:VfB Stuttgart – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83220@andreas-binder
+DTSTAMP:20260703T061003Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:Bayer 04 Leverkusen – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83230@andreas-binder
+DTSTAMP:20260703T061343Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:VfB Stuttgart – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83244@andreas-binder
+DTSTAMP:20260703T061654Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:FC Schalke 04 – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83247@andreas-binder
+DTSTAMP:20260703T061753Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:VfB Stuttgart – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83263@andreas-binder
+DTSTAMP:20260703T062149Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:SV 07 Elversberg – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83265@andreas-binder
+DTSTAMP:20260703T062234Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:VfB Stuttgart – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83276@andreas-binder
+DTSTAMP:20260703T062501Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:SC Freiburg – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83283@andreas-binder
+DTSTAMP:20260703T062638Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:VfB Stuttgart – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83292@andreas-binder
+DTSTAMP:20260703T063027Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:RB Leipzig – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83301@andreas-binder
+DTSTAMP:20260703T063225Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:VfB Stuttgart – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83309@andreas-binder
+DTSTAMP:20260703T064255Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:VfB Stuttgart – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83325@andreas-binder
+DTSTAMP:20260703T064645Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:1. FC Köln – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83328@andreas-binder
+DTSTAMP:20260703T064728Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:VfB Stuttgart – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83336@andreas-binder
+DTSTAMP:20260703T064902Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:Borussia Dortmund – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83346@andreas-binder
+DTSTAMP:20260703T065112Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:VfB Stuttgart – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83356@andreas-binder
+DTSTAMP:20260703T065316Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:VfB Stuttgart – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83367@andreas-binder
+DTSTAMP:20260703T065544Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:Borussia Mönchengladbach – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83374@andreas-binder
+DTSTAMP:20260703T065710Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:VfB Stuttgart – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83387@andreas-binder
+DTSTAMP:20260703T070717Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:SV Werder Bremen – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83392@andreas-binder
+DTSTAMP:20260703T070824Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:VfB Stuttgart – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

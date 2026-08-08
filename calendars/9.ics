@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · FC Schalke 04
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81843@andreas-binder
+DTSTAMP:20260724T202105Z
+DTSTART:20260824T184500Z
+DTEND:20260824T204500Z
+SUMMARY:Hallescher FC – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83160@andreas-binder
+DTSTAMP:20260715T094505Z
+DTSTART:20260830T153000Z
+DTEND:20260830T173000Z
+SUMMARY:FC Augsburg – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83172@andreas-binder
+DTSTAMP:20260715T094544Z
+DTSTART:20260905T163000Z
+DTEND:20260905T183000Z
+SUMMARY:FC Schalke 04 – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83180@andreas-binder
+DTSTAMP:20260715T094738Z
+DTSTART:20260911T183000Z
+DTEND:20260911T203000Z
+SUMMARY:1. FC Union Berlin – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83190@andreas-binder
+DTSTAMP:20260715T095001Z
+DTSTART:20260920T153000Z
+DTEND:20260920T173000Z
+SUMMARY:FC Schalke 04 – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83195@andreas-binder
+DTSTAMP:20260703T060318Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:SC Freiburg – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83208@andreas-binder
+DTSTAMP:20260703T060624Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:FC Schalke 04 – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83217@andreas-binder
+DTSTAMP:20260703T060844Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:1. FC Köln – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83226@andreas-binder
+DTSTAMP:20260703T061159Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:FC Schalke 04 – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83231@andreas-binder
+DTSTAMP:20260703T061353Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:TSG Hoffenheim – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83244@andreas-binder
+DTSTAMP:20260703T061654Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:FC Schalke 04 – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83254@andreas-binder
+DTSTAMP:20260703T061937Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:SC Paderborn 07 – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83262@andreas-binder
+DTSTAMP:20260706T092525Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:FC Schalke 04 – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83269@andreas-binder
+DTSTAMP:20260703T062314Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:Hamburger SV – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83280@andreas-binder
+DTSTAMP:20260703T062546Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:FC Schalke 04 – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83285@andreas-binder
+DTSTAMP:20260703T062703Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:Eintracht Frankfurt – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83298@andreas-binder
+DTSTAMP:20260703T063124Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:FC Schalke 04 – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83303@andreas-binder
+DTSTAMP:20260703T063243Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:Bayer 04 Leverkusen – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83316@andreas-binder
+DTSTAMP:20260703T064407Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:FC Schalke 04 – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83318@andreas-binder
+DTSTAMP:20260703T064506Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:FC Bayern München – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83334@andreas-binder
+DTSTAMP:20260703T064823Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:FC Schalke 04 – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83344@andreas-binder
+DTSTAMP:20260703T065018Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:SV 07 Elversberg – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83352@andreas-binder
+DTSTAMP:20260703T065205Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:FC Schalke 04 – SC Freiburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83360@andreas-binder
+DTSTAMP:20260703T065357Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:1. FSV Mainz 05 – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83370@andreas-binder
+DTSTAMP:20260703T065610Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:FC Schalke 04 – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83373@andreas-binder
+DTSTAMP:20260703T065702Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:RB Leipzig – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83388@andreas-binder
+DTSTAMP:20260703T070726Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:FC Schalke 04 – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83392@andreas-binder
+DTSTAMP:20260703T070824Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:VfB Stuttgart – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

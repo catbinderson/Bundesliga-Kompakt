@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · SV 07 Elversberg
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81851@andreas-binder
+DTSTAMP:20260705T093323Z
+DTSTART:20260822T133000Z
+DTEND:20260822T153000Z
+SUMMARY:MSV Duisburg – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83164@andreas-binder
+DTSTAMP:20260703T053714Z
+DTSTART:20260829T133000Z
+DTEND:20260829T153000Z
+SUMMARY:SV 07 Elversberg – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83169@andreas-binder
+DTSTAMP:20260703T055738Z
+DTSTART:20260905T133000Z
+DTEND:20260905T153000Z
+SUMMARY:Borussia Mönchengladbach – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83182@andreas-binder
+DTSTAMP:20260715T094850Z
+DTSTART:20260913T153000Z
+DTEND:20260913T173000Z
+SUMMARY:SV 07 Elversberg – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83190@andreas-binder
+DTSTAMP:20260715T095001Z
+DTSTART:20260920T153000Z
+DTEND:20260920T173000Z
+SUMMARY:FC Schalke 04 – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83198@andreas-binder
+DTSTAMP:20260703T060352Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:1. FC Union Berlin – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83209@andreas-binder
+DTSTAMP:20260703T060632Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:SV 07 Elversberg – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83211@andreas-binder
+DTSTAMP:20260703T060721Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:RB Leipzig – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83227@andreas-binder
+DTSTAMP:20260703T061207Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:SV 07 Elversberg – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83228@andreas-binder
+DTSTAMP:20260703T061319Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:Borussia Dortmund – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83245@andreas-binder
+DTSTAMP:20260703T061704Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:SV 07 Elversberg – SC Freiburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83252@andreas-binder
+DTSTAMP:20260703T061917Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:1. FC Köln – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83263@andreas-binder
+DTSTAMP:20260703T062149Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:SV 07 Elversberg – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83272@andreas-binder
+DTSTAMP:20260703T062348Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:SC Paderborn 07 – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83281@andreas-binder
+DTSTAMP:20260703T062554Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:SV 07 Elversberg – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83284@andreas-binder
+DTSTAMP:20260703T062652Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:TSG Hoffenheim – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83299@andreas-binder
+DTSTAMP:20260703T063133Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:SV 07 Elversberg – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83307@andreas-binder
+DTSTAMP:20260703T063321Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:SV Werder Bremen – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83311@andreas-binder
+DTSTAMP:20260703T064317Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:Bayer 04 Leverkusen – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83326@andreas-binder
+DTSTAMP:20260703T064652Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:SV 07 Elversberg – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83327@andreas-binder
+DTSTAMP:20260703T064719Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:FC Bayern München – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83344@andreas-binder
+DTSTAMP:20260703T065018Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:SV 07 Elversberg – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83353@andreas-binder
+DTSTAMP:20260703T065212Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:SV 07 Elversberg – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83359@andreas-binder
+DTSTAMP:20260703T065349Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:FC Augsburg – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83371@andreas-binder
+DTSTAMP:20260703T065619Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:SV 07 Elversberg – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83377@andreas-binder
+DTSTAMP:20260703T065745Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:1. FSV Mainz 05 – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83389@andreas-binder
+DTSTAMP:20260703T070734Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:SV 07 Elversberg – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83394@andreas-binder
+DTSTAMP:20260703T070857Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:SC Freiburg – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · Bayer 04 Leverkusen
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81842@andreas-binder
+DTSTAMP:20260705T093116Z
+DTSTART:20260822T110000Z
+DTEND:20260822T130000Z
+SUMMARY:SV Wehen Wiesbaden – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83164@andreas-binder
+DTSTAMP:20260703T053714Z
+DTSTART:20260829T133000Z
+DTEND:20260829T153000Z
+SUMMARY:SV 07 Elversberg – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83167@andreas-binder
+DTSTAMP:20260703T053822Z
+DTSTART:20260905T133000Z
+DTEND:20260905T153000Z
+SUMMARY:Bayer 04 Leverkusen – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83178@andreas-binder
+DTSTAMP:20260703T055847Z
+DTSTART:20260912T133000Z
+DTEND:20260912T153000Z
+SUMMARY:FC Augsburg – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83185@andreas-binder
+DTSTAMP:20260715T094945Z
+DTSTART:20260920T133000Z
+DTEND:20260920T153000Z
+SUMMARY:Bayer 04 Leverkusen – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83197@andreas-binder
+DTSTAMP:20260703T060340Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:1. FSV Mainz 05 – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83202@andreas-binder
+DTSTAMP:20260703T060516Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:Bayer 04 Leverkusen – SC Freiburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83213@andreas-binder
+DTSTAMP:20260703T060800Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:TSG Hoffenheim – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83220@andreas-binder
+DTSTAMP:20260703T061003Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:Bayer 04 Leverkusen – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83235@andreas-binder
+DTSTAMP:20260703T061440Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:1. FC Köln – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83238@andreas-binder
+DTSTAMP:20260703T061541Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:Bayer 04 Leverkusen – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83246@andreas-binder
+DTSTAMP:20260703T061738Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:Borussia Dortmund – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83257@andreas-binder
+DTSTAMP:20260703T062032Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:Bayer 04 Leverkusen – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83271@andreas-binder
+DTSTAMP:20260703T062340Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:SV Werder Bremen – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83275@andreas-binder
+DTSTAMP:20260703T062452Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:Bayer 04 Leverkusen – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83287@andreas-binder
+DTSTAMP:20260703T062722Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:Hamburger SV – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83291@andreas-binder
+DTSTAMP:20260703T063007Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:FC Bayern München – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83303@andreas-binder
+DTSTAMP:20260703T063243Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:Bayer 04 Leverkusen – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83311@andreas-binder
+DTSTAMP:20260703T064317Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:Bayer 04 Leverkusen – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83324@andreas-binder
+DTSTAMP:20260703T064637Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:1. FC Union Berlin – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83329@andreas-binder
+DTSTAMP:20260703T064738Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:Bayer 04 Leverkusen – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83337@andreas-binder
+DTSTAMP:20260703T064916Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:RB Leipzig – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83347@andreas-binder
+DTSTAMP:20260703T065121Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:Bayer 04 Leverkusen – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83358@andreas-binder
+DTSTAMP:20260703T065339Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:SC Freiburg – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83364@andreas-binder
+DTSTAMP:20260703T065515Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:Bayer 04 Leverkusen – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83374@andreas-binder
+DTSTAMP:20260703T065710Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:VfB Stuttgart – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83382@andreas-binder
+DTSTAMP:20260703T070627Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:Bayer 04 Leverkusen – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83398@andreas-binder
+DTSTAMP:20260703T070944Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:SC Paderborn 07 – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

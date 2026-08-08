@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · 1. FSV Mainz 05
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81845@andreas-binder
+DTSTAMP:20260705T093701Z
+DTSTART:20260823T133000Z
+DTEND:20260823T153000Z
+SUMMARY:VfB 1921 Krieschow  – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83161@andreas-binder
+DTSTAMP:20260703T053640Z
+DTSTART:20260829T133000Z
+DTEND:20260829T153000Z
+SUMMARY:1. FSV Mainz 05 – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83170@andreas-binder
+DTSTAMP:20260715T094558Z
+DTSTART:20260906T133000Z
+DTEND:20260906T153000Z
+SUMMARY:Hamburger SV – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83179@andreas-binder
+DTSTAMP:20260703T055902Z
+DTSTART:20260912T133000Z
+DTEND:20260912T153000Z
+SUMMARY:1. FSV Mainz 05 – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83187@andreas-binder
+DTSTAMP:20260703T060057Z
+DTSTART:20260919T133000Z
+DTEND:20260919T153000Z
+SUMMARY:Borussia Mönchengladbach – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83197@andreas-binder
+DTSTAMP:20260703T060340Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:1. FSV Mainz 05 – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83208@andreas-binder
+DTSTAMP:20260703T060624Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:FC Schalke 04 – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83216@andreas-binder
+DTSTAMP:20260703T060834Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:1. FSV Mainz 05 – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83227@andreas-binder
+DTSTAMP:20260703T061207Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:SV 07 Elversberg – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83233@andreas-binder
+DTSTAMP:20260703T061418Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:1. FSV Mainz 05 – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83240@andreas-binder
+DTSTAMP:20260703T061617Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:FC Augsburg – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83250@andreas-binder
+DTSTAMP:20260703T061852Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:1. FSV Mainz 05 – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83256@andreas-binder
+DTSTAMP:20260703T062023Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:RB Leipzig – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83267@andreas-binder
+DTSTAMP:20260703T062256Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:1. FSV Mainz 05 – SC Freiburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83278@andreas-binder
+DTSTAMP:20260703T062528Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:1. FSV Mainz 05 – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83282@andreas-binder
+DTSTAMP:20260703T062628Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:Borussia Dortmund – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83295@andreas-binder
+DTSTAMP:20260703T063059Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:1. FSV Mainz 05 – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83301@andreas-binder
+DTSTAMP:20260703T063225Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:VfB Stuttgart – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83317@andreas-binder
+DTSTAMP:20260703T064417Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:SC Paderborn 07 – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83323@andreas-binder
+DTSTAMP:20260703T064625Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:1. FSV Mainz 05 – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83330@andreas-binder
+DTSTAMP:20260703T064748Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:Eintracht Frankfurt – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83341@andreas-binder
+DTSTAMP:20260703T064952Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:1. FSV Mainz 05 – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83347@andreas-binder
+DTSTAMP:20260703T065121Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:Bayer 04 Leverkusen – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83360@andreas-binder
+DTSTAMP:20260703T065357Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:1. FSV Mainz 05 – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83369@andreas-binder
+DTSTAMP:20260703T065603Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:SV Werder Bremen – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83377@andreas-binder
+DTSTAMP:20260703T065745Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:1. FSV Mainz 05 – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83381@andreas-binder
+DTSTAMP:20260703T070616Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:FC Bayern München – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83395@andreas-binder
+DTSTAMP:20260703T070919Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:1. FSV Mainz 05 – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR

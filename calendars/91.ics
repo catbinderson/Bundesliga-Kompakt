@@ -1,0 +1,300 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//LigaKompakt//Andreas Binder//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LigaKompakt · Eintracht Frankfurt
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:ligakompakt-81864@andreas-binder
+DTSTAMP:20260607T104226Z
+DTSTART:20260815T130000Z
+DTEND:20260815T150000Z
+SUMMARY:Brentford F.C. – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:Brentford Community Stadium\, London
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-81832@andreas-binder
+DTSTAMP:20260705T092956Z
+DTSTART:20260821T160000Z
+DTEND:20260821T180000Z
+SUMMARY:SC St. Tönis – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83162@andreas-binder
+DTSTAMP:20260715T094724Z
+DTSTART:20260829T133000Z
+DTEND:20260829T153000Z
+SUMMARY:1. FC Union Berlin – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83168@andreas-binder
+DTSTAMP:20260715T094610Z
+DTSTART:20260906T153000Z
+DTEND:20260906T173000Z
+SUMMARY:Eintracht Frankfurt – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83179@andreas-binder
+DTSTAMP:20260703T055902Z
+DTSTART:20260912T133000Z
+DTEND:20260912T153000Z
+SUMMARY:1. FSV Mainz 05 – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83186@andreas-binder
+DTSTAMP:20260703T060046Z
+DTSTART:20260919T133000Z
+DTEND:20260919T153000Z
+SUMMARY:Eintracht Frankfurt – SC Freiburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83193@andreas-binder
+DTSTAMP:20260703T060253Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:RB Leipzig – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83203@andreas-binder
+DTSTAMP:20260703T060529Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:Eintracht Frankfurt – 1. FC Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83210@andreas-binder
+DTSTAMP:20260703T060705Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:Borussia Dortmund – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83221@andreas-binder
+DTSTAMP:20260703T061014Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:Eintracht Frankfurt – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83236@andreas-binder
+DTSTAMP:20260703T061449Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:SC Paderborn 07 – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83239@andreas-binder
+DTSTAMP:20260703T061602Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:Eintracht Frankfurt – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83247@andreas-binder
+DTSTAMP:20260703T061753Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:VfB Stuttgart – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83259@andreas-binder
+DTSTAMP:20260703T062055Z
+DTSTART:20261205T143000Z
+DTEND:20261205T163000Z
+SUMMARY:Eintracht Frankfurt – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83268@andreas-binder
+DTSTAMP:20260703T062306Z
+DTSTART:20261212T143000Z
+DTEND:20261212T163000Z
+SUMMARY:Borussia Mönchengladbach – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83275@andreas-binder
+DTSTAMP:20260703T062452Z
+DTSTART:20261219T143000Z
+DTEND:20261219T163000Z
+SUMMARY:Bayer 04 Leverkusen – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83285@andreas-binder
+DTSTAMP:20260703T062703Z
+DTSTART:20270109T143000Z
+DTEND:20270109T163000Z
+SUMMARY:Eintracht Frankfurt – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83299@andreas-binder
+DTSTAMP:20260703T063133Z
+DTSTART:20270112T193000Z
+DTEND:20270112T213000Z
+SUMMARY:SV 07 Elversberg – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83304@andreas-binder
+DTSTAMP:20260703T063252Z
+DTSTART:20270116T143000Z
+DTEND:20270116T163000Z
+SUMMARY:Eintracht Frankfurt – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83312@andreas-binder
+DTSTAMP:20260703T064328Z
+DTSTART:20270123T143000Z
+DTEND:20270123T163000Z
+SUMMARY:Eintracht Frankfurt – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83322@andreas-binder
+DTSTAMP:20260703T064617Z
+DTSTART:20270130T143000Z
+DTEND:20270130T163000Z
+SUMMARY:FC Augsburg – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83330@andreas-binder
+DTSTAMP:20260703T064748Z
+DTSTART:20270206T143000Z
+DTEND:20270206T163000Z
+SUMMARY:Eintracht Frankfurt – 1. FSV Mainz 05
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83339@andreas-binder
+DTSTAMP:20260703T064934Z
+DTSTART:20270213T143000Z
+DTEND:20270213T163000Z
+SUMMARY:SC Freiburg – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83348@andreas-binder
+DTSTAMP:20260703T065128Z
+DTSTART:20270220T143000Z
+DTEND:20270220T163000Z
+SUMMARY:Eintracht Frankfurt – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83361@andreas-binder
+DTSTAMP:20260703T065405Z
+DTSTART:20270227T143000Z
+DTEND:20270227T163000Z
+SUMMARY:1. FC Köln – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83365@andreas-binder
+DTSTAMP:20260703T065525Z
+DTSTART:20270302T193000Z
+DTEND:20270302T213000Z
+SUMMARY:Eintracht Frankfurt – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83378@andreas-binder
+DTSTAMP:20260703T065755Z
+DTSTART:20270306T143000Z
+DTEND:20270306T163000Z
+SUMMARY:Hamburger SV – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83383@andreas-binder
+DTSTAMP:20260703T070638Z
+DTSTART:20270313T143000Z
+DTEND:20270313T163000Z
+SUMMARY:Eintracht Frankfurt – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83393@andreas-binder
+DTSTAMP:20260703T070844Z
+DTSTART:20270320T143000Z
+DTEND:20270320T163000Z
+SUMMARY:TSG Hoffenheim – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+END:VCALENDAR
