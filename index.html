@@ -7,129 +7,47 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="LigaKompakt">
+  <meta name="description" content="Bundesliga-Ergebnisse, Tabelle und dein Lieblingsverein auf einen Blick.">
   <title>LigaKompakt · Bundesliga Live</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.3">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=0.4">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <div class="brand-wrap">
-        <div class="brand-mark">LK</div>
-        <div>
-          <div class="eyebrow">Bundesliga</div>
-          <h1>LigaKompakt</h1>
-        </div>
-      </div>
-      <button id="refreshBtn" class="icon-btn" aria-label="Aktualisieren">↻</button>
+      <div class="brand-wrap"><img class="brand-icon" src="icon.svg" alt=""><div><div class="eyebrow">Bundesliga</div><h1>LigaKompakt</h1></div></div>
+      <button id="refreshBtn" class="icon-btn" aria-label="Daten aktualisieren">↻</button>
     </header>
-
+    <div id="networkBanner" class="network-banner hidden">Offline – gespeicherte Daten werden angezeigt</div>
     <main>
       <section id="today" class="view active">
-        <div class="hero card hero-premium">
-          <div>
-            <div class="eyebrow">BUNDESLIGA LIVE</div>
-            <h2 id="todayTitle">Bundesliga kompakt</h2>
-            <p id="todaySub">Daten werden geladen …</p>
-          </div>
-          <div id="liveDot" class="status">Online</div>
-        </div>
-
+        <div class="hero card hero-premium"><div><div class="eyebrow">BUNDESLIGA LIVE</div><h2 id="todayTitle">Bundesliga kompakt</h2><p id="todaySub">Daten werden geladen …</p></div><div id="liveDot" class="status">Lädt …</div></div>
         <div id="favoriteHero"></div>
-
-        <div class="section-head compact">
-          <div>
-            <div class="eyebrow">SPIELE</div>
-            <h3>Aktueller Spieltag</h3>
-          </div>
-          <button class="ghost-btn" data-goto="fixtures">Alle Spiele</button>
-        </div>
+        <div class="section-head compact"><div><div class="eyebrow">SPIELE</div><h3>Aktueller Spieltag</h3></div><button class="ghost-btn" data-goto="fixtures">Alle Spiele</button></div>
         <div id="todayMatches" class="stack"></div>
       </section>
-
       <section id="table" class="view">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">BUNDESLIGA</div>
-            <h2>Tabelle</h2>
-          </div>
-        </div>
-        <div class="legend-row">
-          <span><i class="dot cl"></i>Champions League</span>
-          <span><i class="dot rel"></i>Abstieg</span>
-        </div>
-        <div class="table-wrap card">
-          <table>
-            <thead><tr><th>#</th><th>Verein</th><th>Sp</th><th>TD</th><th>Pkt</th></tr></thead>
-            <tbody id="tableBody"></tbody>
-          </table>
-        </div>
+        <div class="section-head"><div><div class="eyebrow">BUNDESLIGA</div><h2>Tabelle</h2></div></div>
+        <div class="legend-row"><span><i class="dot cl"></i>Champions League</span><span><i class="dot rel"></i>Abstieg</span></div>
+        <div class="table-wrap card"><table><thead><tr><th>#</th><th>Verein</th><th>Sp</th><th class="wide-col">S</th><th class="wide-col">U</th><th class="wide-col">N</th><th>TD</th><th>Pkt</th></tr></thead><tbody id="tableBody"></tbody></table></div>
       </section>
-
       <section id="fixtures" class="view">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">SPIELE</div>
-            <h2 id="matchdayTitle">Aktueller Spieltag</h2>
-          </div>
-          <select id="matchdaySelect" aria-label="Spieltag"></select>
-        </div>
+        <div class="section-head"><div><div class="eyebrow">SPIELE</div><h2 id="matchdayTitle">Aktueller Spieltag</h2></div><select id="matchdaySelect" aria-label="Spieltag"></select></div>
         <div id="fixturesList" class="stack"></div>
       </section>
-
       <section id="club" class="view">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">FAVORIT</div>
-            <h2>Mein Verein</h2>
-          </div>
-        </div>
-        <div class="card favorite-card">
-          <label for="teamSelect">Lieblingsverein</label>
-          <select id="teamSelect"></select>
-          <p class="muted">Die Auswahl wird nur auf diesem Gerät gespeichert.</p>
-        </div>
-        <div id="clubContent" class="stack"></div>
+        <div class="section-head"><div><div class="eyebrow">FAVORIT</div><h2>Mein Verein</h2></div></div>
+        <div class="card favorite-card"><label for="teamSelect">Lieblingsverein</label><select id="teamSelect"></select><p class="muted">Die Auswahl wird nur auf diesem Gerät gespeichert.</p></div>
+        <div id="clubHeader"></div>
+        <div id="clubContent"></div>
       </section>
+      <p id="updatedAt" class="updated-at" aria-live="polite"></p>
     </main>
-
-    <nav class="bottom-nav">
-      <button data-view="today" class="nav active"><span class="nav-ico">●</span>Heute</button>
-      <button data-view="table" class="nav"><span class="nav-ico">≡</span>Tabelle</button>
-      <button data-view="fixtures" class="nav"><span class="nav-ico">▦</span>Spiele</button>
-      <button data-view="club" class="nav"><span class="nav-ico">★</span>Mein Verein</button>
-    </nav>
+    <nav class="bottom-nav" aria-label="Hauptnavigation"><button data-view="today" class="nav active"><span class="nav-ico">●</span>Heute</button><button data-view="table" class="nav"><span class="nav-ico">≡</span>Tabelle</button><button data-view="fixtures" class="nav"><span class="nav-ico">▦</span>Spiele</button><button data-view="club" class="nav"><span class="nav-ico">★</span>Mein Verein</button></nav>
   </div>
-
-  <div id="onboarding" class="modal hidden">
-    <div class="modal-card">
-      <div class="brand-mark big">LK</div>
-      <div class="eyebrow">WILLKOMMEN</div>
-      <h2>Dein Verein. Deine App.</h2>
-      <p>Wähle deinen Lieblingsverein. LigaKompakt zeigt dir ihn künftig ganz oben.</p>
-      <select id="onboardingTeam"></select>
-      <button id="saveFavorite" class="primary-btn">Los geht's</button>
-      <button id="skipFavorite" class="text-btn">Später auswählen</button>
-    </div>
-  </div>
-
-  <template id="matchTpl">
-    <article class="match card">
-      <div class="match-top">
-        <div class="match-meta"></div>
-        <div class="match-state"></div>
-      </div>
-      <div class="team-row">
-        <div class="team home"><img><span></span></div>
-        <div class="score-wrap">
-          <div class="score"></div>
-          <div class="kickoff"></div>
-        </div>
-        <div class="team away"><span></span><img></div>
-      </div>
-    </article>
-  </template>
-
-  <script src="app.js?v=0.3"></script>
+  <div id="onboarding" class="modal hidden"><div class="modal-card"><img class="onboarding-icon" src="icon.svg" alt=""><div class="eyebrow">WILLKOMMEN</div><h2>Dein Verein. Deine App.</h2><p>Wähle deinen Lieblingsverein. LigaKompakt zeigt dir ihn künftig ganz oben.</p><select id="onboardingTeam"></select><button id="saveFavorite" class="primary-btn">Los geht's</button><button id="skipFavorite" class="text-btn">Später auswählen</button></div></div>
+  <template id="matchTpl"><article class="match card"><div class="match-top"><div class="match-meta"></div><div class="match-state"></div></div><div class="team-row"><div class="team home"><img alt=""><span></span></div><div class="score-wrap"><div class="score"></div><div class="kickoff"></div></div><div class="team away"><span></span><img alt=""></div></div></article></template>
+  <script src="app.js?v=0.4"></script>
 </body>
 </html>
