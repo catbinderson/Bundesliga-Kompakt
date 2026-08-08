@@ -130,3 +130,102 @@
 
   recoverTips();
 })();
+
+(() => {
+  async function freshJson(path) {
+    const response = await fetch(API + path, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status} bei ${path}`);
+    const data = await response.json();
+    if (!Array.isArray(data)) throw new Error(`Ungültige API-Antwort bei ${path}`);
+    return data;
+  }
+
+  async function resilientFixtures(group = currentGroup) {
+    currentGroup = Math.max(1, Math.min(34, Number(group) || 1));
+    updateMatchdayNav();
+    const list = $("#fixturesList");
+    if (list) skeletons(list);
+
+    let matches = [];
+    let firstError = null;
+
+    try {
+      matches = await freshJson(`/getmatchdata/${LEAGUE}/${SEASON}/${currentGroup}`);
+    } catch (error) {
+      firstError = error;
+      console.warn("Spieltag direkt laden:", error);
+    }
+
+    if (!matches.length) {
+      try {
+        const seasonMatches = await freshJson(`/getmatchdata/${LEAGUE}/${SEASON}`);
+        matches = seasonMatches.filter(match => Number(match.group?.groupOrderID) === currentGroup);
+      } catch (error) {
+        console.warn("Saison-Fallback laden:", error);
+        if (!firstError) firstError = error;
+      }
+    }
+
+    if (!matches.length) {
+      try {
+        const currentMatches = await freshJson(`/getmatchdata/${LEAGUE}`);
+        const currentApiGroup = Number(currentMatches[0]?.group?.groupOrderID);
+        if (currentApiGroup && currentApiGroup !== currentGroup) {
+          currentGroup = currentApiGroup;
+          updateMatchdayNav();
+        }
+        matches = currentMatches.filter(match => Number(match.group?.groupOrderID) === currentGroup);
+      } catch (error) {
+        console.warn("Aktueller-Spieltag-Fallback laden:", error);
+        if (!firstError) firstError = error;
+      }
+    }
+
+    if (!matches.length) throw firstError || new Error("Keine Bundesliga-Spiele verfügbar");
+
+    fixtureMatches = matches;
+    $("#matchdayTitle").textContent = `${currentGroup}. Spieltag`;
+    renderFilteredFixtures();
+    if ($("#liveDot")?.textContent === "Fehler") $("#liveDot").textContent = navigator.onLine ? "Online" : "Offline";
+    return matches;
+  }
+
+  loadFixtures = resilientFixtures;
+
+  const originalRefreshAll = refreshAll;
+  refreshAll = async function () {
+    const refresh = $("#refreshBtn");
+    try {
+      refresh?.classList.add("spinning");
+      $("#liveDot").textContent = "Lädt …";
+
+      const results = await Promise.allSettled([loadToday(), loadTable(), loadTeams()]);
+      setupMatchdays();
+      await resilientFixtures(currentGroup);
+
+      const partial = results.some(result => result.status === "rejected");
+      $("#liveDot").textContent = navigator.onLine ? (partial ? "Online" : "Online") : "Offline";
+      $("#updatedAt").textContent = `Zuletzt aktualisiert: ${new Intl.DateTimeFormat("de-DE", { hour: "2-digit", minute: "2-digit" }).format(new Date())}`;
+      results.filter(result => result.status === "rejected").forEach(result => console.warn("Teilabruf fehlgeschlagen:", result.reason));
+    } catch (error) {
+      console.error("Aktualisierung:", error);
+      try {
+        await resilientFixtures(currentGroup);
+        $("#liveDot").textContent = navigator.onLine ? "Online" : "Offline";
+      } catch {
+        originalRefreshAll().catch?.(console.warn);
+      }
+    } finally {
+      refresh?.classList.remove("spinning");
+    }
+  };
+
+  const refreshButton = $("#refreshBtn");
+  if (refreshButton) refreshButton.onclick = refreshAll;
+
+  setTimeout(() => {
+    resilientFixtures(currentGroup).catch(error => {
+      console.warn("Automatische Spielplan-Reparatur:", error);
+    });
+  }, 300);
+})();
