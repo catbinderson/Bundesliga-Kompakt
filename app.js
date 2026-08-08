@@ -1,4 +1,4 @@
-const APP_VERSION="1.1.0", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
+const APP_VERSION="1.2.0", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
 let currentGroup=1, teams=[],leagueTable=[],notificationTimer=null,liveTimer=null,countdownTimer=null,currentMatches=[],previousScores=new Map(),changedMatches=new Set();
 const $=s=>document.querySelector(s);
 
@@ -12,6 +12,11 @@ async function saveMatchToCalendar(m){
   const start=new Date(m.matchDateTime),end=new Date(start.getTime()+2*60*60*1000),home=m.team1?.teamName||"Heimteam",away=m.team2?.teamName||"Auswärtsteam",title=`${home} – ${away}`,venue=[m.location?.locationStadium,m.location?.locationCity].filter(Boolean).join(", "),ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//LigaKompakt//DE","CALSCALE:GREGORIAN","METHOD:PUBLISH","BEGIN:VEVENT",`UID:ligakompakt-${m.matchID||start.getTime()}@andreas-binder`,`DTSTAMP:${calendarDate(new Date())}`,`DTSTART:${calendarDate(start)}`,`DTEND:${calendarDate(end)}`,`SUMMARY:${calendarEscape(title)}`,`DESCRIPTION:${calendarEscape("Bundesliga-Spiel · gespeichert mit LigaKompakt")}`,`LOCATION:${calendarEscape(venue)}`,"END:VEVENT","END:VCALENDAR"].join("\r\n"),file=new File([ics],`LigaKompakt-${home}-${away}.ics`,{type:"text/calendar"});
   if(navigator.share&&navigator.canShare?.({files:[file]})){await navigator.share({title,files:[file]});return}
   const url=URL.createObjectURL(file),a=document.createElement("a");a.href=url;a.download=file.name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)
+}
+async function shareMatch(m){
+  const home=m.team1?.teamName||"Heimteam",away=m.team2?.teamName||"Auswärtsteam",title=`${home} – ${away}`,detail=m.matchIsFinished?`Endstand: ${finalScore(m)}`:`Anstoß: ${dateText(m.matchDateTime)}`,text=`⚽ ${title}\n${detail}\nLigaKompakt`,url=new URL("./",location.href).href;
+  if(navigator.share){await navigator.share({title,text,url});return}
+  await navigator.clipboard.writeText(`${text}\n${url}`);const status=$("#liveDot"),old=status.textContent;status.textContent="Link kopiert";setTimeout(()=>status.textContent=old,1800)
 }
 function isLiveMatch(m){const kickoff=new Date(m.matchDateTime),now=new Date();return!m.matchIsFinished&&now>=kickoff&&(now-kickoff)<3*60*60*1000}
 function countdownText(target){const seconds=Math.max(0,Math.floor((target-Date.now())/1000)),d=Math.floor(seconds/86400),h=Math.floor(seconds%86400/3600),min=Math.floor(seconds%3600/60),s=seconds%60;return d?`${d} T ${h} Std ${min} Min`:h?`${h} Std ${min} Min ${s} Sek`:`${min} Min ${s} Sek`}
@@ -44,8 +49,8 @@ function matchDetails(m){
   if(half)rows.push(`<div class="detail-line"><span>◐</span><div><small>HALBZEIT</small><strong>${half.pointsTeam1}:${half.pointsTeam2}</strong></div></div>`);
   if(goals.length)rows.push(`<div class="goal-list"><small>TORE</small>${goals.map(g=>`<div><b>${g.scoreTeam1}:${g.scoreTeam2}</b><span>${escapeHtml(g.goalGetterName||"Torschütze unbekannt")}${g.matchMinute?` · ${g.matchMinute}. Min.`:""}${g.isPenalty?" · Elfmeter":""}${g.isOwnGoal?" · Eigentor":""}</span></div>`).join("")}</div>`);
   if(!rows.length)rows.push('<p class="muted">Weitere Spieldetails sind noch nicht verfügbar.</p>');
-  const calendar=!m.matchIsFinished&&new Date(m.matchDateTime)>new Date()?'<button type="button" class="calendar-btn"><span>＋</span> Termin speichern</button>':"";
-  return `<div class="match-details"><div class="detail-inner">${rows.join("")}</div></div><div class="match-actions">${calendar}<button type="button" class="details-toggle" aria-expanded="false"><span>Spieldetails öffnen</span><b>⌄</b></button></div>`;
+  const calendar=!m.matchIsFinished&&new Date(m.matchDateTime)>new Date()?'<button type="button" class="calendar-btn"><span>＋</span> Termin</button>':"";
+  return `<div class="match-details"><div class="detail-inner">${rows.join("")}</div></div><div class="match-actions">${calendar}<button type="button" class="share-btn"><span>↗</span> Teilen</button><button type="button" class="details-toggle" aria-expanded="false"><span>Details</span><b>⌄</b></button></div>`;
 }
 
 function matchCard(m){
@@ -57,9 +62,10 @@ function matchCard(m){
   if(m.matchIsFinished){node.querySelector(".score").textContent=finalScore(m);node.querySelector(".kickoff").textContent="Endstand";state.textContent="BEENDET";state.classList.add("done")}
   else if(isLive){const minute=Math.max(1,Math.min(90,Math.floor((now-kickoff)/60000)+1));node.querySelector(".score").textContent=finalScore(m)==="–"?"LIVE":finalScore(m);node.querySelector(".kickoff").textContent=`ca. ${minute}. Minute`;state.textContent=`LIVE · ${minute}'`;state.classList.add("live")}
   else{node.querySelector(".score").textContent=new Intl.DateTimeFormat("de-DE",{hour:"2-digit",minute:"2-digit"}).format(kickoff);node.querySelector(".kickoff").textContent=new Intl.DateTimeFormat("de-DE",{day:"2-digit",month:"2-digit"}).format(kickoff);state.textContent="ANSTEHEND"}
-  if(changedMatches.has(String(m.matchID)))node.classList.add("score-changed");node.insertAdjacentHTML("beforeend",matchDetails(m));const button=node.querySelector(".details-toggle"),calendar=node.querySelector(".calendar-btn");
+  if(changedMatches.has(String(m.matchID)))node.classList.add("score-changed");node.insertAdjacentHTML("beforeend",matchDetails(m));const button=node.querySelector(".details-toggle"),calendar=node.querySelector(".calendar-btn"),share=node.querySelector(".share-btn");
   button.addEventListener("click",e=>{e.stopPropagation();const open=node.classList.toggle("details-open");button.setAttribute("aria-expanded",String(open));button.querySelector("span").textContent=open?"Spieldetails schließen":"Spieldetails öffnen"});
   if(calendar)calendar.addEventListener("click",e=>{e.stopPropagation();saveMatchToCalendar(m).catch(error=>{if(error?.name!=="AbortError")showError(error)})});
+  share.addEventListener("click",e=>{e.stopPropagation();shareMatch(m).catch(error=>{if(error?.name!=="AbortError")showError(error)})});
   return node;
 }
 function renderMatches(el,matches){el.innerHTML="";if(!matches.length){el.innerHTML='<div class="card muted">Keine Spiele gefunden.</div>';return}matches.forEach(m=>el.appendChild(matchCard(m)))}
