@@ -1,4 +1,5 @@
-const CACHE="ligakompakt-v0.6.1",ASSETS=["./","index.html","styles.css?v=0.6.1","app.js?v=0.6.1","manifest.webmanifest","icon.svg"];
+const CACHE="ligakompakt-v0.7",ASSETS=["./","index.html","styles.css?v=0.7","app.js?v=0.7","manifest.webmanifest","icon.svg"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener("activate",e=>e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))])));
 self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;const api=new URL(e.request.url).hostname==="api.openligadb.de";if(api){e.respondWith(fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match(e.request)));return}e.respondWith(fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match(e.request)))});
+self.addEventListener("notificationclick",e=>{e.notification.close();e.waitUntil(clients.matchAll({type:"window",includeUncontrolled:true}).then(list=>list[0]?list[0].focus():clients.openWindow(e.notification.data?.url||"./")))});
