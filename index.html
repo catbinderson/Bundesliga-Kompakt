@@ -11,18 +11,19 @@
   <title>LigaKompakt · Bundesliga Live</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=1.5.0">
+  <link rel="stylesheet" href="styles.css?v=1.6.0">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <div class="brand-wrap"><img class="brand-icon" src="icon.svg" alt=""><div><div class="eyebrow">Bundesliga</div><h1>LigaKompakt</h1><div class="developer-line"><span>Developer: Andreas Binder</span><b>v1.5.0</b></div></div></div>
+      <div class="brand-wrap"><img class="brand-icon" src="icon.svg" alt=""><div><div class="eyebrow">Bundesliga</div><h1>LigaKompakt</h1><div class="developer-line"><span>Developer: Andreas Binder</span><b>v1.6.0</b></div></div></div>
       <div class="topbar-actions"><button id="shareAppBtn" class="icon-btn" aria-label="App teilen">↗</button><button id="refreshBtn" class="icon-btn" aria-label="Daten aktualisieren">↻</button></div>
     </header>
     <div id="networkBanner" class="network-banner hidden">Offline – gespeicherte Daten werden angezeigt</div>
     <main>
       <section id="today" class="view active">
         <div class="hero card hero-premium"><div><div class="eyebrow">BUNDESLIGA LIVE</div><h2 id="todayTitle">Bundesliga kompakt</h2><p id="todaySub">Daten werden geladen …</p></div><div id="liveDot" class="status">Lädt …</div></div>
+        <div id="installCard" class="install-card hidden"><span class="install-icon">⇩</span><span><strong>Als App installieren</strong><small>Schneller Zugriff vom Homebildschirm</small></span><button id="installAction">Installieren</button></div>
         <div id="liveCenter" class="card live-center">
           <div class="live-center-head"><div><div class="eyebrow">LIVE-CENTER</div><h3>Spieltag im Überblick</h3></div><span class="auto-refresh"><i></i> alle 30 Sek.</span></div>
           <div class="live-metrics"><div><strong id="liveCount">0</strong><span>Live</span></div><div><strong id="finishedCount">0</strong><span>Beendet</span></div><div><strong id="upcomingCount">0</strong><span>Anstehend</span></div></div>
@@ -59,7 +60,8 @@
     <nav class="bottom-nav" aria-label="Hauptnavigation"><button data-view="today" class="nav active"><span class="nav-ico">●</span>Heute</button><button data-view="table" class="nav"><span class="nav-ico">≡</span>Tabelle</button><button data-view="fixtures" class="nav"><span class="nav-ico">▦</span>Spiele</button><button data-view="club" class="nav"><span class="nav-ico">★</span>Mein Verein</button></nav>
   </div>
   <div id="onboarding" class="modal hidden"><div class="modal-card"><img class="onboarding-icon" src="icon.svg" alt=""><div class="eyebrow">WILLKOMMEN</div><h2>Dein Verein. Deine App.</h2><p>Wähle deinen Lieblingsverein. LigaKompakt zeigt dir ihn künftig ganz oben.</p><select id="onboardingTeam"></select><button id="saveFavorite" class="primary-btn">Los geht's</button><button id="skipFavorite" class="text-btn">Später auswählen</button></div></div>
+  <div id="installHelp" class="modal hidden"><div class="modal-card install-help"><div class="install-help-icon">⇩</div><div class="eyebrow">INSTALLATION</div><h2 id="installHelpTitle">LigaKompakt installieren</h2><p id="installHelpText"></p><button id="closeInstallHelp" class="primary-btn">Verstanden</button></div></div>
   <template id="matchTpl"><article class="match card"><div class="match-top"><div class="match-meta"></div><div class="match-state"></div></div><div class="team-row"><div class="team home"><img alt=""><span></span></div><div class="score-wrap"><div class="score"></div><div class="kickoff"></div></div><div class="team away"><span></span><img alt=""></div></div></article></template>
-  <script src="app.js?v=1.5.0"></script>
+  <script src="app.js?v=1.6.0"></script>
 </body>
 </html>
