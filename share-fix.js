@@ -1,5 +1,5 @@
 (() => {
-  const SHARE_URL = "https://catbinderson.github.io/Bundesliga-Kompakt/teilen.html?v=4";
+  const SHARE_URL = "https://catbinderson.github.io/Bundesliga-Kompakt/teilen.html?v=5";
   const button = document.getElementById("shareAppBtn");
   if (!button) return;
 
@@ -8,7 +8,7 @@
     event.stopImmediatePropagation();
 
     const title = "LigaKompakt";
-    const text = "⚽ Bundesliga live, Tabelle, Spieltermine und dein Lieblingsverein – mit LigaKompakt von Andreas Binder.";
+    const text = "⚽ LigaKompakt ist kostenlos! Bundesliga live, Tabelle, Spieltermine, Tipps und dein Lieblingsverein – mit LigaKompakt von Andreas Binder.";
 
     try {
       if (navigator.share) {
