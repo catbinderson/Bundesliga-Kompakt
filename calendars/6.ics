@@ -287,4 +287,14 @@ DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83401@andreas-binder
+DTSTAMP:20260703T071032Z
+DTSTART:20270403T133000Z
+DTEND:20270403T153000Z
+SUMMARY:Bayer 04 Leverkusen – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
 END:VCALENDAR
