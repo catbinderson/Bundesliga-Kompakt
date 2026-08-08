@@ -1,4 +1,4 @@
-const APP_VERSION="1.4.1", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
+const APP_VERSION="1.5.0", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
 let currentGroup=1, teams=[],leagueTable=[],notificationTimer=null,liveTimer=null,countdownTimer=null,currentMatches=[],previousScores=new Map(),changedMatches=new Set();
 const $=s=>document.querySelector(s);
 
@@ -19,6 +19,7 @@ async function shareMatch(m){
   if(navigator.share){await navigator.share({title,text,url});return}
   await navigator.clipboard.writeText(`${text}\n${url}`);const status=$("#liveDot"),old=status.textContent;status.textContent="Link kopiert";setTimeout(()=>status.textContent=old,1800)
 }
+async function shareApp(){const title="LigaKompakt",text="⚽ Bundesliga live, Tabelle, Spieltermine und dein Lieblingsverein – mit LigaKompakt von Andreas Binder.",url=new URL("./",location.href).href;if(navigator.share){await navigator.share({title,text,url});return}await navigator.clipboard.writeText(`${text}\n${url}`);const status=$("#liveDot"),old=status.textContent;status.textContent="App-Link kopiert";setTimeout(()=>status.textContent=old,1800)}
 function isLiveMatch(m){const kickoff=new Date(m.matchDateTime),now=new Date();return!m.matchIsFinished&&now>=kickoff&&(now-kickoff)<3*60*60*1000}
 function countdownText(target){const seconds=Math.max(0,Math.floor((target-Date.now())/1000)),d=Math.floor(seconds/86400),h=Math.floor(seconds%86400/3600),min=Math.floor(seconds%3600/60),s=seconds%60;return d?`${d} T ${h} Std ${min} Min`:h?`${h} Std ${min} Min ${s} Sek`:`${min} Min ${s} Sek`}
 function updateCountdown(){const el=$("#nextKickoff"),target=Number(el?.dataset.target);if(!el||!target)return;const strong=el.querySelector("strong");if(target<=Date.now()){strong.textContent="Anpfiff läuft";return}strong.textContent=countdownText(target)}
@@ -98,7 +99,7 @@ function showView(id){document.querySelectorAll(".nav").forEach(x=>x.classList.t
 function updateNetwork(){const offline=!navigator.onLine;$("#networkBanner").classList.toggle("hidden",!offline);if(offline)$("#liveDot").textContent="Offline"}
 async function refreshAll(){try{$("#refreshBtn").classList.add("spinning");$("#liveDot").textContent="Lädt …";await Promise.all([loadToday(),loadTable(),loadTeams()]);setupMatchdays();$("#matchdaySelect").value=String(currentGroup);await loadFixtures(currentGroup);$("#liveDot").textContent=navigator.onLine?"Online":"Offline";$("#updatedAt").textContent=`Zuletzt aktualisiert: ${new Intl.DateTimeFormat("de-DE",{hour:"2-digit",minute:"2-digit"}).format(new Date())}`}catch(e){showError(e)}finally{$("#refreshBtn").classList.remove("spinning")}}
 document.querySelectorAll(".nav").forEach(b=>b.onclick=()=>showView(b.dataset.view));document.querySelectorAll("[data-goto]").forEach(b=>b.onclick=()=>showView(b.dataset.goto));
-$("#teamSelect").onchange=e=>loadClub(e.target.value).catch(showError);$("#refreshBtn").onclick=refreshAll;
+$("#teamSelect").onchange=e=>loadClub(e.target.value).catch(showError);$("#refreshBtn").onclick=refreshAll;$("#shareAppBtn").onclick=()=>shareApp().catch(error=>{if(error?.name!=="AbortError")showError(error)});
 $("#notificationToggle").onclick=()=>enableNotifications().catch(showError);$("#notificationTest").onclick=()=>sendNotification("LigaKompakt Test","Der Spielalarm funktioniert auf diesem Gerät.").catch(showError);
 $("#compareBtn").onclick=()=>renderComparison().catch(showError);$("#compareTeamA").onchange=()=>renderComparison().catch(showError);$("#compareTeamB").onchange=()=>renderComparison().catch(showError);
 $("#saveFavorite").onclick=async()=>{const id=$("#onboardingTeam").value;if(!id)return;await loadClub(id);$("#onboarding").classList.add("hidden")};$("#skipFavorite").onclick=()=>{localStorage.setItem("ligakompakt.onboarded","1");$("#onboarding").classList.add("hidden")};
