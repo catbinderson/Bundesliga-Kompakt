@@ -10,6 +10,15 @@ function skeletons(el,count=3){el.innerHTML=Array.from({length:count},()=>'<div 
 async function get(path){const r=await fetch(API+path,{cache:"no-store"});if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()}
 function clubColors(name=""){const n=name.toLowerCase(),sets=[["dortmund","#fdeb19","#111111"],["bremen","#00864a","#ffffff"],["wolfsburg","#65b32e","#ffffff"],["gladbach","#15a05c","#111111"],["augsburg","#ba3733","#46714b"],["st. pauli","#6f4e37","#ffffff"],["hamburg","#005aaa","#ffffff"],["hoffenheim","#1961a9","#ffffff"],["heidenheim","#e30613","#184b91"],["freiburg","#e30613","#111111"],["mainz","#c3142d","#ffffff"],["frankfurt","#e1000f","#111111"],["leverkusen","#e32221","#111111"],["leipzig","#dd0741","#ffffff"],["stuttgart","#e32219","#ffffff"],["bayern","#dc052d","#0066b2"],["union","#e30613","#ffffff"],["köln","#ed1c24","#ffffff"]];return sets.find(([key])=>n.includes(key))?.slice(1)||["#39db86","#4fa3ff"]}
 function formFor(matches,teamId){return matches.filter(m=>m.matchIsFinished).sort((a,b)=>new Date(b.matchDateTime)-new Date(a.matchDateTime)).slice(0,5).reverse().map(m=>{const r=finalResult(m);if(!r)return"–";const home=String(m.team1?.teamId)===String(teamId),own=home?r.pointsTeam1:r.pointsTeam2,other=home?r.pointsTeam2:r.pointsTeam1;return own>other?"S":own<other?"N":"U"})}
+function matchDetails(m){
+  const half=(m.matchResults||[]).find(r=>r.resultTypeID===1||/halbzeit/i.test(r.resultName||"")),venue=[m.location?.locationStadium,m.location?.locationCity].filter(Boolean).join(" · "),goals=(m.goals||[]).slice().sort((a,b)=>(a.matchMinute||0)-(b.matchMinute||0));
+  const rows=[];
+  if(venue)rows.push(`<div class="detail-line"><span>⌖</span><div><small>SPIELORT</small><strong>${escapeHtml(venue)}</strong></div></div>`);
+  if(half)rows.push(`<div class="detail-line"><span>◐</span><div><small>HALBZEIT</small><strong>${half.pointsTeam1}:${half.pointsTeam2}</strong></div></div>`);
+  if(goals.length)rows.push(`<div class="goal-list"><small>TORE</small>${goals.map(g=>`<div><b>${g.scoreTeam1}:${g.scoreTeam2}</b><span>${escapeHtml(g.goalGetterName||"Torschütze unbekannt")}${g.matchMinute?` · ${g.matchMinute}. Min.`:""}${g.isPenalty?" · Elfmeter":""}${g.isOwnGoal?" · Eigentor":""}</span></div>`).join("")}</div>`);
+  if(!rows.length)rows.push('<p class="muted">Weitere Spieldetails sind noch nicht verfügbar.</p>');
+  return `<div class="match-details"><div class="detail-inner">${rows.join("")}</div></div><div class="details-hint"><span>Details anzeigen</span><b>⌄</b></div>`;
+}
 
 function matchCard(m){
   const node=$("#matchTpl").content.firstElementChild.cloneNode(true), kickoff=new Date(m.matchDateTime), now=new Date();
@@ -20,6 +29,9 @@ function matchCard(m){
   if(m.matchIsFinished){node.querySelector(".score").textContent=finalScore(m);node.querySelector(".kickoff").textContent="Endstand";state.textContent="BEENDET";state.classList.add("done")}
   else if(isLive){node.querySelector(".score").textContent=finalScore(m)==="–"?"LIVE":finalScore(m);node.querySelector(".kickoff").textContent="läuft";state.textContent="LIVE";state.classList.add("live")}
   else{node.querySelector(".score").textContent=new Intl.DateTimeFormat("de-DE",{hour:"2-digit",minute:"2-digit"}).format(kickoff);node.querySelector(".kickoff").textContent=new Intl.DateTimeFormat("de-DE",{day:"2-digit",month:"2-digit"}).format(kickoff);state.textContent="ANSTEHEND"}
+  node.insertAdjacentHTML("beforeend",matchDetails(m));node.tabIndex=0;node.setAttribute("role","button");node.setAttribute("aria-expanded","false");
+  const toggle=()=>{const open=node.classList.toggle("details-open");node.setAttribute("aria-expanded",String(open));node.querySelector(".details-hint span").textContent=open?"Details schließen":"Details anzeigen"};
+  node.addEventListener("click",toggle);node.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}});
   return node;
 }
 function renderMatches(el,matches){el.innerHTML="";if(!matches.length){el.innerHTML='<div class="card muted">Keine Spiele gefunden.</div>';return}matches.forEach(m=>el.appendChild(matchCard(m)))}
