@@ -1,5 +1,5 @@
 (() => {
-  const SHARE_URL = "https://catbinderson.github.io/Bundesliga-Kompakt/teilen.html?v=5";
+  const SHARE_URL = "https://catbinderson.github.io/Bundesliga-Kompakt/teilen.html?v=6";
   const button = document.getElementById("shareAppBtn");
   if (!button) return;
 
