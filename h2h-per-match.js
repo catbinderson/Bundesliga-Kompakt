@@ -1,0 +1,28 @@
+(()=>{
+  const API='https://api.openligadb.de';
+  const scorerMapPromise=fetch(`${API}/getgoalgetters/bl1/2026`,{cache:'no-store'}).then(r=>r.ok?r.json():[]).then(list=>{const m=new Map();for(const x of Array.isArray(list)?list:[]){const id=String(x?.goalGetterID??x?.goalGetterId??x?.id??'');const n=String(x?.goalGetterName??x?.name??'').trim();if(id&&n)m.set(id,n)}return m}).catch(()=>new Map());
+  const matchCache=new Map();
+  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const finalResult=m=>{const a=(m?.matchResults||[]).filter(x=>x.resultTypeID===2||/Endergebnis/i.test(x.resultName||''));return a.at(-1)||(m?.matchResults||[]).at(-1)||null};
+  const score=m=>{const r=finalResult(m);return r?`${r.pointsTeam1}:${r.pointsTeam2}`:'–'};
+  const gid=g=>String(g?.goalGetterID??g?.goalGetterId??g?.goalgetterID??g?.goalgetterId??g?.id??'');
+  const gname=(g,map)=>String(g?.goalGetterName??g?.goalgetterName??g?.name??'').trim()||map.get(gid(g))||'Torschütze nicht verfügbar';
+  async function getJson(url){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()}
+  async function loadMatch(id){if(matchCache.has(id))return matchCache.get(id);const p=getJson(`${API}/getmatchdata/${encodeURIComponent(id)}`).then(x=>Array.isArray(x)?x[0]:x).catch(()=>null);matchCache.set(id,p);return p}
+  function goalRows(goals,map){if(!goals.length)return '<div style="margin-top:7px;color:var(--muted);font-size:11px">Keine Torschützen bei OpenLigaDB hinterlegt.</div>';return `<div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.07)">${goals.map(g=>{const min=Number(g?.matchMinute||0);return `<div style="display:grid;grid-template-columns:38px 1fr;gap:8px;padding:3px 0;font-size:11px"><b style="color:var(--blue)">${esc((g?.scoreTeam1!==undefined&&g?.scoreTeam2!==undefined)?`${g.scoreTeam1}:${g.scoreTeam2}`:'⚽')}</b><span>${esc(gname(g,map))}${min?` · ${min}. Min.`:''}${g?.isPenalty?' · Elfmeter':''}${g?.isOwnGoal?' · Eigentor':''}</span></div>`}).join('')}</div>`}
+  async function renderPanel(card,panel){
+    panel.innerHTML='<div class="skeleton"><i></i><i></i><i></i></div>';
+    try{
+      const current=await loadMatch(card.dataset.matchId);if(!current)throw new Error('match');
+      const a=String(current.team1?.teamId||''),b=String(current.team2?.teamId||'');if(!a||!b)throw new Error('teams');
+      const [duels,map]=await Promise.all([getJson(`${API}/getmatchdata/${encodeURIComponent(a)}/${encodeURIComponent(b)}`),scorerMapPromise]);
+      const last=(Array.isArray(duels)?duels:[]).filter(m=>m.matchIsFinished&&String(m.matchID)!==String(current.matchID)).sort((x,y)=>new Date(y.matchDateTime)-new Date(x.matchDateTime)).slice(0,5);
+      if(!last.length){panel.innerHTML='<p class="muted" style="padding:10px 0">Keine früheren direkten Duelle gefunden.</p>';return}
+      const details=await Promise.all(last.map(async m=>Array.isArray(m?.goals)&&m.goals.length?m:(await loadMatch(m.matchID))||m));
+      panel.innerHTML=`<div style="padding:10px 0 2px"><div class="eyebrow">LETZTE DIREKTE DUELLE</div>${details.map(m=>{const d=new Intl.DateTimeFormat('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'}).format(new Date(m.matchDateTime));const goals=(m.goals||[]).slice().sort((x,y)=>Number(x.matchMinute||0)-Number(y.matchMinute||0));return `<div style="padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07)"><div style="display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;font-size:12px"><small style="color:var(--muted)">${d}</small><strong style="text-align:center">${esc(m.team1?.shortName||m.team1?.teamName||'')} – ${esc(m.team2?.shortName||m.team2?.teamName||'')}</strong><b style="color:var(--blue)">${esc(score(m))}</b></div>${goalRows(goals,map)}</div>`}).join('')}</div>`;
+    }catch(e){console.warn('Direkte Duelle:',e);panel.innerHTML='<p class="error" style="padding:10px 0">Die direkten Duelle konnten gerade nicht geladen werden.</p>'}
+  }
+  function enhance(card){if(!card||card.dataset.h2hReady==='1'||!card.dataset.matchId)return;card.dataset.h2hReady='1';const actions=card.querySelector('.match-actions');if(!actions)return;const btn=document.createElement('button');btn.type='button';btn.className='h2h-toggle';btn.innerHTML='<span>⚔️</span> Direkte Duelle';btn.style.cssText='border:0;background:transparent;color:var(--blue);font:inherit;font-weight:800;padding:10px 8px;cursor:pointer';const panel=document.createElement('div');panel.className='h2h-inline-panel';panel.hidden=true;panel.style.cssText='padding:0 14px 12px';actions.insertAdjacentElement('beforebegin',panel);actions.insertAdjacentElement('afterbegin',btn);btn.addEventListener('click',e=>{e.stopPropagation();const open=panel.hidden;panel.hidden=!open;btn.innerHTML=open?'<span>⚔️</span> Duelle schließen':'<span>⚔️</span> Direkte Duelle';if(open&&!panel.dataset.loaded){panel.dataset.loaded='1';renderPanel(card,panel)}})}
+  function scan(){document.querySelectorAll('.match[data-match-id]').forEach(enhance)}
+  scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true});
+})();
