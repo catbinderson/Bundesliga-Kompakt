@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07101f">
+  <meta name="description" content="Anonyme Nutzungsstatistik von LigaKompakt.">
+  <title>Nutzungsstatistik · LigaKompakt</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css?v=1.0.0-fix1">
+  <style>
+    .stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}.stat-box{text-align:center}.stat-box strong{display:block;font-size:38px;color:var(--accent);margin-bottom:4px}.stat-box span{display:block;font-weight:800}.stat-box small{display:block;color:var(--muted);margin-top:6px;line-height:1.4}.stats-status{text-align:center;margin-top:12px;color:var(--muted);font-size:12px}.stats-actions{display:grid;gap:10px;margin-top:14px}.stats-actions a{text-align:center;text-decoration:none}@media(max-width:520px){.stats-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="legal-page">
+  <main class="legal-wrap">
+    <a class="legal-back app-home-button" href="index.html" data-app-home>Zurück zu LigaKompakt</a>
+    <header class="card legal-hero">
+      <div class="eyebrow">REICHWEITE</div>
+      <h1>Nutzungsstatistik</h1>
+      <p class="muted">Anonyme Zählung für LigaKompakt 1.0.0</p>
+    </header>
+
+    <section class="stats-grid">
+      <div class="card stat-box">
+        <strong id="devices">–</strong>
+        <span>erstmals gezählte Geräte</span>
+        <small>Ein Browser bzw. eine App-Installation wird auf diesem Gerät nur einmal gezählt.</small>
+      </div>
+      <div class="card stat-box">
+        <strong id="opens">–</strong>
+        <span>App-Aufrufe</span>
+        <small>Jeder Start bzw. erneute Seitenaufruf von LigaKompakt wird gezählt.</small>
+      </div>
+    </section>
+
+    <section class="card legal-section">
+      <h2>Was bedeutet die Zahl?</h2>
+      <p>„Erstmals gezählte Geräte“ ist eine gute Annäherung an die Zahl der Nutzer, aber keine exakte Personenzahl. Derselbe Mensch kann mit mehreren Geräten oder Browsern mehrfach erscheinen. Wird der lokale Browserspeicher gelöscht, kann ein Gerät später erneut als neu gezählt werden.</p>
+      <p>Die Zähler sind öffentlich abrufbar und dienen als einfache Reichweitenanzeige. Sie sind nicht als manipulationssichere oder abrechnungsrelevante Statistik gedacht.</p>
+    </section>
+
+    <p id="status" class="stats-status">Statistik wird geladen …</p>
+    <div class="stats-actions">
+      <button id="refreshStats" class="primary-btn" type="button">Statistik aktualisieren</button>
+      <a class="ghost-btn" href="info.html">Info &amp; Datenschutz</a>
+    </div>
+  </main>
+
+  <script>
+    const BASE="https://api.counterapi.dev/v1/ligakompakt-andreas-binder-2026";
+    const valueOf=data=>{
+      if(typeof data==="number")return data;
+      if(!data||typeof data!=="object")return null;
+      for(const key of ["count","value","data"]){
+        const value=data[key];
+        if(typeof value==="number")return value;
+        if(value&&typeof value==="object"){
+          for(const nested of ["count","value"]){if(typeof value[nested]==="number")return value[nested]}
+        }
+      }
+      return null;
+    };
+    async function getCounter(name){
+      const response=await fetch(`${BASE}/${name}`,{cache:"no-store",mode:"cors"});
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      return valueOf(await response.json());
+    }
+    async function loadStats(){
+      const status=document.getElementById("status");
+      status.textContent="Statistik wird geladen …";
+      try{
+        const [devices,opens]=await Promise.all([getCounter("unique-devices-v1"),getCounter("app-opens-v1")]);
+        document.getElementById("devices").textContent=devices??"0";
+        document.getElementById("opens").textContent=opens??"0";
+        status.textContent=`Zuletzt aktualisiert: ${new Date().toLocaleString("de-DE")}`;
+      }catch(error){
+        status.textContent="Die Statistik konnte gerade nicht geladen werden.";
+      }
+    }
+    document.getElementById("refreshStats").addEventListener("click",loadStats);
+    document.querySelectorAll("[data-app-home]").forEach(link=>link.addEventListener("click",event=>{event.preventDefault();location.replace(`index.html?t=${Date.now()}`)}));
+    loadStats();
+  </script>
+</body>
+</html>
