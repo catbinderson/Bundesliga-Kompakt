@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#120f0a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WeizenZähler">
+  <title>WeizenZähler</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div><span class="eyebrow">HEFEWEIZEN</span><h1>WeizenZähler</h1></div>
+      <button id="openSettings" class="icon-btn" aria-label="Einstellungen">⚙︎</button>
+    </header>
+
+    <section class="card today-card">
+      <div class="eyebrow">HEUTE</div>
+      <div id="todayDate" class="muted"></div>
+      <div id="count" class="count">0</div>
+      <div class="unit">Hefeweizen</div>
+      <div id="runningTotal" class="money">0,00 €</div>
+      <div id="currentPrice" class="muted">Aktueller Preis: 4,40 €</div>
+      <div class="counter-actions">
+        <button id="minusBtn" class="minus">−1</button>
+        <button id="plusBtn" class="plus">+1 Bier</button>
+      </div>
+      <button id="closeDayBtn" class="close-day">Tagesabschluss</button>
+    </section>
+
+    <section id="lastClose" class="card hidden"></section>
+
+    <section class="section-head"><div><span class="eyebrow">STATISTIK</span><h2>Dein Überblick</h2></div></section>
+    <section class="stats-grid">
+      <article class="card stat"><span>Week to date</span><strong id="wtdBeer">0</strong><small id="wtdCost">0,00 €</small></article>
+      <article class="card stat"><span>Month to date</span><strong id="mtdBeer">0</strong><small id="mtdCost">0,00 €</small></article>
+      <article class="card stat"><span>Year to date</span><strong id="ytdBeer">0</strong><small id="ytdCost">0,00 €</small></article>
+    </section>
+
+    <section class="card filters">
+      <div><label for="weekSelect">Kalenderwoche</label><input id="weekSelect" type="week"></div>
+      <div id="weekResult" class="period-result"></div>
+      <hr>
+      <div><label for="monthSelect">Monat</label><input id="monthSelect" type="month"></div>
+      <div id="monthResult" class="period-result"></div>
+    </section>
+
+    <section class="section-head"><div><span class="eyebrow">VERLAUF</span><h2>Abgeschlossene Tage</h2></div></section>
+    <section id="history" class="card history"></section>
+  </main>
+
+  <div id="settingsModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="closeSettings" class="modal-close">×</button>
+      <div class="eyebrow">EINSTELLUNGEN</div>
+      <h2>Bierpreis</h2>
+      <p class="muted">Preisänderungen werden ab dem angegebenen Datum berücksichtigt. Alte Tagesabschlüsse bleiben unverändert.</p>
+      <label for="priceInput">Neuer Preis pro Hefeweizen</label>
+      <input id="priceInput" type="number" min="0" step="0.01" inputmode="decimal" value="4.40">
+      <label for="priceFrom">Gültig ab</label>
+      <input id="priceFrom" type="date">
+      <button id="savePrice" class="primary">Preis speichern</button>
+      <h3>Preishistorie</h3>
+      <div id="priceHistory" class="price-history"></div>
+    </div>
+  </div>
+
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-card small">
+      <div class="eyebrow">TAGESABSCHLUSS</div>
+      <h2 id="confirmTitle">Tag abschließen?</h2>
+      <p id="confirmText"></p>
+      <div class="confirm-actions"><button id="cancelClose">Abbrechen</button><button id="confirmClose" class="primary">Abschließen</button></div>
+    </div>
+  </div>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>
