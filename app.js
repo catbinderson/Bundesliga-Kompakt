@@ -1,4 +1,4 @@
-const APP_VERSION="2.0.1", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
+const APP_VERSION="2.1.0", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
 let currentGroup=1, teams=[],leagueTable=[],notificationTimer=null,liveTimer=null,countdownTimer=null,currentMatches=[],fixtureMatches=[],fixtureFilter="all",previousScores=new Map(),changedMatches=new Set();
 let installPrompt=null;
 const $=s=>document.querySelector(s);
@@ -53,13 +53,16 @@ function startNotificationMonitor(){clearInterval(notificationTimer);if(localSto
 async function checkForAppUpdate(){
   try{const r=await fetch(`version.json?t=${Date.now()}`,{cache:"no-store"});if(!r.ok)return;const data=await r.json();if(data.version&&data.version!==APP_VERSION){$("#liveDot").textContent="Update …";const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith("ligakompakt-")).map(k=>caches.delete(k)));const reg=await navigator.serviceWorker.getRegistration();await reg?.update();if(reg?.waiting)reg.waiting.postMessage({type:"SKIP_WAITING"});setTimeout(()=>location.replace(`./?v=${encodeURIComponent(data.version)}&t=${Date.now()}`),500)}}catch(e){console.warn("Versionsprüfung:",e)}
 }
+function savedTips(){try{return JSON.parse(localStorage.getItem("ligakompakt.tips")||"{}")}catch{return{}}}
+function tipMarkup(m){const id=String(m.matchID||""),tip=savedTips()[id],result=finalResult(m);if(m.matchIsFinished){if(!tip)return'<div class="match-tip finished"><span>◎</span><div><small>DEIN TIPP</small><strong>Kein Tipp abgegeben</strong></div></div>';const exact=result&&Number(tip.home)===result.pointsTeam1&&Number(tip.away)===result.pointsTeam2,trend=result&&Math.sign(Number(tip.home)-Number(tip.away))===Math.sign(result.pointsTeam1-result.pointsTeam2);return `<div class="match-tip finished ${exact?"tip-exact":trend?"tip-trend":""}"><span>${exact?"✓":trend?"≈":"×"}</span><div><small>DEIN TIPP</small><strong>${tip.home}:${tip.away} · ${exact?"Volltreffer":trend?"Tendenz richtig":"Daneben"}</strong></div></div>`}if(new Date(m.matchDateTime)<=new Date())return"";return `<div class="match-tip"><span>◎</span><div class="tip-entry"><small>DEIN ERGEBNISTIPP</small><div><input class="tip-home" type="number" min="0" max="20" inputmode="numeric" aria-label="Tore Heimteam" value="${tip?.home??""}"><b>:</b><input class="tip-away" type="number" min="0" max="20" inputmode="numeric" aria-label="Tore Auswärtsteam" value="${tip?.away??""}"><button type="button" class="save-tip">${tip?"Ändern":"Speichern"}</button></div><em class="tip-status">${tip?`Gespeichert: ${tip.home}:${tip.away}`:"Nur auf diesem Gerät"}</em></div></div>`}
+function storeTip(node,m){const home=node.querySelector(".tip-home"),away=node.querySelector(".tip-away"),status=node.querySelector(".tip-status"),button=node.querySelector(".save-tip"),h=Number(home.value),a=Number(away.value);if(home.value===""||away.value===""||!Number.isInteger(h)||!Number.isInteger(a)||h<0||a<0||h>20||a>20){status.textContent="Bitte zwei gültige Torzahlen eingeben.";status.classList.add("tip-error");return}const tips=savedTips();tips[String(m.matchID)]={home:h,away:a};localStorage.setItem("ligakompakt.tips",JSON.stringify(tips));status.textContent=`Gespeichert: ${h}:${a}`;status.classList.remove("tip-error");button.textContent="Ändern"}
 function matchDetails(m){
   const half=(m.matchResults||[]).find(r=>r.resultTypeID===1||/halbzeit/i.test(r.resultName||"")),venue=[m.location?.locationStadium,m.location?.locationCity].filter(Boolean).join(" · "),goals=(m.goals||[]).slice().sort((a,b)=>(a.matchMinute||0)-(b.matchMinute||0));
   const rows=[];
   if(venue)rows.push(`<div class="detail-line"><span>⌖</span><div><small>SPIELORT</small><strong>${escapeHtml(venue)}</strong></div></div>`);
   if(half)rows.push(`<div class="detail-line"><span>◐</span><div><small>HALBZEIT</small><strong>${half.pointsTeam1}:${half.pointsTeam2}</strong></div></div>`);
   if(goals.length)rows.push(`<div class="goal-list"><small>TORE</small>${goals.map(g=>`<div><b>${g.scoreTeam1}:${g.scoreTeam2}</b><span>${escapeHtml(g.goalGetterName||"Torschütze unbekannt")}${g.matchMinute?` · ${g.matchMinute}. Min.`:""}${g.isPenalty?" · Elfmeter":""}${g.isOwnGoal?" · Eigentor":""}</span></div>`).join("")}</div>`);
-  if(!rows.length)rows.push('<p class="muted">Weitere Spieldetails sind noch nicht verfügbar.</p>');
+  if(!rows.length)rows.push('<p class="muted">Weitere Spieldetails sind noch nicht verfügbar.</p>');rows.push(tipMarkup(m));
   const calendar=!m.matchIsFinished&&new Date(m.matchDateTime)>new Date()?'<button type="button" class="calendar-btn"><span>＋</span> Termin</button>':"";
   return `<div class="match-details"><div class="detail-inner">${rows.join("")}</div></div><div class="match-actions">${calendar}<button type="button" class="share-btn"><span>↗</span> Teilen</button><button type="button" class="details-toggle" aria-expanded="false"><span>Details</span><b>⌄</b></button></div>`;
 }
@@ -75,7 +78,7 @@ function matchCard(m){
   else{node.querySelector(".score").textContent=new Intl.DateTimeFormat("de-DE",{hour:"2-digit",minute:"2-digit"}).format(kickoff);node.querySelector(".kickoff").textContent=new Intl.DateTimeFormat("de-DE",{day:"2-digit",month:"2-digit"}).format(kickoff);state.textContent="ANSTEHEND"}
   if(changedMatches.has(String(m.matchID)))node.classList.add("score-changed");node.insertAdjacentHTML("beforeend",matchDetails(m));const button=node.querySelector(".details-toggle"),calendar=node.querySelector(".calendar-btn"),share=node.querySelector(".share-btn");
   button.addEventListener("click",e=>{e.stopPropagation();const open=node.classList.toggle("details-open");button.setAttribute("aria-expanded",String(open));button.querySelector("span").textContent=open?"Spieldetails schließen":"Spieldetails öffnen"});
-  if(calendar)calendar.addEventListener("click",e=>{e.stopPropagation();saveMatchToCalendar(m).catch(error=>{if(error?.name!=="AbortError")showError(error)})});
+  if(calendar)calendar.addEventListener("click",e=>{e.stopPropagation();saveMatchToCalendar(m).catch(error=>{if(error?.name!=="AbortError")showError(error)})});const saveTip=node.querySelector(".save-tip");if(saveTip)saveTip.addEventListener("click",e=>{e.stopPropagation();storeTip(node,m)});
   share.addEventListener("click",e=>{e.stopPropagation();shareMatch(m).catch(error=>{if(error?.name!=="AbortError")showError(error)})});
   return node;
 }
