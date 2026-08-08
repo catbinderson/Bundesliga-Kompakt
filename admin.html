@@ -4,90 +4,78 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#07101f">
-  <meta name="description" content="Betreiberbereich von LigaKompakt.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Geschützter Betreiberbereich von LigaKompakt.">
   <title>Betreiberbereich · LigaKompakt</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css?v=1.0.0-fix1">
   <style>
-    .admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}.admin-card{display:grid;gap:8px}.admin-card strong{font-size:24px}.admin-card small{color:var(--muted);line-height:1.4}.status-pill{display:inline-flex;align-items:center;gap:7px;width:max-content;padding:6px 10px;border-radius:99px;font-size:11px;font-weight:900;background:rgba(255,255,255,.06);color:var(--muted)}.status-pill.ok{background:rgba(57,219,134,.12);color:var(--accent)}.status-pill.bad{background:rgba(255,107,122,.12);color:var(--red)}.admin-actions{display:grid;gap:10px;margin-top:14px}.admin-actions a{text-align:center;text-decoration:none}.wide{grid-column:1/-1}.source-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.source-row b{font-size:13px}.source-row span{color:var(--muted);font-size:11px}.metric{font-size:34px!important;color:var(--accent)}@media(max-width:520px){.admin-grid{grid-template-columns:1fr}.wide{grid-column:auto}}
+    .admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}.admin-card{display:grid;gap:8px}.admin-card strong{font-size:24px}.admin-card small{color:var(--muted);line-height:1.4}.status-pill{display:inline-flex;align-items:center;gap:7px;width:max-content;padding:6px 10px;border-radius:99px;font-size:11px;font-weight:900;background:rgba(255,255,255,.06);color:var(--muted)}.status-pill.ok{background:rgba(57,219,134,.12);color:var(--accent)}.status-pill.bad{background:rgba(255,107,122,.12);color:var(--red)}.admin-actions{display:grid;gap:10px;margin-top:14px}.admin-actions a{text-align:center;text-decoration:none}.wide{grid-column:1/-1}.source-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.source-row b{font-size:13px}.source-row span{color:var(--muted);font-size:11px}.metric{font-size:34px!important;color:var(--accent)}
+    #adminContent{display:none}.pin-gate{min-height:72vh;display:grid;place-items:center}.pin-card{width:min(100%,420px);text-align:center}.pin-icon{display:grid;place-items:center;width:64px;height:64px;margin:0 auto 16px;border-radius:20px;background:rgba(79,163,255,.14);font-size:30px}.pin-form{display:grid;gap:10px;margin-top:18px}.pin-form input{width:100%;text-align:center;font-size:26px;letter-spacing:.25em;border:1px solid var(--line);border-radius:14px;padding:13px;background:#0c192b;color:var(--text)}.pin-error{min-height:18px;color:var(--red);font-size:12px}.lock-btn{margin-top:4px}
+    @media(max-width:520px){.admin-grid{grid-template-columns:1fr}.wide{grid-column:auto}}
   </style>
 </head>
 <body class="legal-page">
   <main class="legal-wrap">
-    <a class="legal-back app-home-button" href="index.html" data-app-home>Zurück zu LigaKompakt</a>
-    <header class="card legal-hero">
-      <div class="eyebrow">BETREIBER</div>
-      <h1>LigaKompakt Admin</h1>
-      <p class="muted">Technischer Überblick für Andreas Binder</p>
-    </header>
-
-    <section class="admin-grid">
-      <div class="card admin-card">
-        <div class="eyebrow">VERSION</div>
-        <strong id="version">–</strong>
-        <small id="versionMeta">Versionsdaten werden geladen …</small>
-      </div>
-      <div class="card admin-card">
-        <div class="eyebrow">APP-STATUS</div>
-        <span id="appStatus" class="status-pill">● Prüfe …</span>
-        <small id="appStatusText">GitHub Pages und zentrale App-Dateien werden geprüft.</small>
-      </div>
-      <div class="card admin-card">
-        <div class="eyebrow">OPENLIGADB</div>
-        <span id="apiStatus" class="status-pill">● Prüfe …</span>
-        <small id="apiStatusText">Sportdaten-API wird getestet.</small>
-      </div>
-      <div class="card admin-card">
-        <div class="eyebrow">LETZTER DATENCHECK</div>
-        <strong id="lastCheck">–</strong>
-        <small>Letzter erfolgreicher Live-Test dieser Admin-Seite.</small>
-      </div>
-      <div class="card admin-card">
-        <div class="eyebrow">GEZÄHLTE GERÄTE</div>
-        <strong id="devices" class="metric">–</strong>
-        <small>Anonymer Näherungswert für bisherige Nutzer.</small>
-      </div>
-      <div class="card admin-card">
-        <div class="eyebrow">APP-AUFRUFE</div>
-        <strong id="opens" class="metric">–</strong>
-        <small>Seit Aktivierung der Nutzungsstatistik.</small>
-      </div>
-      <div class="card admin-card wide">
-        <div class="eyebrow">DATENQUELLEN</div>
-        <div class="source-row"><b>Spieldaten</b><span>OpenLigaDB · Bundesliga 2026/27</span></div>
-        <div class="source-row"><b>Hosting</b><span>GitHub Pages · main</span></div>
-        <div class="source-row"><b>Reichweite</b><span>CounterAPI · anonym</span></div>
-        <div class="source-row"><b>PWA</b><span>Service Worker + Web Manifest</span></div>
+    <section id="pinGate" class="pin-gate">
+      <div class="card pin-card">
+        <div class="pin-icon">🔒</div>
+        <div class="eyebrow">GESCHÜTZTER BEREICH</div>
+        <h1>LigaKompakt Admin</h1>
+        <p class="muted" style="margin-top:8px">PIN eingeben, um den Betreiberbereich zu öffnen.</p>
+        <form id="pinForm" class="pin-form">
+          <input id="pinInput" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Admin PIN">
+          <button class="primary-btn" type="submit">Entsperren</button>
+          <div id="pinError" class="pin-error"></div>
+        </form>
+        <a class="ghost-btn" href="index.html" style="display:block;text-decoration:none;margin-top:8px">Zurück zu LigaKompakt</a>
       </div>
     </section>
 
-    <p id="status" class="muted" style="text-align:center;margin:12px 0">Status wird geladen …</p>
-    <div class="admin-actions">
-      <button id="refreshAdmin" class="primary-btn" type="button">Status aktualisieren</button>
-      <a class="ghost-btn" href="statistik.html">📊 Nutzungsstatistik öffnen</a>
-      <a class="ghost-btn" href="info.html">Info &amp; Datenschutz</a>
+    <div id="adminContent">
+      <a class="legal-back app-home-button" href="index.html" data-app-home>Zurück zu LigaKompakt</a>
+      <header class="card legal-hero">
+        <div class="eyebrow">BETREIBER</div>
+        <h1>LigaKompakt Admin</h1>
+        <p class="muted">Technischer Überblick für Andreas Binder</p>
+      </header>
+      <section class="admin-grid">
+        <div class="card admin-card"><div class="eyebrow">VERSION</div><strong id="version">–</strong><small id="versionMeta">Versionsdaten werden geladen …</small></div>
+        <div class="card admin-card"><div class="eyebrow">APP-STATUS</div><span id="appStatus" class="status-pill">● Prüfe …</span><small id="appStatusText">GitHub Pages und zentrale App-Dateien werden geprüft.</small></div>
+        <div class="card admin-card"><div class="eyebrow">OPENLIGADB</div><span id="apiStatus" class="status-pill">● Prüfe …</span><small id="apiStatusText">Sportdaten-API wird getestet.</small></div>
+        <div class="card admin-card"><div class="eyebrow">LETZTER DATENCHECK</div><strong id="lastCheck">–</strong><small>Letzter erfolgreicher Live-Test dieser Admin-Seite.</small></div>
+        <div class="card admin-card"><div class="eyebrow">GEZÄHLTE GERÄTE</div><strong id="devices" class="metric">–</strong><small>Anonymer Näherungswert für bisherige Nutzer.</small></div>
+        <div class="card admin-card"><div class="eyebrow">APP-AUFRUFE</div><strong id="opens" class="metric">–</strong><small>Seit Aktivierung der Nutzungsstatistik.</small></div>
+        <div class="card admin-card wide"><div class="eyebrow">DATENQUELLEN</div><div class="source-row"><b>Spieldaten</b><span>OpenLigaDB · Bundesliga 2026/27</span></div><div class="source-row"><b>Hosting</b><span>GitHub Pages · main</span></div><div class="source-row"><b>Reichweite</b><span>CounterAPI · anonym</span></div><div class="source-row"><b>PWA</b><span>Service Worker + Web Manifest</span></div></div>
+      </section>
+      <p id="status" class="muted" style="text-align:center;margin:12px 0">Status wird geladen …</p>
+      <div class="admin-actions">
+        <button id="refreshAdmin" class="primary-btn" type="button">Status aktualisieren</button>
+        <a class="ghost-btn" href="statistik.html">📊 Nutzungsstatistik öffnen</a>
+        <button id="lockAdmin" class="ghost-btn lock-btn" type="button">🔒 Betreiberbereich sperren</button>
+      </div>
     </div>
   </main>
-
   <script>
+    const PIN_HASH="c7c63acc2b79f8ae36746930b4ebfdef3aca62b8f7665682145ac26732be1137";
     const COUNTER_BASE="https://api.counterapi.dev/v1/ligakompakt-andreas-binder-2026";
+    let unlocked=false;
+    async function sha256(text){const data=new TextEncoder().encode(text);const hash=await crypto.subtle.digest("SHA-256",data);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,"0")).join("")}
+    function lock(){unlocked=false;document.getElementById("adminContent").style.display="none";document.getElementById("pinGate").style.display="grid";document.getElementById("pinInput").value="";setTimeout(()=>document.getElementById("pinInput").focus(),50)}
+    async function unlock(pin){if(await sha256(pin)!==PIN_HASH)return false;unlocked=true;document.getElementById("pinGate").style.display="none";document.getElementById("adminContent").style.display="block";loadAdmin();return true}
+    document.getElementById("pinForm").addEventListener("submit",async e=>{e.preventDefault();const ok=await unlock(document.getElementById("pinInput").value);document.getElementById("pinError").textContent=ok?"":"PIN nicht korrekt.";if(!ok){document.getElementById("pinInput").value="";document.getElementById("pinInput").focus()}});
+    document.getElementById("lockAdmin").addEventListener("click",lock);
+    window.addEventListener("pageshow",e=>{if(e.persisted)lock()});
+    document.addEventListener("visibilitychange",()=>{if(document.hidden&&unlocked)setTimeout(()=>{if(document.hidden)lock()},1500)});
     const valueOf=data=>{if(typeof data==="number")return data;if(!data||typeof data!=="object")return null;for(const key of ["count","value","data"]){const v=data[key];if(typeof v==="number")return v;if(v&&typeof v==="object")for(const n of ["count","value"]){if(typeof v[n]==="number")return v[n]}}return null};
     async function getJson(url,opts={}){const r=await fetch(url,{cache:"no-store",...opts});if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()}
     async function checkHead(url){const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw new Error(`HTTP ${r.status}`);return true}
     function pill(id,ok,text){const el=document.getElementById(id);el.className=`status-pill ${ok?"ok":"bad"}`;el.textContent=`● ${text}`}
-    async function loadAdmin(){
-      const status=document.getElementById("status");status.textContent="Status wird geprüft …";
-      let allOk=true;
-      try{const v=await getJson(`version.json?t=${Date.now()}`);document.getElementById("version").textContent=`v${v.version||"–"}`;document.getElementById("versionMeta").textContent=`${v.status||""} · veröffentlicht ${v.released||"–"}`}catch{document.getElementById("versionMeta").textContent="Versionsdatei nicht erreichbar";allOk=false}
-      try{await Promise.all([checkHead(`index.html?t=${Date.now()}`),checkHead(`app.js?t=${Date.now()}`),checkHead(`manifest.webmanifest?t=${Date.now()}`)]);pill("appStatus",true,"ONLINE");document.getElementById("appStatusText").textContent="Startseite, App-Code und Manifest sind erreichbar."}catch{pill("appStatus",false,"FEHLER");document.getElementById("appStatusText").textContent="Mindestens eine zentrale App-Datei ist nicht erreichbar.";allOk=false}
-      try{const data=await getJson("https://api.openligadb.de/getmatchdata/bl1/2026/1",{mode:"cors"});if(!Array.isArray(data))throw new Error("invalid");pill("apiStatus",true,"ERREICHBAR");document.getElementById("apiStatusText").textContent=`OpenLigaDB antwortet · ${data.length} Spiele im Testabruf.`;document.getElementById("lastCheck").textContent=new Date().toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit",second:"2-digit"})}catch{pill("apiStatus",false,"NICHT ERREICHBAR");document.getElementById("apiStatusText").textContent="OpenLigaDB konnte gerade nicht erfolgreich abgefragt werden.";allOk=false}
-      try{const [d,o]=await Promise.all([getJson(`${COUNTER_BASE}/unique-devices-v1`,{mode:"cors"}),getJson(`${COUNTER_BASE}/app-opens-v1`,{mode:"cors"})]);document.getElementById("devices").textContent=valueOf(d)??"0";document.getElementById("opens").textContent=valueOf(o)??"0"}catch{document.getElementById("devices").textContent="–";document.getElementById("opens").textContent="–"}
-      status.textContent=allOk?`Alles betriebsbereit · geprüft ${new Date().toLocaleString("de-DE")}`:`Mindestens ein Dienst meldet ein Problem · geprüft ${new Date().toLocaleString("de-DE")}`;
-    }
+    async function loadAdmin(){if(!unlocked)return;const status=document.getElementById("status");status.textContent="Status wird geprüft …";let allOk=true;try{const v=await getJson(`version.json?t=${Date.now()}`);document.getElementById("version").textContent=`v${v.version||"–"}`;document.getElementById("versionMeta").textContent=`${v.status||""} · veröffentlicht ${v.released||"–"}`}catch{document.getElementById("versionMeta").textContent="Versionsdatei nicht erreichbar";allOk=false}try{await Promise.all([checkHead(`index.html?t=${Date.now()}`),checkHead(`app.js?t=${Date.now()}`),checkHead(`manifest.webmanifest?t=${Date.now()}`)]);pill("appStatus",true,"ONLINE");document.getElementById("appStatusText").textContent="Startseite, App-Code und Manifest sind erreichbar."}catch{pill("appStatus",false,"FEHLER");document.getElementById("appStatusText").textContent="Mindestens eine zentrale App-Datei ist nicht erreichbar.";allOk=false}try{const data=await getJson("https://api.openligadb.de/getmatchdata/bl1/2026/1",{mode:"cors"});if(!Array.isArray(data))throw new Error("invalid");pill("apiStatus",true,"ERREICHBAR");document.getElementById("apiStatusText").textContent=`OpenLigaDB antwortet · ${data.length} Spiele im Testabruf.`;document.getElementById("lastCheck").textContent=new Date().toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit",second:"2-digit"})}catch{pill("apiStatus",false,"NICHT ERREICHBAR");document.getElementById("apiStatusText").textContent="OpenLigaDB konnte gerade nicht erfolgreich abgefragt werden.";allOk=false}try{const [d,o]=await Promise.all([getJson(`${COUNTER_BASE}/unique-devices-v1`,{mode:"cors"}),getJson(`${COUNTER_BASE}/app-opens-v1`,{mode:"cors"})]);document.getElementById("devices").textContent=valueOf(d)??"0";document.getElementById("opens").textContent=valueOf(o)??"0"}catch{document.getElementById("devices").textContent="–";document.getElementById("opens").textContent="–"}status.textContent=allOk?`Alles betriebsbereit · geprüft ${new Date().toLocaleString("de-DE")}`:`Mindestens ein Dienst meldet ein Problem · geprüft ${new Date().toLocaleString("de-DE")}`}
     document.getElementById("refreshAdmin").addEventListener("click",loadAdmin);
-    document.querySelectorAll("[data-app-home]").forEach(link=>link.addEventListener("click",event=>{event.preventDefault();location.replace(`index.html?t=${Date.now()}`)}));
-    loadAdmin();
+    document.querySelectorAll("[data-app-home]").forEach(link=>link.addEventListener("click",event=>{event.preventDefault();lock();location.replace(`index.html?t=${Date.now()}`)}));
+    lock();
   </script>
 </body>
 </html>
