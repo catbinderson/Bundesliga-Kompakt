@@ -1,149 +1,31 @@
 (() => {
-  const SHARE_URL = "https://catbinderson.github.io/Bundesliga-Kompakt/teilen.html?v=6";
-  const COUNTER_BASE = "https://api.counterapi.dev/v1/ligakompakt-andreas-binder-2026";
-  const OPENLIGA_API = "https://api.openligadb.de";
-  const LEAGUE = "bl1";
-  const SEASON = "2026";
-  const matchCache = new Map();
-  let goalGetterMapPromise = null;
-  let seasonStatsPromise = null;
-  let enrichTimer = null;
+  const SHARE_URL="https://catbinderson.github.io/Bundesliga-Kompakt/teilen.html?v=6";
+  const COUNTER_BASE="https://api.counterapi.dev/v1/ligakompakt-andreas-binder-2026";
+  const OPENLIGA_API="https://api.openligadb.de",LEAGUE="bl1",SEASON="2026";
+  const matchCache=new Map();let goalGetterMapPromise=null,seasonDataPromise=null,enrichTimer=null;
+  const readId=v=>v===null||v===undefined||v===""?"":String(v);
+  const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  function goalGetterId(x){return readId(x?.goalGetterID??x?.goalGetterId??x?.goalgetterID??x?.goalgetterId??x?.goalGetter?.goalGetterID??x?.goalGetter?.goalGetterId??x?.goalGetter?.id??x?.id)}
+  function goalGetterName(x){return String(x?.goalGetterName??x?.goalgetterName??x?.name??x?.goalGetter?.goalGetterName??x?.goalGetter?.name??"").trim()}
+  async function getJson(url){const r=await fetch(url,{cache:"no-store",mode:"cors"});if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()}
 
-  async function countUsage() {
-    try { await fetch(`${COUNTER_BASE}/app-opens-v1/up`, { cache: "no-store", mode: "cors" }); } catch (error) { console.warn("Aufrufstatistik nicht erreichbar", error); }
-    try {
-      const key = "ligakompakt-unique-device-counted-v1";
-      if (!localStorage.getItem(key)) {
-        const response = await fetch(`${COUNTER_BASE}/unique-devices-v1/up`, { cache: "no-store", mode: "cors" });
-        if (response.ok) localStorage.setItem(key, "1");
-      }
-    } catch (error) { console.warn("Gerätestatistik nicht erreichbar", error); }
-  }
+  async function countUsage(){try{await fetch(`${COUNTER_BASE}/app-opens-v1/up`,{cache:"no-store",mode:"cors"})}catch(e){console.warn("Aufrufstatistik nicht erreichbar",e)}try{const k="ligakompakt-unique-device-counted-v1";if(!localStorage.getItem(k)){const r=await fetch(`${COUNTER_BASE}/unique-devices-v1/up`,{cache:"no-store",mode:"cors"});if(r.ok)localStorage.setItem(k,"1")}}catch(e){console.warn("Gerätestatistik nicht erreichbar",e)}}
+  function addStatsEntry(){if(document.getElementById("usageStatsCard"))return;const live=document.getElementById("liveCenter");if(!live)return;const a=document.createElement("a");a.id="usageStatsCard";a.href="statistik.html";a.setAttribute("aria-label","LigaKompakt Nutzungsstatistik öffnen");a.style.cssText="display:flex;align-items:center;gap:13px;margin:0 0 14px;padding:15px 16px;text-decoration:none;color:var(--text);background:linear-gradient(135deg,rgba(79,163,255,.13),rgba(57,219,134,.09));border:1px solid rgba(79,163,255,.25);border-radius:20px;box-shadow:var(--shadow)";a.innerHTML='<span style="display:grid;place-items:center;width:44px;height:44px;flex:0 0 44px;border-radius:14px;background:rgba(79,163,255,.14);font-size:22px">📊</span><span style="min-width:0;flex:1"><strong style="display:block;font-size:14px">Nutzungsstatistik</strong><small style="display:block;margin-top:3px;color:var(--muted);font-size:11px">Besucher, Aufrufe und 30-Tage-Verlauf ansehen</small></span><span style="color:var(--blue);font-size:22px;font-weight:800">›</span>';live.insertAdjacentElement("afterend",a)}
 
-  function addStatsEntry() {
-    if (document.getElementById("usageStatsCard")) return;
-    const liveCenter = document.getElementById("liveCenter"); if (!liveCenter) return;
-    const card = document.createElement("a");
-    card.id = "usageStatsCard"; card.href = "statistik.html"; card.setAttribute("aria-label", "LigaKompakt Nutzungsstatistik öffnen");
-    card.style.cssText = "display:flex;align-items:center;gap:13px;margin:0 0 14px;padding:15px 16px;text-decoration:none;color:var(--text);background:linear-gradient(135deg,rgba(79,163,255,.13),rgba(57,219,134,.09));border:1px solid rgba(79,163,255,.25);border-radius:20px;box-shadow:var(--shadow)";
-    card.innerHTML = `<span style="display:grid;place-items:center;width:44px;height:44px;flex:0 0 44px;border-radius:14px;background:rgba(79,163,255,.14);font-size:22px">📊</span><span style="min-width:0;flex:1"><strong style="display:block;font-size:14px">Nutzungsstatistik</strong><small style="display:block;margin-top:3px;color:var(--muted);font-size:11px">Besucher, Aufrufe und 30-Tage-Verlauf ansehen</small></span><span style="color:var(--blue);font-size:22px;font-weight:800">›</span>`;
-    liveCenter.insertAdjacentElement("afterend", card);
-  }
+  async function loadGoalGetterMap(){if(goalGetterMapPromise)return goalGetterMapPromise;goalGetterMapPromise=(async()=>{const map=new Map();try{const d=await getJson(`${OPENLIGA_API}/getgoalgetters/${LEAGUE}/${SEASON}`),list=Array.isArray(d)?d:Array.isArray(d?.goalGetters)?d.goalGetters:[];for(const x of list){const id=goalGetterId(x),n=goalGetterName(x);if(id&&n)map.set(id,n)}}catch(e){console.warn("Torschützenliste nicht erreichbar",e)}return map})();return goalGetterMapPromise}
+  async function loadMatch(id){if(matchCache.has(id))return matchCache.get(id);const p=getJson(`${OPENLIGA_API}/getmatchdata/${encodeURIComponent(id)}`).then(d=>Array.isArray(d)?d[0]:d).catch(e=>{console.warn(`Spieldetails ${id} nicht erreichbar`,e);return null});matchCache.set(id,p);return p}
+  async function enrichUnknownScorers(){const cards=[...document.querySelectorAll(".match[data-match-id]")];if(!cards.some(c=>c.textContent.includes("Torschütze unbekannt")))return;const map=await loadGoalGetterMap();await Promise.all(cards.map(async card=>{const rows=[...card.querySelectorAll(".goal-list > div")];if(!rows.some(r=>r.querySelector("span")?.textContent?.includes("Torschütze unbekannt")))return;const m=await loadMatch(card.dataset.matchId),goals=Array.isArray(m?.goals)?m.goals.slice().sort((a,b)=>Number(a.matchMinute||0)-Number(b.matchMinute||0)):[];rows.forEach((row,i)=>{const t=row.querySelector("span"),g=goals[i];if(!t||!g||!t.textContent.includes("Torschütze unbekannt"))return;const n=goalGetterName(g)||(map.get(goalGetterId(g))||"");if(n)t.textContent=t.textContent.replace("Torschütze unbekannt",n)})}))}
+  function scheduleScorerEnrichment(){clearTimeout(enrichTimer);enrichTimer=setTimeout(()=>enrichUnknownScorers().catch(e=>console.warn("Torschützen-Ergänzung fehlgeschlagen",e)),120)}
 
-  const readId = value => value === null || value === undefined || value === "" ? "" : String(value);
-  function goalGetterId(item) { return readId(item?.goalGetterID ?? item?.goalGetterId ?? item?.goalgetterID ?? item?.goalgetterId ?? item?.goalGetter?.goalGetterID ?? item?.goalGetter?.goalGetterId ?? item?.goalGetter?.id ?? item?.id); }
-  function goalGetterName(item) { return String(item?.goalGetterName ?? item?.goalgetterName ?? item?.name ?? item?.goalGetter?.goalGetterName ?? item?.goalGetter?.name ?? "").trim(); }
-  const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  function parseAssist(c){const t=String(c||"").trim();if(!t)return"";const m=t.match(/(?:vorlage|assist|assisted\s+by)\s*[:\-]?\s*([^,;()|]+)/i);return m?m[1].trim().replace(/[.!]+$/g,""):""}
+  function finalResult(m){const r=(m?.matchResults||[]).filter(x=>x.resultTypeID===2||/Endergebnis/i.test(x.resultName||""));return r.at(-1)||(m?.matchResults||[]).at(-1)||null}
+  async function loadSeasonData(){if(seasonDataPromise)return seasonDataPromise;seasonDataPromise=(async()=>{const [gg,matches,teams]=await Promise.all([getJson(`${OPENLIGA_API}/getgoalgetters/${LEAGUE}/${SEASON}`).catch(()=>[]),getJson(`${OPENLIGA_API}/getmatchdata/${LEAGUE}/${SEASON}`).catch(()=>[]),getJson(`${OPENLIGA_API}/getavailableteams/${LEAGUE}/${SEASON}`).catch(()=>[])]);const teamById=new Map((Array.isArray(teams)?teams:[]).map(t=>[readId(t.teamId),t])),playerTeam=new Map(),assists=new Map(),assistTeam=new Map(),cleanMap=new Map((Array.isArray(teams)?teams:[]).map(t=>[readId(t.teamId),{team:t,cleanSheets:0,matches:0}]));for(const m of(Array.isArray(matches)?matches:[])){for(const g of(Array.isArray(m?.goals)?m.goals:[])){const gid=goalGetterId(g),tid=readId(g?.scoringTeamId);if(gid&&tid&&!playerTeam.has(gid))playerTeam.set(gid,tid);const a=parseAssist(g?.comment);if(a){const k=a.toLocaleLowerCase("de-DE");assists.set(k,(assists.get(k)||0)+1);if(tid&&!assistTeam.has(k))assistTeam.set(k,tid)}}if(m?.matchIsFinished){const r=finalResult(m);if(r){const h=cleanMap.get(readId(m.team1?.teamId)),a=cleanMap.get(readId(m.team2?.teamId)),hg=Number(r.pointsTeam1),ag=Number(r.pointsTeam2);if(Number.isFinite(hg)&&Number.isFinite(ag)){if(h){h.matches++;if(ag===0)h.cleanSheets++}if(a){a.matches++;if(hg===0)a.cleanSheets++}}}}}const scorers=(Array.isArray(gg)?gg:[]).map(x=>{const id=goalGetterId(x),name=goalGetterName(x)||"Unbekannt",goals=Number(x?.goalCount??x?.goals??0)||0,teamId=playerTeam.get(id)||"",team=teamById.get(teamId),key=name.toLocaleLowerCase("de-DE"),as=assists.get(key)||0;return{id,name,goals,assists:as,points:goals+as,teamId,team}});for(const[k,n]of assists){if(scorers.some(s=>s.name.toLocaleLowerCase("de-DE")===k))continue;const tid=assistTeam.get(k)||"";scorers.push({id:`assist:${k}`,name:k.replace(/(^|\s)\S/g,c=>c.toUpperCase()),goals:0,assists:n,points:n,teamId:tid,team:teamById.get(tid)})}return{scorers,cleanSheets:[...cleanMap.values()].filter(x=>x.matches>0)}})();return seasonDataPromise}
 
-  async function getJson(url) { const response = await fetch(url, { cache: "no-store", mode: "cors" }); if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }
+  function playerRow(p,i,mode){const icon=p.team?.teamIconUrl?`<img src="${esc(p.team.teamIconUrl)}" alt="" style="width:30px;height:30px;object-fit:contain">`:'<span style="width:30px;height:30px;display:grid;place-items:center">⚽</span>',club=p.team?.shortName||p.team?.teamName||"Verein nicht zugeordnet",value=mode==="goals"?`${p.goals} ${p.goals===1?"Tor":"Tore"}`:`${p.points} Pkt.`,detail=mode==="goals"?club:`${p.goals} Tore · ${p.assists} Vorlagen`;return `<div style="display:grid;grid-template-columns:30px 30px 1fr auto;gap:10px;align-items:center;padding:11px 4px;border-bottom:1px solid rgba(255,255,255,.06)"><strong style="text-align:center;color:${i<3?'var(--accent)':'var(--muted)'}">${i+1}</strong>${icon}<span style="min-width:0"><b style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(p.name)}</b><small style="display:block;color:var(--muted);margin-top:2px">${esc(detail)}</small></span><strong style="color:var(--blue);white-space:nowrap">${value}</strong></div>`}
+  function keeperRow(x,i){const t=x.team||{},icon=t.teamIconUrl?`<img src="${esc(t.teamIconUrl)}" alt="" style="width:30px;height:30px;object-fit:contain">`:'<span style="width:30px;height:30px;display:grid;place-items:center">🧤</span>',name=t.shortName||t.teamName||"Verein";return `<div style="display:grid;grid-template-columns:30px 30px 1fr auto;gap:10px;align-items:center;padding:11px 4px;border-bottom:1px solid rgba(255,255,255,.06)"><strong style="text-align:center;color:${i<3?'var(--accent)':'var(--muted)'}">${i+1}</strong>${icon}<span style="min-width:0"><b style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(name)}</b><small style="display:block;color:var(--muted);margin-top:2px">${x.matches} beendete Spiele · Torhüter/Defensive</small></span><strong style="color:var(--blue);white-space:nowrap">${x.cleanSheets} ${x.cleanSheets===1?"Weiße Weste":"Weiße Westen"}</strong></div>`}
+  async function renderRanking(mode="goals"){const list=document.getElementById("playerRankingList"),note=document.getElementById("playerRankingNote");if(!list||!note)return;list.innerHTML='<div class="skeleton"><i></i><i></i><i></i></div>';note.textContent="Daten werden geladen …";try{const data=await loadSeasonData();if(mode==="keepers"){const sorted=[...data.cleanSheets].sort((a,b)=>b.cleanSheets-a.cleanSheets||a.matches-b.matches||String(a.team?.teamName||"").localeCompare(String(b.team?.teamName||""),"de")).slice(0,20);list.innerHTML=sorted.length?sorted.map(keeperRow).join(""):'<p class="muted" style="padding:12px 0">Noch keine beendeten Spiele mit auswertbaren Ergebnissen.</p>';note.textContent="Weiße Westen = beendete Bundesliga-Spiele ohne Gegentor. OpenLigaDB liefert keine verlässliche Torhüter-Aufstellung pro Spiel; deshalb wird die Statistik dem Verein bzw. seiner eingesetzten Torhüter-Einheit zugerechnet.";return}const sorted=[...data.scorers].filter(p=>mode==="goals"?p.goals>0:p.points>0).sort((a,b)=>mode==="goals"?(b.goals-a.goals||a.name.localeCompare(b.name,"de")):(b.points-a.points||b.goals-a.goals||a.name.localeCompare(b.name,"de"))).slice(0,20);list.innerHTML=sorted.length?sorted.map((p,i)=>playerRow(p,i,mode)).join(""):'<p class="muted" style="padding:12px 0">Für diese Saison sind noch keine entsprechenden Daten vorhanden.</p>';note.textContent=mode==="goals"?"Torjägerdaten: OpenLigaDB · Saison 2026/27":"Scorerpunkte = Tore + erkannte Vorlagen. OpenLigaDB führt Vorlagen nicht als eigenes Standardfeld; deshalb können Vorlagen unvollständig sein."}catch(e){console.warn(e);list.innerHTML='<p class="error">Die Rangliste konnte gerade nicht geladen werden.</p>';note.textContent="Bitte später erneut versuchen."}}
+  function addPlayerRankings(){if(document.getElementById("playerRankings"))return;const view=document.getElementById("table"),head=view?.querySelector(".section-head");if(!head)return;const card=document.createElement("section");card.id="playerRankings";card.className="card";card.style.cssText="margin-bottom:14px";card.innerHTML='<div style="display:flex;justify-content:space-between;align-items:end;gap:10px;margin-bottom:12px"><div><div class="eyebrow">STATISTIKEN</div><h3>Bundesliga-Ranglisten</h3></div><span style="font-size:10px;color:var(--muted)">Saison 26/27</span></div><div id="rankingTabs" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:10px"><button type="button" data-ranking="goals" class="primary-btn" style="padding:10px 6px">⚽ Torjäger</button><button type="button" data-ranking="scorers" class="ghost-btn" style="padding:10px 6px">★ Topscorer</button><button type="button" data-ranking="keepers" class="ghost-btn" style="padding:10px 6px">🧤 Weiße Westen</button></div><div id="playerRankingList"></div><p id="playerRankingNote" class="muted" style="font-size:10px;line-height:1.45;margin-top:10px"></p>';head.insertAdjacentElement("afterend",card);const tabs=[...card.querySelectorAll("[data-ranking]")];tabs.forEach(btn=>btn.addEventListener("click",()=>{tabs.forEach(b=>{b.className=b===btn?"primary-btn":"ghost-btn";b.style.padding="10px 6px"});renderRanking(btn.dataset.ranking)}));renderRanking("goals")}
 
-  async function loadGoalGetterMap() {
-    if (goalGetterMapPromise) return goalGetterMapPromise;
-    goalGetterMapPromise = (async () => {
-      const map = new Map();
-      try {
-        const data = await getJson(`${OPENLIGA_API}/getgoalgetters/${LEAGUE}/${SEASON}`);
-        const list = Array.isArray(data) ? data : Array.isArray(data?.goalGetters) ? data.goalGetters : [];
-        for (const item of list) { const id = goalGetterId(item), name = goalGetterName(item); if (id && name) map.set(id, name); }
-      } catch (error) { console.warn("Torschützenliste nicht erreichbar", error); }
-      return map;
-    })();
-    return goalGetterMapPromise;
-  }
-
-  async function loadMatch(matchId) {
-    if (matchCache.has(matchId)) return matchCache.get(matchId);
-    const promise = getJson(`${OPENLIGA_API}/getmatchdata/${encodeURIComponent(matchId)}`).then(data => Array.isArray(data) ? data[0] : data).catch(error => { console.warn(`Spieldetails ${matchId} nicht erreichbar`, error); return null; });
-    matchCache.set(matchId, promise); return promise;
-  }
-
-  function scorerName(goal, map) { const direct = goalGetterName(goal); if (direct) return direct; const id = goalGetterId(goal); return id ? (map.get(id) || "") : ""; }
-
-  async function enrichMatchCard(card, map) {
-    if (!card?.dataset?.matchId) return;
-    const rows = [...card.querySelectorAll(".goal-list > div")];
-    if (!rows.some(row => row.querySelector("span")?.textContent?.includes("Torschütze unbekannt"))) return;
-    const match = await loadMatch(card.dataset.matchId);
-    const goals = Array.isArray(match?.goals) ? match.goals.slice().sort((a,b)=>Number(a.matchMinute||0)-Number(b.matchMinute||0)) : [];
-    if (!goals.length) return;
-    rows.forEach((row,index) => { const text=row.querySelector("span"); if(!text||!text.textContent.includes("Torschütze unbekannt")) return; const goal=goals[index]; if(!goal) return; const name=scorerName(goal,map); if(name) text.textContent=text.textContent.replace("Torschütze unbekannt",name); });
-  }
-
-  async function enrichUnknownScorers() { const cards=[...document.querySelectorAll(".match[data-match-id]")]; if(!cards.some(card=>card.textContent.includes("Torschütze unbekannt"))) return; const map=await loadGoalGetterMap(); await Promise.all(cards.map(card=>enrichMatchCard(card,map))); }
-  function scheduleScorerEnrichment() { clearTimeout(enrichTimer); enrichTimer=setTimeout(()=>enrichUnknownScorers().catch(error=>console.warn("Torschützen-Ergänzung fehlgeschlagen",error)),120); }
-
-  function parseAssist(comment) {
-    const text=String(comment||"").trim(); if(!text) return "";
-    const match=text.match(/(?:vorlage|assist|assisted\s+by)\s*[:\-]?\s*([^,;()|]+)/i);
-    return match ? match[1].trim().replace(/[.!]+$/g,"") : "";
-  }
-
-  async function loadSeasonStats() {
-    if (seasonStatsPromise) return seasonStatsPromise;
-    seasonStatsPromise=(async()=>{
-      const [goalGetters,matches,teams]=await Promise.all([
-        getJson(`${OPENLIGA_API}/getgoalgetters/${LEAGUE}/${SEASON}`).catch(()=>[]),
-        getJson(`${OPENLIGA_API}/getmatchdata/${LEAGUE}/${SEASON}`).catch(()=>[]),
-        getJson(`${OPENLIGA_API}/getavailableteams/${LEAGUE}/${SEASON}`).catch(()=>[])
-      ]);
-      const teamById=new Map((Array.isArray(teams)?teams:[]).map(t=>[readId(t.teamId),t]));
-      const playerTeam=new Map(), assists=new Map(), assistTeam=new Map();
-      for(const match of (Array.isArray(matches)?matches:[])) {
-        for(const goal of (Array.isArray(match?.goals)?match.goals:[])) {
-          const gid=goalGetterId(goal), teamId=readId(goal?.scoringTeamId);
-          if(gid&&teamId&&!playerTeam.has(gid)) playerTeam.set(gid,teamId);
-          const assist=parseAssist(goal?.comment);
-          if(assist){ const key=assist.toLocaleLowerCase("de-DE"); assists.set(key,(assists.get(key)||0)+1); if(teamId&&!assistTeam.has(key)) assistTeam.set(key,teamId); }
-        }
-      }
-      const scorers=(Array.isArray(goalGetters)?goalGetters:[]).map(item=>{
-        const id=goalGetterId(item), name=goalGetterName(item)||"Unbekannt", goals=Number(item?.goalCount??item?.goals??0)||0, teamId=playerTeam.get(id)||"", team=teamById.get(teamId), key=name.toLocaleLowerCase("de-DE"), assistsCount=assists.get(key)||0;
-        return {id,name,goals,assists:assistsCount,points:goals+assistsCount,teamId,team};
-      });
-      for(const [key,count] of assists){ if(scorers.some(s=>s.name.toLocaleLowerCase("de-DE")===key)) continue; const teamId=assistTeam.get(key)||"", team=teamById.get(teamId); scorers.push({id:`assist:${key}`,name:key.replace(/(^|\s)\S/g,c=>c.toUpperCase()),goals:0,assists:count,points:count,teamId,team}); }
-      return scorers;
-    })();
-    return seasonStatsPromise;
-  }
-
-  function rankingRow(player,index,mode){
-    const icon=player.team?.teamIconUrl?`<img src="${esc(player.team.teamIconUrl)}" alt="" style="width:30px;height:30px;object-fit:contain">`:`<span style="width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.06)">⚽</span>`;
-    const club=player.team?.shortName||player.team?.teamName||"Verein nicht zugeordnet";
-    const value=mode==="goals"?`${player.goals} ${player.goals===1?"Tor":"Tore"}`:`${player.points} Pkt.`;
-    const detail=mode==="goals"?club:`${player.goals} Tore · ${player.assists} Vorlagen`;
-    return `<div style="display:grid;grid-template-columns:30px 30px 1fr auto;gap:10px;align-items:center;padding:11px 4px;border-bottom:1px solid rgba(255,255,255,.06)"><strong style="text-align:center;color:${index<3?'var(--accent)':'var(--muted)'}">${index+1}</strong>${icon}<span style="min-width:0"><b style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(player.name)}</b><small style="display:block;color:var(--muted);margin-top:2px">${esc(detail)}</small></span><strong style="color:var(--blue);white-space:nowrap">${value}</strong></div>`;
-  }
-
-  async function renderRanking(mode="goals") {
-    const list=document.getElementById("playerRankingList"), note=document.getElementById("playerRankingNote"); if(!list) return;
-    list.innerHTML='<div class="skeleton"><i></i><i></i><i></i></div>'; note.textContent="Daten werden geladen …";
-    try{
-      const stats=await loadSeasonStats();
-      const sorted=[...stats].filter(p=>mode==="goals"?p.goals>0:p.points>0).sort((a,b)=>mode==="goals"?(b.goals-a.goals||a.name.localeCompare(b.name,"de")):(b.points-a.points||b.goals-a.goals||a.name.localeCompare(b.name,"de"))).slice(0,20);
-      list.innerHTML=sorted.length?sorted.map((p,i)=>rankingRow(p,i,mode)).join(""):'<p class="muted" style="padding:12px 0">Für diese Saison sind noch keine entsprechenden Daten vorhanden.</p>';
-      note.textContent=mode==="goals"?"Torjägerdaten: OpenLigaDB · Saison 2026/27":"Scorerpunkte = Tore + erkannte Vorlagen. OpenLigaDB führt Vorlagen nicht als eigenes Standardfeld; deshalb können Vorlagen unvollständig sein.";
-    }catch(error){ console.warn(error); list.innerHTML='<p class="error">Die Spieler-Rangliste konnte gerade nicht geladen werden.</p>'; note.textContent="Bitte später erneut versuchen."; }
-  }
-
-  function addPlayerRankings(){
-    if(document.getElementById("playerRankings")) return;
-    const tableView=document.getElementById("table"); if(!tableView) return;
-    const firstHead=tableView.querySelector(".section-head"); if(!firstHead) return;
-    const card=document.createElement("section"); card.id="playerRankings"; card.className="card"; card.style.cssText="margin-bottom:14px";
-    card.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:end;gap:10px;margin-bottom:12px"><div><div class="eyebrow">SPIELER</div><h3>Spieler-Ranglisten</h3></div><span style="font-size:10px;color:var(--muted)">Top 20</span></div><div id="rankingTabs" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px"><button type="button" data-ranking="goals" class="primary-btn" style="padding:10px">⚽ Torjäger</button><button type="button" data-ranking="scorers" class="ghost-btn" style="padding:10px">★ Topscorer</button></div><div id="playerRankingList"></div><p id="playerRankingNote" class="muted" style="font-size:10px;line-height:1.45;margin-top:10px"></p>`;
-    firstHead.insertAdjacentElement("afterend",card);
-    const tabs=[...card.querySelectorAll("[data-ranking]")];
-    tabs.forEach(btn=>btn.addEventListener("click",()=>{ tabs.forEach(b=>{b.className=b===btn?"primary-btn":"ghost-btn";b.style.padding="10px"}); renderRanking(btn.dataset.ranking).catch(console.warn); }));
-    renderRanking("goals").catch(console.warn);
-  }
-
-  countUsage(); addStatsEntry(); addPlayerRankings(); scheduleScorerEnrichment();
-  const scorerObserver=new MutationObserver(scheduleScorerEnrichment); scorerObserver.observe(document.body,{childList:true,subtree:true});
-
-  const button=document.getElementById("shareAppBtn"); if(!button) return;
-  button.addEventListener("click",async event=>{
-    event.preventDefault(); event.stopImmediatePropagation();
-    const title="LigaKompakt", text="⚽ LigaKompakt ist kostenlos! Bundesliga live, Tabelle, Spieltermine, Tipps und dein Lieblingsverein – mit LigaKompakt von Andreas Binder.";
-    try{ if(navigator.share) await navigator.share({title,text,url:SHARE_URL}); else { await navigator.clipboard.writeText(`${text}\n${SHARE_URL}`); const status=document.getElementById("liveDot"); if(status){const old=status.textContent;status.textContent="App-Link kopiert";setTimeout(()=>{status.textContent=old},1800);} } }catch(error){ if(error?.name!=="AbortError") console.warn("Teilen fehlgeschlagen",error); }
-  },true);
+  countUsage();addStatsEntry();addPlayerRankings();scheduleScorerEnrichment();const observer=new MutationObserver(scheduleScorerEnrichment);observer.observe(document.body,{childList:true,subtree:true});
+  const button=document.getElementById("shareAppBtn");if(button)button.addEventListener("click",async e=>{e.preventDefault();e.stopImmediatePropagation();const title="LigaKompakt",text="⚽ LigaKompakt ist kostenlos! Bundesliga live, Tabelle, Spieltermine, Tipps und dein Lieblingsverein – mit LigaKompakt von Andreas Binder.";try{if(navigator.share)await navigator.share({title,text,url:SHARE_URL});else{await navigator.clipboard.writeText(`${text}\n${SHARE_URL}`);const s=document.getElementById("liveDot");if(s){const old=s.textContent;s.textContent="App-Link kopiert";setTimeout(()=>s.textContent=old,1800)}}}catch(err){if(err?.name!=="AbortError")console.warn("Teilen fehlgeschlagen",err)}},true);
 })();
