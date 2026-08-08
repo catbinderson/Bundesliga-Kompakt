@@ -11,7 +11,7 @@
   <title>LigaKompakt · Bundesliga Live</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=0.6.1">
+  <link rel="stylesheet" href="styles.css?v=0.7">
 </head>
 <body>
   <div class="app-shell">
@@ -39,6 +39,10 @@
       <section id="club" class="view">
         <div class="section-head"><div><div class="eyebrow">FAVORIT</div><h2>Mein Verein</h2></div></div>
         <div class="card favorite-card"><label for="teamSelect">Lieblingsverein</label><select id="teamSelect"></select><p class="muted">Die Auswahl wird nur auf diesem Gerät gespeichert.</p></div>
+        <div class="card notification-card">
+          <div class="notification-copy"><div class="notification-icon">🔔</div><div><strong>Spielalarm</strong><p id="notificationStatus" class="muted">Benachrichtigungen sind ausgeschaltet.</p></div></div>
+          <div class="notification-actions"><button id="notificationToggle" class="primary-btn compact-btn">Einschalten</button><button id="notificationTest" class="ghost-btn" disabled>Test senden</button></div>
+        </div>
         <div id="clubHeader"></div>
         <div id="clubContent"></div>
       </section>
@@ -48,6 +52,6 @@
   </div>
   <div id="onboarding" class="modal hidden"><div class="modal-card"><img class="onboarding-icon" src="icon.svg" alt=""><div class="eyebrow">WILLKOMMEN</div><h2>Dein Verein. Deine App.</h2><p>Wähle deinen Lieblingsverein. LigaKompakt zeigt dir ihn künftig ganz oben.</p><select id="onboardingTeam"></select><button id="saveFavorite" class="primary-btn">Los geht's</button><button id="skipFavorite" class="text-btn">Später auswählen</button></div></div>
   <template id="matchTpl"><article class="match card"><div class="match-top"><div class="match-meta"></div><div class="match-state"></div></div><div class="team-row"><div class="team home"><img alt=""><span></span></div><div class="score-wrap"><div class="score"></div><div class="kickoff"></div></div><div class="team away"><span></span><img alt=""></div></div></article></template>
-  <script src="app.js?v=0.6.1"></script>
+  <script src="app.js?v=0.7"></script>
 </body>
 </html>
