@@ -1,4 +1,4 @@
-const CACHE="ligakompakt-v1.0.0-final-share-v5",ASSETS=["./","index.html","info.html","einladen.html","teilen.html","styles.css?v=1.0.0-fix1","app.js?v=1.0.0","share-fix.js?v=2","manifest.webmanifest","icon.svg","icon-192.png","icon-512.png","icon-maskable-512.png","apple-touch-icon.png","qr-ligakompakt.png","social-preview.jpg","facebook-preview-v5.jpg","version.json"];
+const CACHE="ligakompakt-v1.0.0-final-tips-fix1",ASSETS=["./","index.html","info.html","einladen.html","teilen.html","styles.css?v=1.0.0-fix1","app.js?v=1.0.0","tips-persistence.js?v=1","share-fix.js?v=2","manifest.webmanifest","icon.svg","icon-192.png","icon-512.png","icon-maskable-512.png","apple-touch-icon.png","qr-ligakompakt.png","social-preview.jpg","facebook-preview-v5.jpg","version.json"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener("activate",e=>e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))])));
 self.addEventListener("message",e=>{if(e.data?.type==="SKIP_WAITING")self.skipWaiting()});
