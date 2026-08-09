@@ -85,8 +85,8 @@
     return `<div style="min-width:0;padding:11px;border:1px solid rgba(80,155,255,.18);border-radius:14px;background:rgba(10,27,51,.55)"><strong style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(name)}</strong><div style="display:flex;gap:6px;min-height:15px;margin:9px 0">${dots}</div><small style="color:var(--muted)">${form.length?`${goals}:${against} Tore · `:''}${position}</small></div>`;
   }
 
-  async function formComparison(data,matchId){
-    const teams=data?.matchTeams?.[String(matchId)];
+  async function formComparison(data,matchId,fallbackTeams){
+    const teams=data?.matchTeams?.[String(matchId)]||fallbackTeams;
     if(!Array.isArray(teams))return '';
     let current=[],table=[];
     try{[current,table]=await Promise.all([loadCurrentSeason(),loadTable()])}catch(error){console.warn('Formvergleich:',error)}
@@ -126,11 +126,12 @@
     panel.innerHTML='<div class="skeleton"><i></i><i></i><i></i></div>';
     try{
       const data=await loadDuelData();
-      const pair=data?.matchToPair?.[String(card.dataset.matchId)];
+      const fallbackTeams=[Number(card.dataset.team1Id),Number(card.dataset.team2Id)].filter(Number.isFinite);
+      const pair=data?.matchToPair?.[String(card.dataset.matchId)]||(fallbackTeams.length===2?fallbackTeams.slice().sort((a,b)=>a-b).join('-'):null);
       const packed=pair?data?.byPair?.[pair]:undefined;
       const last=Array.isArray(packed)?packed.map(row=>({matchID:row[0],matchDateTime:row[1],team1:{teamId:row[2],shortName:row[3]},team2:{teamId:row[4],shortName:row[5]},pointsTeam1:row[6],pointsTeam2:row[7]})):undefined;
       if(!Array.isArray(last))throw new Error('Begegnung fehlt in der Duell-Datei');
-      const form=await formComparison(data,card.dataset.matchId);
+      const form=await formComparison(data,card.dataset.matchId,fallbackTeams);
       if(!last.length){
         panel.innerHTML=`${form}<p class="muted" style="padding:10px 0">Diese Vereine treffen in der Bundesliga zum ersten Mal aufeinander.</p>`;
         return;
