@@ -1,4 +1,4 @@
-const APP_VERSION="1.0.4", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
+const APP_VERSION="1.0.5", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
 let currentGroup=1, teams=[],leagueTable=[],favoriteClubMatches=[],notificationTimer=null,liveTimer=null,countdownTimer=null,currentMatches=[],fixtureMatches=[],fixtureFilter="all",previousScores=new Map(),changedMatches=new Set();
 let installPrompt=null;
 const $=s=>document.querySelector(s);
@@ -81,7 +81,7 @@ function matchDetails(m){
 }
 
 function matchCard(m){
-  const node=$("#matchTpl").content.firstElementChild.cloneNode(true), kickoff=new Date(m.matchDateTime), now=new Date();node.dataset.matchId=String(m.matchID||"");
+  const node=$("#matchTpl").content.firstElementChild.cloneNode(true), kickoff=new Date(m.matchDateTime), now=new Date();node.dataset.matchId=String(m.matchID||"");node.dataset.team1Id=String(m.team1?.teamId||"");node.dataset.team2Id=String(m.team2?.teamId||"");
   node.querySelector(".match-meta").textContent=`${m.group?.groupName||""} · ${dateText(m.matchDateTime)}`;
   node.querySelector(".home img").src=m.team1?.teamIconUrl||""; node.querySelector(".home span").textContent=m.team1?.shortName||m.team1?.teamName||"";
   node.querySelector(".away img").src=m.team2?.teamIconUrl||""; node.querySelector(".away span").textContent=m.team2?.shortName||m.team2?.teamName||"";
