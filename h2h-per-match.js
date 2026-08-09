@@ -1,6 +1,6 @@
 (()=>{
-  const API='https://api.openligadb.de',DATA='h2h-2026.json?v=5';
-  const matchCache=new Map(),seasonCache=new Map();let duelDataPromise,currentSeasonPromise,tablePromise;
+  const API='https://api.openligadb.de',DATA='h2h-2026.json?v=5',GOALS_DATA='h2h-goals.json?v=1';
+  const matchCache=new Map(),seasonCache=new Map();let duelDataPromise,goalsDataPromise,currentSeasonPromise,tablePromise;
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 
@@ -22,6 +22,11 @@
   function loadDuelData(){
     if(!duelDataPromise)duelDataPromise=getJson(DATA).catch(error=>{duelDataPromise=null;throw error});
     return duelDataPromise;
+  }
+
+  function loadGoalsData(){
+    if(!goalsDataPromise)goalsDataPromise=getJson(GOALS_DATA).catch(error=>{goalsDataPromise=null;throw error});
+    return goalsDataPromise;
   }
 
   async function loadMatch(matchId){
@@ -98,6 +103,10 @@
   async function goalRows(match){
     let detail=null;
     try{
+      const stored=(await loadGoalsData())?.goalsByMatch?.[String(match.matchID)];
+      if(Array.isArray(stored)&&stored.length)detail={goals:stored.map(goal=>({scoreTeam1:goal[0],scoreTeam2:goal[1],matchMinute:goal[2],goalGetterName:goal[3],isPenalty:goal[4],isOwnGoal:goal[5]}))};
+    }catch(error){console.warn('Gespeicherte Torschützen:',error)}
+    if(!Array.isArray(detail?.goals)||!detail.goals.length)try{
       const seasonMatches=await loadSeason(seasonFromDate(match.matchDateTime));
       detail=seasonMatches.find(item=>Number(item.matchID)===Number(match.matchID))||null;
     }catch(error){console.warn('Saison-Torschützen:',error)}
