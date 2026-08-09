@@ -1,6 +1,6 @@
 (()=>{
   const API='https://api.openligadb.de',DATA='h2h-2026.json?v=5';
-  const matchCache=new Map();let duelDataPromise,currentSeasonPromise,tablePromise;
+  const matchCache=new Map(),seasonCache=new Map();let duelDataPromise,currentSeasonPromise,tablePromise;
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 
@@ -31,6 +31,16 @@
     const result=await request;
     if(!result)matchCache.delete(matchId);
     return result;
+  }
+
+  function seasonFromDate(value){
+    const date=new Date(value),year=date.getFullYear(),month=date.getMonth()+1;
+    return month>=7?year:year-1;
+  }
+
+  async function loadSeason(season){
+    if(!seasonCache.has(season))seasonCache.set(season,getJson(`${API}/getmatchdata/bl1/${season}`).catch(error=>{seasonCache.delete(season);throw error}));
+    return seasonCache.get(season);
   }
 
   function score(match){
@@ -86,7 +96,12 @@
   }
 
   async function goalRows(match){
-    const detail=await loadMatch(match.matchID);
+    let detail=null;
+    try{
+      const seasonMatches=await loadSeason(seasonFromDate(match.matchDateTime));
+      detail=seasonMatches.find(item=>Number(item.matchID)===Number(match.matchID))||null;
+    }catch(error){console.warn('Saison-Torschützen:',error)}
+    if(!Array.isArray(detail?.goals)||!detail.goals.length)detail=await loadMatch(match.matchID);
     const goals=Array.isArray(detail?.goals)?detail.goals.slice().sort((a,b)=>Number(a.matchMinute||0)-Number(b.matchMinute||0)):[];
     if(!goals.length)return '<div style="margin-top:7px;color:var(--muted);font-size:11px">Für dieses Bundesliga-Spiel sind bei OpenLigaDB keine Torschützen hinterlegt.</div>';
     return `<div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.07)">${goals.map(goal=>{
