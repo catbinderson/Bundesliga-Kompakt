@@ -52,7 +52,7 @@
       <p id="status" class="muted" style="text-align:center;margin:12px 0">Status wird geladen …</p>
       <div class="admin-actions">
         <button id="refreshAdmin" class="primary-btn" type="button">Status aktualisieren</button>
-        <a class="ghost-btn" href="statistik.html">📊 Nutzungsstatistik öffnen</a>
+        <a id="openOperatorStats" class="ghost-btn" href="statistik.html">📊 Nutzungsstatistik öffnen</a>
         <button id="lockAdmin" class="ghost-btn lock-btn" type="button">🔒 Betreiberbereich sperren</button>
       </div>
     </div>
@@ -66,6 +66,7 @@
     async function unlock(pin){if(await sha256(pin)!==PIN_HASH)return false;unlocked=true;document.getElementById("pinGate").style.display="none";document.getElementById("adminContent").style.display="block";loadAdmin();return true}
     document.getElementById("pinForm").addEventListener("submit",async e=>{e.preventDefault();const ok=await unlock(document.getElementById("pinInput").value);document.getElementById("pinError").textContent=ok?"":"PIN nicht korrekt.";if(!ok){document.getElementById("pinInput").value="";document.getElementById("pinInput").focus()}});
     document.getElementById("lockAdmin").addEventListener("click",lock);
+    document.getElementById("openOperatorStats").addEventListener("click",event=>{if(!unlocked){event.preventDefault();return}sessionStorage.setItem("ligakompakt.operatorStatsTicket",String(Date.now()))});
     window.addEventListener("pageshow",e=>{if(e.persisted)lock()});
     document.addEventListener("visibilitychange",()=>{if(document.hidden&&unlocked)setTimeout(()=>{if(document.hidden)lock()},1500)});
     const valueOf=data=>{if(typeof data==="number")return data;if(!data||typeof data!=="object")return null;for(const key of ["count","value","data"]){const v=data[key];if(typeof v==="number")return v;if(v&&typeof v==="object")for(const n of ["count","value"]){if(typeof v[n]==="number")return v[n]}}return null};
