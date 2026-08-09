@@ -1,4 +1,4 @@
-const APP_VERSION="1.0.1", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
+const APP_VERSION="1.0.2", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
 let currentGroup=1, teams=[],leagueTable=[],favoriteClubMatches=[],notificationTimer=null,liveTimer=null,countdownTimer=null,currentMatches=[],fixtureMatches=[],fixtureFilter="all",previousScores=new Map(),changedMatches=new Set();
 let installPrompt=null;
 const $=s=>document.querySelector(s);
