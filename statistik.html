@@ -6,6 +6,9 @@
   <meta name="theme-color" content="#07101f">
   <meta name="description" content="Anonyme Nutzungsstatistik von LigaKompakt.">
   <title>Nutzungsstatistik · LigaKompakt</title>
+  <script>
+    (()=>{document.documentElement.style.display="none";try{const key="ligakompakt.operatorStatsTicket",issued=Number(sessionStorage.getItem(key)||0);sessionStorage.removeItem(key);if(!issued||Date.now()-issued>15000){location.replace("admin.html");return}document.documentElement.style.display=""}catch{location.replace("admin.html")}})();
+  </script>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css?v=1.0.0-fix1">
