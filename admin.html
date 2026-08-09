@@ -64,12 +64,19 @@
   </main>
   <script>
     const PIN_HASH="c7c63acc2b79f8ae36746930b4ebfdef3aca62b8f7665682145ac26732be1137";
+    const PIN_FAILURES_KEY="ligakompakt.adminPinFailures",PIN_LOCK_KEY="ligakompakt.adminPinLockUntil",PIN_LOCK_MS=10*60*1000;
     const COUNTER_BASE="https://countapi.mileshilliard.com/api/v1/get/ligakompakt_andreas_binder_2026_v2_";
-    let unlocked=false;
+    let unlocked=false,pinLockTimer=null;
     async function sha256(text){const data=new TextEncoder().encode(text);const hash=await crypto.subtle.digest("SHA-256",data);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,"0")).join("")}
-    function lock(){unlocked=false;document.getElementById("adminContent").style.display="none";document.getElementById("pinGate").style.display="grid";document.getElementById("pinInput").value="";setTimeout(()=>document.getElementById("pinInput").focus(),50)}
+    function pinElements(){const form=document.getElementById("pinForm");return{input:document.getElementById("pinInput"),button:form.querySelector('button[type="submit"]'),error:document.getElementById("pinError")}}
+    function pinLockRemaining(){return Math.max(0,Number(localStorage.getItem(PIN_LOCK_KEY)||0)-Date.now())}
+    function formatRemaining(ms){const total=Math.max(1,Math.ceil(ms/1000)),minutes=Math.floor(total/60),seconds=total%60;return `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`}
+    function updatePinLock(){clearTimeout(pinLockTimer);const elements=pinElements(),remaining=pinLockRemaining(),locked=remaining>0;elements.input.disabled=locked;elements.button.disabled=locked;if(locked){elements.error.textContent=`Zu viele falsche Versuche. Erneut möglich in ${formatRemaining(remaining)}.`;pinLockTimer=setTimeout(updatePinLock,1000)}else{localStorage.removeItem(PIN_LOCK_KEY);if(elements.error.textContent.startsWith("Zu viele falsche"))elements.error.textContent=""}return locked}
+    function clearPinFailures(){localStorage.removeItem(PIN_FAILURES_KEY);localStorage.removeItem(PIN_LOCK_KEY);clearTimeout(pinLockTimer)}
+    function registerPinFailure(){const attempts=Number(localStorage.getItem(PIN_FAILURES_KEY)||0)+1;localStorage.setItem(PIN_FAILURES_KEY,String(attempts));const elements=pinElements();if(attempts>=3){localStorage.setItem(PIN_LOCK_KEY,String(Date.now()+PIN_LOCK_MS));elements.input.value="";updatePinLock()}else{const left=3-attempts;elements.error.textContent=`PIN nicht korrekt. Noch ${left} ${left===1?"Versuch":"Versuche"} bis zur 10-Minuten-Sperre.`;elements.input.value="";elements.input.focus()}}
+    function lock(){unlocked=false;document.getElementById("adminContent").style.display="none";document.getElementById("pinGate").style.display="grid";document.getElementById("pinInput").value="";setTimeout(()=>{if(!updatePinLock())document.getElementById("pinInput").focus()},50)}
     async function unlock(pin){if(await sha256(pin)!==PIN_HASH)return false;unlocked=true;document.getElementById("pinGate").style.display="none";document.getElementById("adminContent").style.display="block";loadAdmin();return true}
-    document.getElementById("pinForm").addEventListener("submit",async e=>{e.preventDefault();const ok=await unlock(document.getElementById("pinInput").value);document.getElementById("pinError").textContent=ok?"":"PIN nicht korrekt.";if(!ok){document.getElementById("pinInput").value="";document.getElementById("pinInput").focus()}});
+    document.getElementById("pinForm").addEventListener("submit",async e=>{e.preventDefault();if(updatePinLock())return;const ok=await unlock(document.getElementById("pinInput").value);if(ok){clearPinFailures();document.getElementById("pinError").textContent=""}else registerPinFailure()});
     document.getElementById("lockAdmin").addEventListener("click",lock);
     document.getElementById("openOperatorStats").addEventListener("click",event=>{if(!unlocked){event.preventDefault();return}sessionStorage.setItem("ligakompakt.operatorStatsTicket",String(Date.now()))});
     window.addEventListener("pageshow",e=>{if(e.persisted)lock()});
