@@ -112,7 +112,7 @@
     }catch(error){console.warn('Saison-Torschützen:',error)}
     if(!Array.isArray(detail?.goals)||!detail.goals.length)detail=await loadMatch(match.matchID);
     const goals=Array.isArray(detail?.goals)?detail.goals.slice().sort((a,b)=>Number(a.matchMinute||0)-Number(b.matchMinute||0)):[];
-    if(!goals.length&&Number(match.pointsTeam1)===0&&Number(match.pointsTeam2)===0)return '<div style="margin-top:7px;color:var(--muted);font-size:11px">Keine Tore – daher keine Torschützen.</div>';
+    if(!goals.length&&Number(match.pointsTeam1)===0&&Number(match.pointsTeam2)===0)return '';
     if(!goals.length)return '<div style="margin-top:7px;color:var(--muted);font-size:11px">Für dieses Bundesliga-Spiel sind bei OpenLigaDB keine Torschützen hinterlegt.</div>';
     return `<div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.07)">${goals.map(goal=>{
       const minute=Number(goal?.matchMinute||0);
