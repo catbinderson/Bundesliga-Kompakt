@@ -1,6 +1,7 @@
 (()=>{
   const API='https://api.openligadb.de/getmatchdata/bl1/2026',FALLBACK='crystal-ball-2026.json?v=7';
   const STRENGTH={40:82,7:68,1635:63,16:60,6:59,175:55,112:50,91:48,81:45,95:43,80:41,87:40,134:38,100:37,65:35,9:34,31:31,198:29};
+  const LOGO_FALLBACK={1635:'leipzig-logo.svg?v=1'};
   const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
   const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 
@@ -24,7 +25,7 @@
 
   function forecast(matches){
     const clubs=new Map();
-    const ensure=team=>{if(!clubs.has(team.teamId))clubs.set(team.teamId,{id:team.teamId,name:team.shortName||team.teamName,logo:team.teamIconUrl,played:0,points:0,goals:0,against:0,expected:0,expectedDiff:0});return clubs.get(team.teamId)};
+    const ensure=team=>{if(!clubs.has(team.teamId))clubs.set(team.teamId,{id:team.teamId,name:team.shortName||team.teamName,logo:LOGO_FALLBACK[team.teamId]||team.teamIconUrl,played:0,points:0,goals:0,against:0,expected:0,expectedDiff:0});return clubs.get(team.teamId)};
     for(const match of matches){
       const home=ensure(match.team1),away=ensure(match.team2),result=finalScore(match);
       if(match.matchIsFinished&&result){
