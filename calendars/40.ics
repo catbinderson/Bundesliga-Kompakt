@@ -307,4 +307,14 @@ DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83416@andreas-binder
+DTSTAMP:20260703T071301Z
+DTSTART:20270410T133000Z
+DTEND:20270410T153000Z
+SUMMARY:SC Paderborn 07 – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
 END:VCALENDAR

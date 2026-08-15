@@ -297,4 +297,14 @@ DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83409@andreas-binder
+DTSTAMP:20260703T071158Z
+DTSTART:20270410T133000Z
+DTEND:20270410T153000Z
+SUMMARY:VfB Stuttgart – SV 07 Elversberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
 END:VCALENDAR
