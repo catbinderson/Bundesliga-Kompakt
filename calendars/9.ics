@@ -9,9 +9,9 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:ligakompakt-86017@andreas-binder
-DTSTAMP:20260821T095309Z
-DTSTART:20260822T133000Z
-DTEND:20260822T153000Z
+DTSTAMP:20260821T143729Z
+DTSTART:20260823T130000Z
+DTEND:20260823T150000Z
 SUMMARY:Vorwärts Spoho Köln – FC Schalke 04
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
@@ -23,6 +23,16 @@ DTSTAMP:20260724T202105Z
 DTSTART:20260824T184500Z
 DTEND:20260824T204500Z
 SUMMARY:Hallescher FC – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86028@andreas-binder
+DTSTAMP:20260821T144750Z
+DTSTART:20260830T150000Z
+DTEND:20260830T170000Z
+SUMMARY:FC Schalke 04 – SGS Essen II
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -48,11 +58,41 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86029@andreas-binder
+DTSTAMP:20260821T151842Z
+DTSTART:20260906T110000Z
+DTEND:20260906T130000Z
+SUMMARY:SC Fortuna Köln – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83180@andreas-binder
 DTSTAMP:20260715T094738Z
 DTSTART:20260911T183000Z
 DTEND:20260911T203000Z
 SUMMARY:1. FC Union Berlin – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86044@andreas-binder
+DTSTAMP:20260821T153751Z
+DTSTART:20260913T150000Z
+DTEND:20260913T170000Z
+SUMMARY:FC Schalke 04 – SV Fortuna Freudenberg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86052@andreas-binder
+DTSTAMP:20260821T160150Z
+DTSTART:20260920T150000Z
+DTEND:20260920T170000Z
+SUMMARY:FC Schalke 04 – 1. FFC Recklinghausen
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -68,11 +108,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86068@andreas-binder
+DTSTAMP:20260821T170431Z
+DTSTART:20261004T150000Z
+DTEND:20261004T170000Z
+SUMMARY:FC Schalke 04 – VfR SW Warbeyen 1945 e.V.
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83195@andreas-binder
 DTSTAMP:20260703T060318Z
 DTSTART:20261010T133000Z
 DTEND:20261010T153000Z
 SUMMARY:SC Freiburg – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86069@andreas-binder
+DTSTAMP:20260821T170624Z
+DTSTART:20261011T110000Z
+DTEND:20261011T130000Z
+SUMMARY:DSC Arminia Bielefeld – FC Schalke 04
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -88,11 +148,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86084@andreas-binder
+DTSTAMP:20260821T171154Z
+DTSTART:20261018T150000Z
+DTEND:20261018T170000Z
+SUMMARY:FC Schalke 04 – SSV Rhade
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83217@andreas-binder
 DTSTAMP:20260703T060844Z
 DTSTART:20261024T133000Z
 DTEND:20261024T153000Z
 SUMMARY:1. FC Köln – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86086@andreas-binder
+DTSTAMP:20260821T171239Z
+DTSTART:20261025T120000Z
+DTEND:20261025T140000Z
+SUMMARY:DJK Wacker Mecklenbeck – FC Schalke 04
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -108,11 +188,41 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86060@andreas-binder
+DTSTAMP:20260821T165932Z
+DTSTART:20261031T170000Z
+DTEND:20261031T190000Z
+SUMMARY:Bayer 04 Leverkusen II – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83231@andreas-binder
 DTSTAMP:20260703T061353Z
 DTSTART:20261107T143000Z
 DTEND:20261107T163000Z
 SUMMARY:TSG Hoffenheim – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86100@andreas-binder
+DTSTAMP:20260821T171847Z
+DTSTART:20261108T160000Z
+DTEND:20261108T180000Z
+SUMMARY:FC Schalke 04 – MSV Duisburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86105@andreas-binder
+DTSTAMP:20260821T172145Z
+DTSTART:20261115T140000Z
+DTEND:20261115T160000Z
+SUMMARY:Borussia Dortmund – FC Schalke 04
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -138,6 +248,16 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86116@andreas-binder
+DTSTAMP:20260821T172527Z
+DTSTART:20261129T160000Z
+DTEND:20261129T180000Z
+SUMMARY:FC Schalke 04 – FSV Gütersloh 2009
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83262@andreas-binder
 DTSTAMP:20260706T092525Z
 DTSTART:20261205T143000Z
@@ -148,11 +268,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86122@andreas-binder
+DTSTAMP:20260821T173857Z
+DTSTART:20261206T143000Z
+DTEND:20261206T163000Z
+SUMMARY:DJK Südwest Köln – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83269@andreas-binder
 DTSTAMP:20260703T062314Z
 DTSTART:20261212T143000Z
 DTEND:20261212T163000Z
 SUMMARY:Hamburger SV – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86132@andreas-binder
+DTSTAMP:20260821T174242Z
+DTSTART:20261213T160000Z
+DTEND:20261213T180000Z
+SUMMARY:FC Schalke 04 – Rhenania Bottrop
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -238,6 +378,16 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86140@andreas-binder
+DTSTAMP:20260821T175205Z
+DTSTART:20270214T160000Z
+DTEND:20270214T180000Z
+SUMMARY:FC Schalke 04 – Vorwärts Spoho Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83352@andreas-binder
 DTSTAMP:20260703T065205Z
 DTSTART:20270220T143000Z
@@ -248,11 +398,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86141@andreas-binder
+DTSTAMP:20260821T175450Z
+DTSTART:20270221T120000Z
+DTEND:20270221T140000Z
+SUMMARY:SGS Essen II – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83360@andreas-binder
 DTSTAMP:20260703T065357Z
 DTSTART:20270227T143000Z
 DTEND:20270227T163000Z
 SUMMARY:1. FSV Mainz 05 – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86156@andreas-binder
+DTSTAMP:20260821T180103Z
+DTSTART:20270228T160000Z
+DTEND:20270228T180000Z
+SUMMARY:FC Schalke 04 – SC Fortuna Köln
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -278,11 +448,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86160@andreas-binder
+DTSTAMP:20260821T180714Z
+DTSTART:20270307T140000Z
+DTEND:20270307T160000Z
+SUMMARY:SV Fortuna Freudenberg – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83388@andreas-binder
 DTSTAMP:20260703T070726Z
 DTSTART:20270313T143000Z
 DTEND:20270313T163000Z
 SUMMARY:FC Schalke 04 – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86169@andreas-binder
+DTSTAMP:20260821T183325Z
+DTSTART:20270314T140000Z
+DTEND:20270314T160000Z
+SUMMARY:1. FFC Recklinghausen – FC Schalke 04
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -298,6 +488,26 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86180@andreas-binder
+DTSTAMP:20260821T183625Z
+DTSTART:20270321T160000Z
+DTEND:20270321T180000Z
+SUMMARY:FC Schalke 04 – Bayer 04 Leverkusen II
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86196@andreas-binder
+DTSTAMP:20260821T190735Z
+DTSTART:20270329T150000Z
+DTEND:20270329T170000Z
+SUMMARY:FC Schalke 04 – DSC Arminia Bielefeld
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83406@andreas-binder
 DTSTAMP:20260703T071114Z
 DTSTART:20270403T133000Z
@@ -308,11 +518,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86199@andreas-binder
+DTSTAMP:20260821T190949Z
+DTSTART:20270404T113000Z
+DTEND:20270404T133000Z
+SUMMARY:SSV Rhade – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83408@andreas-binder
 DTSTAMP:20260703T071149Z
 DTSTART:20270410T133000Z
 DTEND:20270410T153000Z
 SUMMARY:Borussia Dortmund – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86212@andreas-binder
+DTSTAMP:20260821T192020Z
+DTSTART:20270411T150000Z
+DTEND:20270411T170000Z
+SUMMARY:FC Schalke 04 – DJK Wacker Mecklenbeck
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/

@@ -8,16 +8,6 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:ligakompakt-86013@andreas-binder
-DTSTAMP:20260821T095118Z
-DTSTART:20260822T133000Z
-DTEND:20260822T153000Z
-SUMMARY:Borussia Dortmund – DSC Arminia Bielefeld
-DESCRIPTION:Bundesliga-Spiel · LigaKompakt
-LOCATION:Rote Erde \, Dortmund
-URL:https://catbinderson.github.io/Bundesliga-Kompakt/
-END:VEVENT
-BEGIN:VEVENT
 UID:ligakompakt-84304@andreas-binder
 DTSTAMP:20260705T173628Z
 DTSTART:20260822T183000Z
@@ -33,6 +23,16 @@ DTSTAMP:20260715T094437Z
 DTSTART:20260829T163000Z
 DTEND:20260829T183000Z
 SUMMARY:Borussia Dortmund – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86024@andreas-binder
+DTSTAMP:20260821T144649Z
+DTSTART:20260830T130000Z
+DTEND:20260830T150000Z
+SUMMARY:SSV Rhade – Borussia Dortmund
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -58,11 +58,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86034@andreas-binder
+DTSTAMP:20260821T152028Z
+DTSTART:20260906T130000Z
+DTEND:20260906T150000Z
+SUMMARY:Borussia Dortmund – DJK Wacker Mecklenbeck
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83174@andreas-binder
 DTSTAMP:20260703T055757Z
 DTSTART:20260912T133000Z
 DTEND:20260912T153000Z
 SUMMARY:Borussia Dortmund – SC Paderborn 07
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86043@andreas-binder
+DTSTAMP:20260821T153804Z
+DTSTART:20260913T133000Z
+DTEND:20260913T153000Z
+SUMMARY:MSV Duisburg – Borussia Dortmund
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -78,11 +98,51 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86048@andreas-binder
+DTSTAMP:20260821T160013Z
+DTSTART:20260920T130000Z
+DTEND:20260920T150000Z
+SUMMARY:SV Fortuna Freudenberg – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86058@andreas-binder
+DTSTAMP:20260821T165705Z
+DTSTART:20260927T130000Z
+DTEND:20260927T150000Z
+SUMMARY:Borussia Dortmund – FSV Gütersloh 2009
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86066@andreas-binder
+DTSTAMP:20260821T170403Z
+DTSTART:20261004T133000Z
+DTEND:20261004T153000Z
+SUMMARY:DJK Südwest Köln – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83192@andreas-binder
 DTSTAMP:20260703T060241Z
 DTSTART:20261010T133000Z
 DTEND:20261010T153000Z
 SUMMARY:Borussia Dortmund – SV Werder Bremen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86073@andreas-binder
+DTSTAMP:20260821T170758Z
+DTSTART:20261011T130000Z
+DTEND:20261011T150000Z
+SUMMARY:Borussia Dortmund – Rhenania Bottrop
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -98,11 +158,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86081@andreas-binder
+DTSTAMP:20260821T171119Z
+DTSTART:20261018T130000Z
+DTEND:20261018T150000Z
+SUMMARY:Vorwärts Spoho Köln – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83210@andreas-binder
 DTSTAMP:20260703T060705Z
 DTSTART:20261024T133000Z
 DTEND:20261024T153000Z
 SUMMARY:Borussia Dortmund – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86089@andreas-binder
+DTSTAMP:20260821T171320Z
+DTSTART:20261025T140000Z
+DTEND:20261025T160000Z
+SUMMARY:Borussia Dortmund – SGS Essen II
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -128,6 +208,26 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86094@andreas-binder
+DTSTAMP:20260821T171711Z
+DTSTART:20261108T120000Z
+DTEND:20261108T140000Z
+SUMMARY:SC Fortuna Köln – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86105@andreas-binder
+DTSTAMP:20260821T172145Z
+DTSTART:20261115T140000Z
+DTEND:20261115T160000Z
+SUMMARY:Borussia Dortmund – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83242@andreas-binder
 DTSTAMP:20260703T061635Z
 DTSTART:20261121T143000Z
@@ -148,6 +248,16 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86112@andreas-binder
+DTSTAMP:20260821T172442Z
+DTSTART:20261129T140000Z
+DTEND:20261129T160000Z
+SUMMARY:1. FFC Recklinghausen – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83262@andreas-binder
 DTSTAMP:20260706T092525Z
 DTSTART:20261205T143000Z
@@ -158,11 +268,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86119@andreas-binder
+DTSTAMP:20260821T173802Z
+DTSTART:20261206T140000Z
+DTEND:20261206T160000Z
+SUMMARY:Borussia Dortmund – Bayer 04 Leverkusen II
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83264@andreas-binder
 DTSTAMP:20260703T062224Z
 DTSTART:20261212T143000Z
 DTEND:20261212T163000Z
 SUMMARY:Borussia Dortmund – FC Augsburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86129@andreas-binder
+DTSTAMP:20260821T174210Z
+DTSTART:20261213T140000Z
+DTEND:20261213T160000Z
+SUMMARY:VfR SW Warbeyen 1945 e.V. – Borussia Dortmund
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -248,6 +378,16 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86133@andreas-binder
+DTSTAMP:20260821T174941Z
+DTSTART:20270214T120000Z
+DTEND:20270214T140000Z
+SUMMARY:DSC Arminia Bielefeld – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83351@andreas-binder
 DTSTAMP:20260703T065156Z
 DTSTART:20270220T143000Z
@@ -258,11 +398,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86143@andreas-binder
+DTSTAMP:20260821T175610Z
+DTSTART:20270221T140000Z
+DTEND:20270221T160000Z
+SUMMARY:Borussia Dortmund – SSV Rhade
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83354@andreas-binder
 DTSTAMP:20260703T065238Z
 DTSTART:20270227T143000Z
 DTEND:20270227T163000Z
 SUMMARY:Borussia Dortmund – 1. FC Union Berlin
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86150@andreas-binder
+DTSTAMP:20260821T175950Z
+DTSTART:20270228T120000Z
+DTEND:20270228T140000Z
+SUMMARY:DJK Wacker Mecklenbeck – Borussia Dortmund
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -288,11 +448,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86161@andreas-binder
+DTSTAMP:20260821T180723Z
+DTSTART:20270307T140000Z
+DTEND:20270307T160000Z
+SUMMARY:Borussia Dortmund – MSV Duisburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83389@andreas-binder
 DTSTAMP:20260703T070734Z
 DTSTART:20270313T143000Z
 DTEND:20270313T163000Z
 SUMMARY:SV 07 Elversberg – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86168@andreas-binder
+DTSTAMP:20260821T183313Z
+DTSTART:20270314T140000Z
+DTEND:20270314T160000Z
+SUMMARY:Borussia Dortmund – SV Fortuna Freudenberg
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
@@ -308,6 +488,26 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86175@andreas-binder
+DTSTAMP:20260821T183521Z
+DTSTART:20270321T130000Z
+DTEND:20270321T150000Z
+SUMMARY:FSV Gütersloh 2009 – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86194@andreas-binder
+DTSTAMP:20260821T190714Z
+DTSTART:20270329T133000Z
+DTEND:20270329T153000Z
+SUMMARY:Rhenania Bottrop – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83401@andreas-binder
 DTSTAMP:20260703T071032Z
 DTSTART:20270403T133000Z
@@ -318,11 +518,31 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86202@andreas-binder
+DTSTAMP:20260821T191041Z
+DTSTART:20270404T130000Z
+DTEND:20270404T150000Z
+SUMMARY:Borussia Dortmund – Vorwärts Spoho Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83408@andreas-binder
 DTSTAMP:20260703T071149Z
 DTSTART:20270410T133000Z
 DTEND:20270410T153000Z
 SUMMARY:Borussia Dortmund – FC Schalke 04
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86205@andreas-binder
+DTSTAMP:20260821T191126Z
+DTSTART:20270411T110000Z
+DTEND:20270411T130000Z
+SUMMARY:SGS Essen II – Borussia Dortmund
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
