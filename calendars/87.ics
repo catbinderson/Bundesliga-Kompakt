@@ -307,4 +307,14 @@ DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83421@andreas-binder
+DTSTAMP:20260703T071434Z
+DTSTART:20270417T133000Z
+DTEND:20270417T153000Z
+SUMMARY:Eintracht Frankfurt – Borussia Mönchengladbach
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
 END:VCALENDAR

@@ -297,4 +297,14 @@ DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83423@andreas-binder
+DTSTAMP:20260703T071451Z
+DTSTART:20270417T133000Z
+DTEND:20270417T153000Z
+SUMMARY:1. FC Union Berlin – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
 END:VCALENDAR

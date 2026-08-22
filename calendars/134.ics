@@ -8,16 +8,6 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:ligakompakt-81853@andreas-binder
-DTSTAMP:20260705T093340Z
-DTSTART:20260822T133000Z
-DTEND:20260822T153000Z
-SUMMARY:Lüneburger SK Hansa – SV Werder Bremen
-DESCRIPTION:Bundesliga-Spiel · LigaKompakt
-LOCATION:
-URL:https://catbinderson.github.io/Bundesliga-Kompakt/
-END:VEVENT
-BEGIN:VEVENT
 UID:ligakompakt-83159@andreas-binder
 DTSTAMP:20260715T094451Z
 DTSTART:20260830T133000Z
@@ -303,6 +293,16 @@ DTSTAMP:20260703T071253Z
 DTSTART:20270410T133000Z
 DTEND:20270410T153000Z
 SUMMARY:SV Werder Bremen – Eintracht Frankfurt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83419@andreas-binder
+DTSTAMP:20260703T071417Z
+DTSTART:20270417T133000Z
+DTEND:20270417T153000Z
+SUMMARY:Bayer 04 Leverkusen – SV Werder Bremen
 DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/

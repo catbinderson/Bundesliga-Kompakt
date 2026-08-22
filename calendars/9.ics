@@ -547,4 +547,14 @@ DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83424@andreas-binder
+DTSTAMP:20260703T071459Z
+DTSTART:20270417T133000Z
+DTEND:20270417T153000Z
+SUMMARY:FC Schalke 04 – Hamburger SV
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
 END:VCALENDAR

@@ -317,4 +317,14 @@ DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-83417@andreas-binder
+DTSTAMP:20260703T071400Z
+DTSTART:20270417T133000Z
+DTEND:20270417T153000Z
+SUMMARY:FC Bayern München – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
 END:VCALENDAR
