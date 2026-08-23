@@ -547,4 +547,14 @@ DESCRIPTION:Bundesliga-Spiel · LigaKompakt
 LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86217@andreas-binder
+DTSTAMP:20260821T192246Z
+DTSTART:20270418T130000Z
+DTEND:20270418T150000Z
+SUMMARY:Borussia Dortmund – SC Fortuna Köln
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
 END:VCALENDAR
