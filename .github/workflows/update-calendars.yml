@@ -25,7 +25,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Pillow installieren
+      - name: Abhängigkeiten installieren
         run: python -m pip install --quiet pillow
 
       - name: Facebook-Vorschaubild erzeugen
@@ -33,17 +33,10 @@ jobs:
           python - <<'PY'
           from PIL import Image, ImageDraw, ImageFont
           from pathlib import Path
-
           W,H=1200,630
-          bg=(7,16,31)
-          card=(14,26,48)
-          green=(57,219,134)
-          white=(248,251,255)
-          muted=(169,184,204)
-          im=Image.new('RGB',(W,H),bg)
-          d=ImageDraw.Draw(im)
-          d.rounded_rectangle((55,55,1145,575), radius=42, fill=card, outline=(32,54,86), width=3)
-
+          bg=(7,16,31); card=(14,26,48); green=(57,219,134); white=(248,251,255); muted=(169,184,204)
+          im=Image.new('RGB',(W,H),bg); d=ImageDraw.Draw(im)
+          d.rounded_rectangle((55,55,1145,575),radius=42,fill=card,outline=(32,54,86),width=3)
           def font(size,bold=False):
               candidates=[
                 '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf' if bold else '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
@@ -52,22 +45,21 @@ jobs:
               for p in candidates:
                   if Path(p).exists(): return ImageFont.truetype(p,size)
               return ImageFont.load_default()
-
           icon=Image.open('icon-512.png').convert('RGBA').resize((190,190),Image.Resampling.LANCZOS)
           im.paste(icon,(105,165),icon)
           d.text((350,130),'LigaKompakt',font=font(72,True),fill=white)
-          d.text((352,225),'Bundesliga. Live. Kompakt.',font=font(36,False),fill=muted)
+          d.text((352,225),'Bundesliga. Live. Kompakt.',font=font(36),fill=muted)
           d.rounded_rectangle((350,305,790,385),radius=25,fill=green)
           d.text((390,323),'100 % KOSTENLOS',font=font(34,True),fill=bg)
-          d.text((352,430),'Live · Tabelle · Spielplan · Tipps · Statistiken',font=font(26,False),fill=white)
-          d.text((352,485),'Keine Anmeldung · Keine versteckten Gebühren',font=font(24,False),fill=muted)
+          d.text((352,430),'Live · Tabelle · Spielplan · Tipps · Statistiken',font=font(26),fill=white)
+          d.text((352,485),'Keine Anmeldung · Keine versteckten Gebühren',font=font(24),fill=muted)
           im.save('facebook-preview-v6.jpg','JPEG',quality=92,optimize=True,progressive=False)
           PY
 
       - name: Kalender neu erzeugen
         run: python scripts/update_calendars.py
 
-      - name: App-Version und PWA-Cache synchronisieren
+      - name: Release-Dateien synchronisieren
         run: |
           python - <<'PY'
           import json, re
@@ -86,8 +78,12 @@ jobs:
           text=index.read_text(encoding='utf-8')
           text=re.sub(r'<b>v\d+\.\d+\.\d+</b>', f'<b>v{version}</b>', text, count=1)
           text=re.sub(r'app\.js\?v=[^"\']+', f'app.js?v={version}-build{build}', text)
+          text=re.sub(r'fetch-fix\.js\?v=\d+', f'fetch-fix.js?v={build}', text)
+          text=re.sub(r'data-fix\.js\?v=\d+', f'data-fix.js?v={build}', text)
+          if 'fetch-fix.js' not in text:
+              text=text.replace(f'<script src="app.js?v={version}-build{build}"></script>', f'<script src="fetch-fix.js?v={build}"></script>\n  <script src="app.js?v={version}-build{build}"></script>', 1)
           if 'data-fix.js' not in text:
-              text=text.replace('</body>', '  <script src="data-fix.js?v=1"></script>\n</body>', 1)
+              text=text.replace('</body>', f'  <script src="data-fix.js?v={build}"></script>\n</body>', 1)
           index.write_text(text, encoding='utf-8')
 
           sw=Path('sw.js')
@@ -95,8 +91,13 @@ jobs:
           text=re.sub(r'const BUILD=\d+,CACHE="[^"]+"', f'const BUILD={build},CACHE="ligakompakt-v{version}-build{build}"', text, count=1)
           text=re.sub(r'app\.js\?v=[^"\']+', f'app.js?v={version}-build{build}', text)
           text=re.sub(r'update-manager\.js\?v=\d+', f'update-manager.js?v={build}', text)
-          if '"data-fix.js?v=1"' not in text:
-              text=text.replace(f'"app.js?v={version}-build{build}",', f'"app.js?v={version}-build{build}","data-fix.js?v=1",', 1)
+          text=re.sub(r'fetch-fix\.js\?v=\d+', f'fetch-fix.js?v={build}', text)
+          text=re.sub(r'data-fix\.js\?v=\d+', f'data-fix.js?v={build}', text)
+          marker=f'"app.js?v={version}-build{build}",'
+          if '"fetch-fix.js?v=' not in text:
+              text=text.replace(marker, f'"fetch-fix.js?v={build}",{marker}', 1)
+          if '"data-fix.js?v=' not in text:
+              text=text.replace(marker, f'{marker}"data-fix.js?v={build}",', 1)
           sw.write_text(text, encoding='utf-8')
           PY
 
@@ -105,13 +106,13 @@ jobs:
         run: |
           git config user.name "LigaKompakt Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add calendars facebook-preview-v6.jpg app.js index.html sw.js version.json data-fix.js
+          git add calendars facebook-preview-v6.jpg app.js index.html sw.js version.json data-fix.js fetch-fix.js
           if git diff --cached --quiet; then
             echo "Keine Änderungen vorhanden."
             echo "updated=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git commit -m "Aktualisiere LigaKompakt Kalenderdaten und PWA-Version [skip ci]"
+          git commit -m "Aktualisiere LigaKompakt Kalenderdaten und Release [skip ci]"
           git push
           echo "updated=true" >> "$GITHUB_OUTPUT"
           echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
@@ -132,21 +133,18 @@ jobs:
           TARGET_COMMIT: ${{ steps.changes.outputs.commit }}
         run: |
           set -euo pipefail
-          for attempt in $(seq 1 30); do
+          for attempt in $(seq 1 36); do
             json=$(gh api -H "Accept: application/vnd.github+json" "repos/${{ github.repository }}/pages/builds/latest")
             status=$(printf '%s' "$json" | python -c 'import json,sys; print(json.load(sys.stdin).get("status", ""))')
             commit=$(printf '%s' "$json" | python -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')
             error=$(printf '%s' "$json" | python -c 'import json,sys; print((json.load(sys.stdin).get("error") or {}).get("message") or "")')
             echo "Pages-Status: $status · Commit: $commit"
-            if [ -n "$error" ]; then
-              echo "GitHub Pages Fehler: $error" >&2
-              exit 1
-            fi
+            if [ -n "$error" ]; then echo "GitHub Pages Fehler: $error" >&2; exit 1; fi
             if [ "$commit" = "$TARGET_COMMIT" ] && [ "$status" = "built" ]; then
               echo "GitHub Pages wurde erfolgreich veröffentlicht."
               exit 0
             fi
             sleep 5
           done
-          echo "GitHub Pages hat den neuen Stand nicht innerhalb von 150 Sekunden bestätigt." >&2
+          echo "GitHub Pages hat den neuen Stand nicht rechtzeitig bestätigt." >&2
           exit 1
