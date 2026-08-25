@@ -1,4 +1,4 @@
-const APP_VERSION="1.0.10", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
+const APP_VERSION="1.0.11", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
 let currentGroup=1, teams=[],leagueTable=[],favoriteClubMatches=[],notificationTimer=null,liveTimer=null,countdownTimer=null,currentMatches=[],fixtureMatches=[],fixtureFilter="all",previousScores=new Map(),changedMatches=new Set();
 let installPrompt=null;
 const $=s=>document.querySelector(s);
@@ -41,7 +41,32 @@ function updateCountdown(){const el=$("#nextKickoff"),target=Number(el?.dataset.
 function updateFavoriteCountdown(){const el=$("#favoriteCountdown"),target=Number(el?.dataset.target);if(!el||!target)return;el.textContent=target<=Date.now()?"Anpfiff läuft":`Noch ${countdownText(target)}`}
 function renderLiveCenter(matches){const live=matches.filter(isLiveMatch),finished=matches.filter(m=>m.matchIsFinished),upcoming=matches.filter(m=>!m.matchIsFinished&&!isLiveMatch(m)&&new Date(m.matchDateTime)>new Date()).sort((a,b)=>new Date(a.matchDateTime)-new Date(b.matchDateTime));$("#liveCount").textContent=live.length;$("#finishedCount").textContent=finished.length;$("#upcomingCount").textContent=upcoming.length;const next=$("#nextKickoff");if(live.length){next.removeAttribute("data-target");next.querySelector("span").textContent="Gerade live";next.querySelector("strong").textContent=live.map(m=>`${m.team1?.shortName||m.team1?.teamName} – ${m.team2?.shortName||m.team2?.teamName}`).join(" · ")}else if(upcoming.length){const m=upcoming[0],target=new Date(m.matchDateTime).getTime();next.dataset.target=String(target);next.querySelector("span").textContent=`Nächster Anpfiff · ${m.team1?.shortName||m.team1?.teamName} – ${m.team2?.shortName||m.team2?.teamName}`;updateCountdown()}else{next.removeAttribute("data-target");next.querySelector("span").textContent="Spieltag";next.querySelector("strong").textContent="Alle Spiele beendet"}}
 function skeletons(el,count=3){el.innerHTML=Array.from({length:count},()=>'<div class="card skeleton"><i></i><i></i><i></i></div>').join("")}
-async function get(path){const r=await fetch(API+path,{cache:"no-store"});if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()}
+async function get(path){
+  const cacheKey=`ligakompakt.api.${path}`;
+  let lastError=null;
+  for(let attempt=1;attempt<=3;attempt++){
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),10000);
+    try{
+      const r=await fetch(API+path,{cache:"no-store",signal:controller.signal});
+      if(!r.ok)throw new Error(`HTTP ${r.status}`);
+      const data=await r.json();
+      try{localStorage.setItem(cacheKey,JSON.stringify({saved:Date.now(),data}))}catch{}
+      return data;
+    }catch(e){lastError=e;if(attempt<3)await new Promise(resolve=>setTimeout(resolve,500*attempt))}
+    finally{clearTimeout(timer)}
+  }
+  try{
+    const cached=JSON.parse(localStorage.getItem(cacheKey)||"null");
+    if(cached?.data!=null){
+      const banner=$("#networkBanner");
+      if(banner){banner.textContent=`Verbindung gestört – gespeicherte Daten für ${path} werden angezeigt`;banner.classList.remove("hidden")}
+      return cached.data;
+    }
+  }catch{}
+  const detail=lastError?.name==="AbortError"?"Zeitüberschreitung":(lastError?.message||"unbekannter Fehler");
+  throw new Error(`${path} · ${detail}`);
+}
 function clubColors(name=""){const n=name.toLowerCase(),sets=[["dortmund","#fdeb19","#111111"],["bremen","#00864a","#ffffff"],["wolfsburg","#65b32e","#ffffff"],["gladbach","#15a05c","#111111"],["augsburg","#ba3733","#46714b"],["st. pauli","#6f4e37","#ffffff"],["hamburg","#005aaa","#ffffff"],["hoffenheim","#1961a9","#ffffff"],["heidenheim","#e30613","#184b91"],["freiburg","#e30613","#111111"],["mainz","#c3142d","#ffffff"],["frankfurt","#e1000f","#111111"],["leverkusen","#e32221","#111111"],["leipzig","#dd0741","#ffffff"],["stuttgart","#e32219","#ffffff"],["bayern","#dc052d","#0066b2"],["union","#e30613","#ffffff"],["köln","#ed1c24","#ffffff"]];return sets.find(([key])=>n.includes(key))?.slice(1)||["#39db86","#4fa3ff"]}
 function formFor(matches,teamId){return matches.filter(m=>m.matchIsFinished).sort((a,b)=>new Date(b.matchDateTime)-new Date(a.matchDateTime)).slice(0,5).reverse().map(m=>{const r=finalResult(m);if(!r)return"–";const home=String(m.team1?.teamId)===String(teamId),own=home?r.pointsTeam1:r.pointsTeam2,other=home?r.pointsTeam2:r.pointsTeam1;return own>other?"S":own<other?"N":"U"})}
 function standingId(t){return String(t?.teamInfoId??t?.teamId??"")}
@@ -106,7 +131,7 @@ function updateMatchdayNav(){const previous=$("#previousMatchday"),next=$("#next
 async function loadFixtures(group=currentGroup){currentGroup=Math.max(1,Math.min(34,Number(group)||1));updateMatchdayNav();skeletons($("#fixturesList"));fixtureMatches=await get(`/getmatchdata/${LEAGUE}/${SEASON}/${currentGroup}`);$("#matchdayTitle").textContent=`${currentGroup}. Spieltag`;renderFilteredFixtures()}
 async function loadToday(silent=false){if(!silent)skeletons($("#todayMatches"));const data=await get(`/getmatchdata/${LEAGUE}`);changedMatches=new Set();data.forEach(m=>{const key=String(m.matchID),score=finalScore(m),old=previousScores.get(key);if(old&&score!=="–"&&old!==score)changedMatches.add(key);previousScores.set(key,score)});currentMatches=data;currentGroup=data[0]?.group?.groupOrderID||1;$("#todayTitle").textContent=`${currentGroup}. Spieltag`;$("#todaySub").textContent=`Live-Daten · aktualisiert ${new Intl.DateTimeFormat("de-DE",{hour:"2-digit",minute:"2-digit",second:"2-digit"}).format(new Date())}`;renderLiveCenter(data);renderMatches($("#todayMatches"),chronological(data));if(changedMatches.size)setTimeout(()=>document.querySelectorAll(".score-changed").forEach(x=>x.classList.remove("score-changed")),2500)}
 function startLiveCenter(){clearInterval(liveTimer);clearInterval(countdownTimer);liveTimer=setInterval(()=>{if(document.visibilityState==="visible"&&navigator.onLine)loadToday(true).catch(console.warn)},30000);countdownTimer=setInterval(()=>{updateCountdown();updateFavoriteCountdown()},1000)}
-async function loadTeams(){teams=await get(`/getavailableteams/${LEAGUE}/${SEASON}`);const options='<option value="">Verein wählen …</option>'+teams.map(t=>`<option value="${t.teamId}">${escapeHtml(t.teamName)}</option>`).join("");$("#teamSelect").innerHTML=options;$("#onboardingTeam").innerHTML=options;setupComparison();const saved=localStorage.getItem("ligakompakt.favorite");if(saved){$("#teamSelect").value=saved;$("#onboardingTeam").value=saved;renderFavoriteHero(saved);await loadClub(saved,false)}else if(localStorage.getItem("ligakompakt.onboarded")!=="1")$("#onboarding").classList.remove("hidden")}
+async function loadTeams(){teams=await get(`/getavailableteams/${LEAGUE}/${SEASON}`);const options='<option value="">Verein wählen …</option>'+teams.map(t=>`<option value="${t.teamId}">${escapeHtml(t.teamName)}</option>`).join("");$("#teamSelect").innerHTML=options;$("#onboardingTeam").innerHTML=options;setupComparison();const saved=localStorage.getItem("ligakompakt.favorite");if(saved){$("#teamSelect").value=saved;$("#onboardingTeam").value=saved;renderFavoriteHero(saved);loadClub(saved,false).catch(e=>console.warn("Mein Verein konnte nicht aktualisiert werden:",e))}else if(localStorage.getItem("ligakompakt.onboarded")!=="1")$("#onboarding").classList.remove("hidden")}
 async function loadClub(teamId,save=true){
   if(!teamId){$("#clubHeader").innerHTML="";$("#clubContent").innerHTML="";renderFavoriteHero("");return}
   if(save){localStorage.setItem("ligakompakt.favorite",teamId);localStorage.setItem("ligakompakt.onboarded","1");localStorage.removeItem("ligakompakt.matchState");if(leagueTable.length)renderLeagueTable(leagueTable);if(fixtureMatches.length&&fixtureFilter==="favorite")renderFilteredFixtures()}
@@ -125,10 +150,10 @@ async function loadClub(teamId,save=true){
   renderMatches($("#clubUpcoming"),upcoming.slice(1));renderMatches($("#clubPast"),past);startNotificationMonitor();
 }
 function setupMatchdays(){const s=$("#matchdaySelect");s.innerHTML=Array.from({length:34},(_,i)=>`<option value="${i+1}">${i+1}. Spieltag</option>`).join("");s.onchange=e=>loadFixtures(Number(e.target.value)).catch(showError);$("#previousMatchday").onclick=()=>loadFixtures(currentGroup-1).catch(showError);$("#nextMatchday").onclick=()=>loadFixtures(currentGroup+1).catch(showError);updateMatchdayNav()}
-function showError(e){console.error(e);$("#todayMatches").innerHTML='<div class="error">Daten konnten nicht geladen werden. Bitte später erneut versuchen.</div>';$("#liveDot").textContent=navigator.onLine?"Fehler":"Offline"}
+function showError(e){console.error(e);const detail=escapeHtml(e?.message||String(e)||"Unbekannter Fehler");const target=$("#todayMatches");if(target&&!currentMatches.length)target.innerHTML=`<div class="error"><b>Datenabruf fehlgeschlagen</b><br><small>${detail}</small></div>`;$("#todaySub").textContent=`Aktualisierung fehlerhaft · ${detail}`;$("#liveDot").textContent=navigator.onLine?"Teilfehler":"Offline"}
 function showView(id){document.querySelectorAll(".nav").forEach(x=>x.classList.toggle("active",x.dataset.view===id));document.querySelectorAll(".view").forEach(x=>x.classList.toggle("active",x.id===id));window.scrollTo({top:0,behavior:"smooth"})}
 function updateNetwork(){const offline=!navigator.onLine;$("#networkBanner").classList.toggle("hidden",!offline);if(offline)$("#liveDot").textContent="Offline"}
-async function refreshAll(){try{$("#refreshBtn").classList.add("spinning");$("#liveDot").textContent="Lädt …";await Promise.all([loadToday(),loadTable(),loadTeams()]);setupMatchdays();$("#matchdaySelect").value=String(currentGroup);await loadFixtures(currentGroup);$("#liveDot").textContent=navigator.onLine?"Online":"Offline";$("#updatedAt").textContent=`Zuletzt aktualisiert: ${new Intl.DateTimeFormat("de-DE",{hour:"2-digit",minute:"2-digit"}).format(new Date())}`}catch(e){showError(e)}finally{$("#refreshBtn").classList.remove("spinning")}}
+async function refreshAll(){$("#refreshBtn").classList.add("spinning");$("#liveDot").textContent="Lädt …";const failures=[];try{const results=await Promise.allSettled([loadToday(),loadTable(),loadTeams()]);const labels=["Live-Daten","Tabelle","Vereine"];results.forEach((r,i)=>{if(r.status==="rejected")failures.push(`${labels[i]}: ${r.reason?.message||r.reason}`)});if(results[0].status==="rejected")throw results[0].reason;setupMatchdays();$("#matchdaySelect").value=String(currentGroup);try{await loadFixtures(currentGroup)}catch(e){failures.push(`Spieltag: ${e?.message||e}`)}$("#liveDot").textContent=failures.length?"Teilweise online":(navigator.onLine?"Online":"Offline");$("#updatedAt").textContent=`Zuletzt aktualisiert: ${new Intl.DateTimeFormat("de-DE",{hour:"2-digit",minute:"2-digit"}).format(new Date())}`;if(failures.length){console.warn("LigaKompakt Teilfehler",failures);$("#todaySub").textContent=`Live-Daten aktuell · Teilfehler: ${failures.join(" | ")}`}}catch(e){showError(e)}finally{$("#refreshBtn").classList.remove("spinning")}}
 document.querySelectorAll(".nav").forEach(b=>b.onclick=()=>showView(b.dataset.view));document.querySelectorAll("[data-goto]").forEach(b=>b.onclick=()=>showView(b.dataset.goto));
 document.querySelectorAll("[data-fixture-filter]").forEach(button=>button.onclick=()=>{fixtureFilter=button.dataset.fixtureFilter;renderFilteredFixtures()});
 $("#teamSelect").onchange=e=>loadClub(e.target.value).catch(showError);$("#refreshBtn").onclick=refreshAll;$("#shareAppBtn").onclick=()=>shareApp().catch(error=>{if(error?.name!=="AbortError")showError(error)});
