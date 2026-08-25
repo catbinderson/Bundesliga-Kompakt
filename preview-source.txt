@@ -2,4 +2,4 @@ LigaKompakt Facebook Preview v6
 1200x630
 100 % KOSTENLOS
 Bundesliga. Live. Kompakt.
-Trigger 6 · Daten-Fix v1.0.9 Build 24
+Trigger 7 · Release v1.0.10 Build 25
