@@ -2,4 +2,4 @@ LigaKompakt Facebook Preview v6
 1200x630
 100 % KOSTENLOS
 Bundesliga. Live. Kompakt.
-Trigger 3
+Trigger 4 · Kalender-Fix 1.0.7
