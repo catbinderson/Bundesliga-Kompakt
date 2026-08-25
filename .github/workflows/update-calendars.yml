@@ -55,7 +55,6 @@ jobs:
 
           icon=Image.open('icon-512.png').convert('RGBA').resize((190,190),Image.Resampling.LANCZOS)
           im.paste(icon,(105,165),icon)
-
           d.text((350,130),'LigaKompakt',font=font(72,True),fill=white)
           d.text((352,225),'Bundesliga. Live. Kompakt.',font=font(36,False),fill=muted)
           d.rounded_rectangle((350,305,790,385),radius=25,fill=green)
@@ -68,21 +67,33 @@ jobs:
       - name: Kalender neu erzeugen
         run: python scripts/update_calendars.py
 
-      - name: App-Version auf 1.0.7 anheben
+      - name: App-Version und PWA-Cache synchronisieren
         run: |
           python - <<'PY'
+          import json, re
           from pathlib import Path
 
-          replacements = {
-              'app.js': [('const APP_VERSION="1.0.6"', 'const APP_VERSION="1.0.7"')],
-              'index.html': [('<b>v1.0.6</b>', '<b>v1.0.7</b>')],
-          }
-          for filename, pairs in replacements.items():
-              path = Path(filename)
-              text = path.read_text(encoding='utf-8')
-              for old, new in pairs:
-                  text = text.replace(old, new)
-              path.write_text(text, encoding='utf-8')
+          meta=json.loads(Path('version.json').read_text(encoding='utf-8'))
+          version=str(meta['version'])
+          build=int(meta['build'])
+
+          app=Path('app.js')
+          text=app.read_text(encoding='utf-8')
+          text=re.sub(r'^const APP_VERSION="[^"]+"', f'const APP_VERSION="{version}"', text, count=1)
+          app.write_text(text, encoding='utf-8')
+
+          index=Path('index.html')
+          text=index.read_text(encoding='utf-8')
+          text=re.sub(r'<b>v\d+\.\d+\.\d+</b>', f'<b>v{version}</b>', text, count=1)
+          text=re.sub(r'app\.js\?v=[^"\']+', f'app.js?v={version}-build{build}', text)
+          index.write_text(text, encoding='utf-8')
+
+          sw=Path('sw.js')
+          text=sw.read_text(encoding='utf-8')
+          text=re.sub(r'const BUILD=\d+,CACHE="[^"]+"', f'const BUILD={build},CACHE="ligakompakt-v{version}-build{build}"', text, count=1)
+          text=re.sub(r'app\.js\?v=[^"\']+', f'app.js?v={version}-build{build}', text)
+          text=re.sub(r'update-manager\.js\?v=\d+', f'update-manager.js?v={build}', text)
+          sw.write_text(text, encoding='utf-8')
           PY
 
       - name: Änderungen speichern
@@ -90,13 +101,13 @@ jobs:
         run: |
           git config user.name "LigaKompakt Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add calendars facebook-preview-v6.jpg app.js index.html
+          git add calendars facebook-preview-v6.jpg app.js index.html sw.js version.json
           if git diff --cached --quiet; then
             echo "Keine Änderungen vorhanden."
             echo "updated=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git commit -m "Aktualisiere LigaKompakt Kalenderdaten [skip ci]"
+          git commit -m "Aktualisiere LigaKompakt Kalenderdaten und PWA-Version [skip ci]"
           git push
           echo "updated=true" >> "$GITHUB_OUTPUT"
           echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
@@ -107,9 +118,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          gh api --method POST \
-            -H "Accept: application/vnd.github+json" \
-            "repos/${{ github.repository }}/pages/builds" >/tmp/pages-build.json
+          gh api --method POST -H "Accept: application/vnd.github+json" "repos/${{ github.repository }}/pages/builds" >/tmp/pages-build.json
           cat /tmp/pages-build.json
 
       - name: Veröffentlichung prüfen
@@ -130,10 +139,10 @@ jobs:
               exit 1
             fi
             if [ "$commit" = "$TARGET_COMMIT" ] && [ "$status" = "built" ]; then
-              echo "GitHub Pages wurde erfolgreich mit dem aktuellen Kalenderstand veröffentlicht."
+              echo "GitHub Pages wurde erfolgreich veröffentlicht."
               exit 0
             fi
             sleep 5
           done
-          echo "GitHub Pages hat den neuen Kalenderstand nicht innerhalb von 150 Sekunden bestätigt." >&2
+          echo "GitHub Pages hat den neuen Stand nicht innerhalb von 150 Sekunden bestätigt." >&2
           exit 1
