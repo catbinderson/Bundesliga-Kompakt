@@ -59,6 +59,9 @@ jobs:
       - name: Kalender neu erzeugen
         run: python scripts/update_calendars.py
 
+      - name: Datenlogik direkt in app.js reparieren
+        run: python scripts/repair_data_loading.py
+
       - name: Release-Dateien synchronisieren
         run: |
           python - <<'PY'
@@ -78,12 +81,7 @@ jobs:
           text=index.read_text(encoding='utf-8')
           text=re.sub(r'<b>v\d+\.\d+\.\d+</b>', f'<b>v{version}</b>', text, count=1)
           text=re.sub(r'app\.js\?v=[^"\']+', f'app.js?v={version}-build{build}', text)
-          text=re.sub(r'fetch-fix\.js\?v=\d+', f'fetch-fix.js?v={build}', text)
-          text=re.sub(r'data-fix\.js\?v=\d+', f'data-fix.js?v={build}', text)
-          if 'fetch-fix.js' not in text:
-              text=text.replace(f'<script src="app.js?v={version}-build{build}"></script>', f'<script src="fetch-fix.js?v={build}"></script>\n  <script src="app.js?v={version}-build{build}"></script>', 1)
-          if 'data-fix.js' not in text:
-              text=text.replace('</body>', f'  <script src="data-fix.js?v={build}"></script>\n</body>', 1)
+          text=re.sub(r'\s*<script src="(?:fetch-fix|data-fix)\.js\?v=[^"]+"></script>', '', text)
           index.write_text(text, encoding='utf-8')
 
           sw=Path('sw.js')
@@ -91,13 +89,7 @@ jobs:
           text=re.sub(r'const BUILD=\d+,CACHE="[^"]+"', f'const BUILD={build},CACHE="ligakompakt-v{version}-build{build}"', text, count=1)
           text=re.sub(r'app\.js\?v=[^"\']+', f'app.js?v={version}-build{build}', text)
           text=re.sub(r'update-manager\.js\?v=\d+', f'update-manager.js?v={build}', text)
-          text=re.sub(r'fetch-fix\.js\?v=\d+', f'fetch-fix.js?v={build}', text)
-          text=re.sub(r'data-fix\.js\?v=\d+', f'data-fix.js?v={build}', text)
-          marker=f'"app.js?v={version}-build{build}",'
-          if '"fetch-fix.js?v=' not in text:
-              text=text.replace(marker, f'"fetch-fix.js?v={build}",{marker}', 1)
-          if '"data-fix.js?v=' not in text:
-              text=text.replace(marker, f'{marker}"data-fix.js?v={build}",', 1)
+          text=re.sub(r',?"(?:fetch-fix|data-fix)\.js\?v=[^"]+"', '', text)
           sw.write_text(text, encoding='utf-8')
           PY
 
@@ -106,7 +98,7 @@ jobs:
         run: |
           git config user.name "LigaKompakt Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add calendars facebook-preview-v6.jpg app.js index.html sw.js version.json data-fix.js fetch-fix.js
+          git add calendars facebook-preview-v6.jpg app.js index.html sw.js version.json scripts/repair_data_loading.py
           if git diff --cached --quiet; then
             echo "Keine Änderungen vorhanden."
             echo "updated=false" >> "$GITHUB_OUTPUT"
