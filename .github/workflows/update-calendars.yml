@@ -19,12 +19,15 @@ jobs:
     steps:
       - name: Repository laden
         uses: actions/checkout@v4
+
       - name: Python einrichten
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Pillow installieren
         run: python -m pip install --quiet pillow
+
       - name: Facebook-Vorschaubild erzeugen
         run: |
           python - <<'PY'
@@ -61,24 +64,76 @@ jobs:
           d.text((352,485),'Keine Anmeldung · Keine versteckten Gebühren',font=font(24,False),fill=muted)
           im.save('facebook-preview-v6.jpg','JPEG',quality=92,optimize=True,progressive=False)
           PY
+
       - name: Kalender neu erzeugen
         run: python scripts/update_calendars.py
+
+      - name: App-Version auf 1.0.7 anheben
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              'app.js': [('const APP_VERSION="1.0.6"', 'const APP_VERSION="1.0.7"')],
+              'index.html': [('<b>v1.0.6</b>', '<b>v1.0.7</b>')],
+          }
+          for filename, pairs in replacements.items():
+              path = Path(filename)
+              text = path.read_text(encoding='utf-8')
+              for old, new in pairs:
+                  text = text.replace(old, new)
+              path.write_text(text, encoding='utf-8')
+          PY
+
       - name: Änderungen speichern
         id: changes
         run: |
           git config user.name "LigaKompakt Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add calendars facebook-preview-v6.jpg
+          git add calendars facebook-preview-v6.jpg app.js index.html
           if git diff --cached --quiet; then
             echo "Keine Änderungen vorhanden."
             echo "updated=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git commit -m "Aktualisiere LigaKompakt Daten und Vorschau [skip ci]"
+          git commit -m "Aktualisiere LigaKompakt Kalenderdaten [skip ci]"
           git push
           echo "updated=true" >> "$GITHUB_OUTPUT"
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
       - name: GitHub Pages neu veröffentlichen
         if: steps.changes.outputs.updated == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh api --method POST "repos/${{ github.repository }}/pages/builds"
+        run: |
+          set -euo pipefail
+          gh api --method POST \
+            -H "Accept: application/vnd.github+json" \
+            "repos/${{ github.repository }}/pages/builds" >/tmp/pages-build.json
+          cat /tmp/pages-build.json
+
+      - name: Veröffentlichung prüfen
+        if: steps.changes.outputs.updated == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_COMMIT: ${{ steps.changes.outputs.commit }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 30); do
+            json=$(gh api -H "Accept: application/vnd.github+json" "repos/${{ github.repository }}/pages/builds/latest")
+            status=$(printf '%s' "$json" | python -c 'import json,sys; print(json.load(sys.stdin).get("status", ""))')
+            commit=$(printf '%s' "$json" | python -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')
+            error=$(printf '%s' "$json" | python -c 'import json,sys; print((json.load(sys.stdin).get("error") or {}).get("message") or "")')
+            echo "Pages-Status: $status · Commit: $commit"
+            if [ -n "$error" ]; then
+              echo "GitHub Pages Fehler: $error" >&2
+              exit 1
+            fi
+            if [ "$commit" = "$TARGET_COMMIT" ] && [ "$status" = "built" ]; then
+              echo "GitHub Pages wurde erfolgreich mit dem aktuellen Kalenderstand veröffentlicht."
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "GitHub Pages hat den neuen Kalenderstand nicht innerhalb von 150 Sekunden bestätigt." >&2
+          exit 1
