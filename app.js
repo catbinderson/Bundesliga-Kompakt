@@ -1,4 +1,4 @@
-const APP_VERSION="1.0.11", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
+const APP_VERSION="1.0.12", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
 let currentGroup=1, teams=[],leagueTable=[],favoriteClubMatches=[],notificationTimer=null,liveTimer=null,countdownTimer=null,currentMatches=[],fixtureMatches=[],fixtureFilter="all",previousScores=new Map(),changedMatches=new Set();
 let installPrompt=null;
 const $=s=>document.querySelector(s);
@@ -11,6 +11,22 @@ function deleteProfile(){localStorage.removeItem("ligakompakt.userName");updateP
 function finalScore(m){const results=(m.matchResults||[]).filter(x=>x.resultTypeID===2||x.resultName==="Endergebnis");const r=results.at(-1)||(m.matchResults||[]).at(-1);return r?`${r.pointsTeam1}:${r.pointsTeam2}`:"–"}
 function finalResult(m){const results=(m.matchResults||[]).filter(x=>x.resultTypeID===2||x.resultName==="Endergebnis");return results.at(-1)||(m.matchResults||[]).at(-1)}
 function dateText(s){return s?new Intl.DateTimeFormat("de-DE",{weekday:"short",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}).format(new Date(s)):""}
+function matchDateKey(m){return String(m?.matchDateTime||"").slice(0,10)}
+function matchTeamName(team){return String(team?.teamName||team?.shortName||"").toLocaleLowerCase("de-DE")}
+function matchTeamsInclude(m,home,away){return matchTeamName(m?.team1).includes(home)&&matchTeamName(m?.team2).includes(away)}
+function correctKnownMatchData(m){
+  if(!m||typeof m!=="object"||matchDateKey(m)!=="2026-08-22"||!matchTeamsInclude(m,"dortmund","bayern"))return m;
+  const results=[...(m.matchResults||[])];
+  const halfIndex=results.findIndex(r=>r.resultTypeID===1||/halbzeit/i.test(r.resultName||""));
+  const correctedHalf={...(halfIndex>=0?results[halfIndex]:{}),resultName:"Halbzeitergebnis",pointsTeam1:0,pointsTeam2:2,resultOrderID:1,resultTypeID:1,resultDescription:"Ergebnis nach Ende der 1. Halbzeit"};
+  if(halfIndex>=0)results[halfIndex]=correctedHalf;else results.push(correctedHalf);
+  return {...m,matchResults:results};
+}
+function isKnownInvalidMatch(m){return matchDateKey(m)==="2026-08-15"&&matchTeamsInclude(m,"schalke","bayern")}
+function sanitizeApiData(data){
+  if(Array.isArray(data))return data.filter(item=>!isKnownInvalidMatch(item)).map(correctKnownMatchData);
+  return isKnownInvalidMatch(data)?null:correctKnownMatchData(data);
+}
 function calendarDate(d){return new Date(d).toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"")}
 function calendarEscape(s=""){return String(s).replace(/\\/g,"\\\\").replace(/\n/g,"\\n").replace(/,/g,"\\,").replace(/;/g,"\\;")}
 function calendarEvent(m){const start=new Date(m.matchDateTime),end=new Date(start.getTime()+2*60*60*1000),home=m.team1?.teamName||"Heimteam",away=m.team2?.teamName||"Auswärtsteam",venue=[m.location?.locationStadium,m.location?.locationCity].filter(Boolean).join(", ");return ["BEGIN:VEVENT",`UID:ligakompakt-${m.matchID||start.getTime()}@andreas-binder`,`DTSTAMP:${calendarDate(new Date())}`,`DTSTART:${calendarDate(start)}`,`DTEND:${calendarDate(end)}`,`SUMMARY:${calendarEscape(`${home} – ${away}`)}`,`DESCRIPTION:${calendarEscape("Bundesliga-Spiel · gespeichert mit LigaKompakt")}`,`LOCATION:${calendarEscape(venue)}`,"END:VEVENT"]}
@@ -50,7 +66,7 @@ async function get(path){
     try{
       const r=await fetch(API+path,{cache:"no-store",signal:controller.signal});
       if(!r.ok)throw new Error(`HTTP ${r.status}`);
-      const data=await r.json();
+      const data=sanitizeApiData(await r.json());
       try{localStorage.setItem(cacheKey,JSON.stringify({saved:Date.now(),data}))}catch{}
       return data;
     }catch(e){lastError=e;if(attempt<3)await new Promise(resolve=>setTimeout(resolve,500*attempt))}
@@ -61,7 +77,7 @@ async function get(path){
     if(cached?.data!=null){
       const banner=$("#networkBanner");
       if(banner){banner.textContent=`Verbindung gestört – gespeicherte Daten für ${path} werden angezeigt`;banner.classList.remove("hidden")}
-      return cached.data;
+      return sanitizeApiData(cached.data);
     }
   }catch{}
   const detail=lastError?.name==="AbortError"?"Zeitüberschreitung":(lastError?.message||"unbekannter Fehler");
