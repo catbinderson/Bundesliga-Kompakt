@@ -28,6 +28,86 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86946@andreas-binder
+DTSTAMP:20260827T163759Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:VfB Stuttgart – Atletico Madrid
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86955@andreas-binder
+DTSTAMP:20260827T164839Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:VfB Stuttgart – FC Brügge
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86965@andreas-binder
+DTSTAMP:20260827T165849Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:PSV Eindhoven – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86966@andreas-binder
+DTSTAMP:20260827T170701Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Galatasaray Istanbul – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86967@andreas-binder
+DTSTAMP:20260827T170718Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:VfB Stuttgart – OSC Lille
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86968@andreas-binder
+DTSTAMP:20260827T170850Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:VfB Stuttgart – Viking
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86969@andreas-binder
+DTSTAMP:20260827T170904Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Slovan Bratislava – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86970@andreas-binder
+DTSTAMP:20260827T170944Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Inter Mailand – VfB Stuttgart
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83176@andreas-binder
 DTSTAMP:20260703T055812Z
 DTSTART:20260912T133000Z

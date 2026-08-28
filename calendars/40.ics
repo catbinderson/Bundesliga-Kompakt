@@ -38,6 +38,86 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86945@andreas-binder
+DTSTAMP:20260827T163744Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Atletico Madrid – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86947@andreas-binder
+DTSTAMP:20260827T164141Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:FC Bayern München – FC Arsenal
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86949@andreas-binder
+DTSTAMP:20260827T164355Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:FC Bayern München – Real Betis
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86950@andreas-binder
+DTSTAMP:20260827T164404Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Manchester United FC – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86951@andreas-binder
+DTSTAMP:20260827T164417Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:FC Bayern München – FK Bodö/Glimt
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86952@andreas-binder
+DTSTAMP:20260827T164427Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:OSC Lille – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86953@andreas-binder
+DTSTAMP:20260827T164437Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:FC Bayern München – Slavia Prag
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86954@andreas-binder
+DTSTAMP:20260827T164447Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Viking – FC Bayern München
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83182@andreas-binder
 DTSTAMP:20260715T094850Z
 DTSTART:20260913T153000Z

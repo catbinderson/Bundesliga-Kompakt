@@ -58,6 +58,86 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86948@andreas-binder
+DTSTAMP:20260827T164154Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:FC Arsenal – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86956@andreas-binder
+DTSTAMP:20260827T164954Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Borussia Dortmund – Inter Mailand
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86957@andreas-binder
+DTSTAMP:20260827T165013Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Borussia Dortmund – Real Betis
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86958@andreas-binder
+DTSTAMP:20260827T165022Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Aston Villa – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86959@andreas-binder
+DTSTAMP:20260827T165030Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Borussia Dortmund – Villarreal CF
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86960@andreas-binder
+DTSTAMP:20260827T165043Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:FK Bodö/Glimt – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86961@andreas-binder
+DTSTAMP:20260827T165051Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Borussia Dortmund – AEK Athen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86962@andreas-binder
+DTSTAMP:20260827T165101Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Sabah – Borussia Dortmund
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83174@andreas-binder
 DTSTAMP:20260703T055757Z
 DTSTART:20260912T133000Z

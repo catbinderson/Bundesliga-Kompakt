@@ -28,6 +28,86 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-86943@andreas-binder
+DTSTAMP:20260827T163524Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Real Madrid – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86944@andreas-binder
+DTSTAMP:20260827T163507Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:RB Leipzig – Manchester City
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86963@andreas-binder
+DTSTAMP:20260827T165629Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Manchester United FC – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86964@andreas-binder
+DTSTAMP:20260827T165821Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:RB Leipzig – PSV Eindhoven
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86971@andreas-binder
+DTSTAMP:20260827T171025Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Como 1907 – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86973@andreas-binder
+DTSTAMP:20260827T171440Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:Feyenoord Rotterdam – RB Leipzig
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86974@andreas-binder
+DTSTAMP:20260827T171454Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:RB Leipzig – RC Lens
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-86976@andreas-binder
+DTSTAMP:20260827T171626Z
+DTSTART:20260908T190000Z
+DTEND:20260908T210000Z
+SUMMARY:RB Leipzig – Schachtar Donezk
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83175@andreas-binder
 DTSTAMP:20260715T094832Z
 DTSTART:20260913T133000Z
