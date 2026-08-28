@@ -38,6 +38,86 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-87363@andreas-binder
+DTSTAMP:20260828T115435Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:TSG Hoffenheim – Olympique Lyon
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87364@andreas-binder
+DTSTAMP:20260828T115443Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:Olympique Lyon – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87365@andreas-binder
+DTSTAMP:20260828T115451Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:TSG Hoffenheim – Ferencváros Budapest
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87366@andreas-binder
+DTSTAMP:20260828T115458Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:RSC Anderlecht – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87367@andreas-binder
+DTSTAMP:20260828T115506Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:TSG Hoffenheim – Sturm Graz
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87368@andreas-binder
+DTSTAMP:20260828T115520Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:Crystal Palace FC – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87369@andreas-binder
+DTSTAMP:20260828T115536Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:TSG Hoffenheim – Besiktas Istanbul
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87370@andreas-binder
+DTSTAMP:20260828T115545Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:OFI Kreta – TSG Hoffenheim
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83191@andreas-binder
 DTSTAMP:20260715T095019Z
 DTSTART:20260920T173000Z

@@ -38,6 +38,86 @@ LOCATION:
 URL:https://catbinderson.github.io/Bundesliga-Kompakt/
 END:VEVENT
 BEGIN:VEVENT
+UID:ligakompakt-87355@andreas-binder
+DTSTAMP:20260828T115320Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:Bayer 04 Leverkusen – Olympique Marseille
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87356@andreas-binder
+DTSTAMP:20260828T115328Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:Olympique Lyon – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87357@andreas-binder
+DTSTAMP:20260828T115340Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:Bayer 04 Leverkusen – RB Salzburg
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87358@andreas-binder
+DTSTAMP:20260828T115346Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:Dinamo Zagreb – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87359@andreas-binder
+DTSTAMP:20260828T115353Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:Bayer 04 Leverkusen – Celje Pivovarna Lasko
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87360@andreas-binder
+DTSTAMP:20260828T115359Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:Lech Poznan – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87361@andreas-binder
+DTSTAMP:20260828T115406Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:Bayer 04 Leverkusen – Besiktas Istanbul
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
+UID:ligakompakt-87362@andreas-binder
+DTSTAMP:20260828T115415Z
+DTSTART:20260916T190000Z
+DTEND:20260916T210000Z
+SUMMARY:OFI Kreta – Bayer 04 Leverkusen
+DESCRIPTION:Bundesliga-Spiel · LigaKompakt
+LOCATION:
+URL:https://catbinderson.github.io/Bundesliga-Kompakt/
+END:VEVENT
+BEGIN:VEVENT
 UID:ligakompakt-83185@andreas-binder
 DTSTAMP:20260715T094945Z
 DTSTART:20260920T133000Z
