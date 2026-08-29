@@ -84,12 +84,45 @@ jobs:
           text=re.sub(r'\s*<script src="(?:fetch-fix|data-fix)\.js\?v=[^"]+"></script>', '', text)
           index.write_text(text, encoding='utf-8')
 
+          update=Path('update-manager.js')
+          update.write_text(f'''(()=>{{
+  const CURRENT_BUILD={build};
+  const KEY='ligakompakt.build';
+  let checking=false;
+  async function check(){{
+    if(checking||!navigator.onLine)return;
+    checking=true;
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),5000);
+    try{{
+      const r=await fetch(`version.json?t=${{Date.now()}}`,{{cache:'no-store',signal:controller.signal}});
+      if(!r.ok)return;
+      const data=await r.json(),remote=Number(data.build||0);
+      if(remote>CURRENT_BUILD){{
+        const seen=Number(sessionStorage.getItem('ligakompakt.updateTarget')||0);
+        if(seen===remote)return;
+        sessionStorage.setItem('ligakompakt.updateTarget',String(remote));
+        const reg=await navigator.serviceWorker?.getRegistration();
+        reg?.update().catch(()=>{{}});
+        setTimeout(()=>location.reload(),600);
+        return;
+      }}
+      sessionStorage.removeItem('ligakompakt.updateTarget');
+      localStorage.setItem(KEY,String(CURRENT_BUILD));
+    }}catch(e){{console.warn('Build-Prüfung:',e)}}finally{{clearTimeout(timer);checking=false}}
+  }}
+  check();addEventListener('online',check);document.addEventListener('visibilitychange',()=>{{if(document.visibilityState==='visible')check()}});setInterval(check,5*60*1000);
+}})();
+''',encoding='utf-8')
+
           sw=Path('sw.js')
           text=sw.read_text(encoding='utf-8')
           text=re.sub(r'const BUILD=\d+,CACHE="[^"]+"', f'const BUILD={build},CACHE="ligakompakt-v{version}-build{build}"', text, count=1)
           text=re.sub(r'app\.js\?v=[^"\']+', f'app.js?v={version}-build{build}', text)
           text=re.sub(r'update-manager\.js\?v=\d+', f'update-manager.js?v={build}', text)
           text=re.sub(r',?"(?:fetch-fix|data-fix)\.js\?v=[^"]+"', '', text)
+          clean_inject='''async function injectUpdateManager(response){if(!response)return response;const type=response.headers.get("content-type")||"";if(!type.includes("text/html"))return response;let html=await response.text();if(!html.includes("update-manager.js")){const tag=`<script src="update-manager.js?v=${BUILD}"></script>`;html=html.includes("</body>")?html.replace("</body>",`${tag}\\n</body>`):html+tag}const headers=new Headers(response.headers);headers.set("cache-control","no-cache");headers.delete("content-length");return new Response(html,{status:response.status,statusText:response.statusText,headers})}\n'''
+          text=re.sub(r'async function injectUpdateManager\(response\)\{.*?\}\nasync function fetchWithTimeout', clean_inject+'async function fetchWithTimeout', text, count=1, flags=re.S)
           sw.write_text(text, encoding='utf-8')
           PY
 
@@ -98,7 +131,7 @@ jobs:
         run: |
           git config user.name "LigaKompakt Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add calendars facebook-preview-v6.jpg app.js index.html sw.js version.json scripts/repair_data_loading.py
+          git add calendars facebook-preview-v6.jpg app.js index.html sw.js update-manager.js version.json scripts/repair_data_loading.py
           if git diff --cached --quiet; then
             echo "Keine Änderungen vorhanden."
             echo "updated=false" >> "$GITHUB_OUTPUT"
