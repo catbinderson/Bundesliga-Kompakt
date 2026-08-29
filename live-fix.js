@@ -1,7 +1,7 @@
-// LigaKompakt v1.0.14 – robustere Live-Spielstände und Abpfiff-Erkennung
+// LigaKompakt v1.0.15 – robustere Live-Spielstände und Abpfiff-Erkennung
 (function(){
   const REFRESH_MS=10000;
-  const FINISH_AFTER_MS=135*60*1000;
+  const FINISH_AFTER_MS=130*60*1000;
 
   function scoreFromGoals(m){
     const goals=Array.isArray(m?.goals)?m.goals:[];
@@ -26,11 +26,12 @@
     const kickoff=new Date(m.matchDateTime).getTime();
     if(!Number.isFinite(kickoff)||Date.now()-kickoff<FINISH_AFTER_MS)return m;
     const score=reliableScore(m);
-    if(score==="–")return m;
-    const [home,away]=score.split(":").map(Number);
     const results=[...(m.matchResults||[])];
-    if(!results.some(r=>r.resultTypeID===2||r.resultName==="Endergebnis"))results.push({resultName:"Endergebnis",pointsTeam1:home,pointsTeam2:away,resultOrderID:2,resultTypeID:2,resultDescription:"Endstand"});
-    return {...m,matchIsFinished:true,matchResults:results};
+    if(score!=="–"&&!results.some(r=>r.resultTypeID===2||r.resultName==="Endergebnis")){
+      const [home,away]=score.split(":").map(Number);
+      results.push({resultName:"Endergebnis",pointsTeam1:home,pointsTeam2:away,resultOrderID:2,resultTypeID:2,resultDescription:"Endstand"});
+    }
+    return {...m,matchIsFinished:true,matchResults:results,_resultPending:score==="–"};
   }
 
   const originalSanitize=typeof sanitizeApiData==="function"?sanitizeApiData:null;
@@ -52,6 +53,18 @@
   isLiveMatch=function(m){
     const kickoff=new Date(m?.matchDateTime).getTime(),age=Date.now()-kickoff;
     return !m?.matchIsFinished&&Number.isFinite(kickoff)&&age>=0&&age<FINISH_AFTER_MS;
+  };
+
+  const originalMatchCard=matchCard;
+  matchCard=function(m){
+    const node=originalMatchCard(m);
+    if(m?._resultPending&&m.matchIsFinished){
+      const score=node.querySelector(".score"),kickoff=node.querySelector(".kickoff"),state=node.querySelector(".match-state");
+      if(score)score.textContent="–";
+      if(kickoff)kickoff.textContent="Ergebnis folgt";
+      if(state){state.textContent="BEENDET";state.classList.add("done")}
+    }
+    return node;
   };
 
   startLiveCenter=function(){
