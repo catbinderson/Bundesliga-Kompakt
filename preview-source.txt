@@ -2,4 +2,4 @@ LigaKompakt Facebook Preview v6
 1200x630
 100 % KOSTENLOS
 Bundesliga. Live. Kompakt.
-Trigger 8 · Direkte Datenlogik v1.0.11 Build 26
+Trigger 9 · Stabiler Update-Manager v1.0.13 Build 28
