@@ -1,7 +1,6 @@
-// LigaKompakt v1.0.16 – zweite Ergebnisquelle für schnelle Live-/Endstände
+// LigaKompakt – zweite Ergebnisquelle für schnelle Live-/Endstände
 (function(){
   const ESPN="https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard";
-  const VERSION="1.0.16";
   const VERIFIED_FINALS={"2026-08-29|leipzig|gladbach":[3,0],"2026-08-29|mainz|paderborn":[0,0],"2026-08-29|union berlin|frankfurt":[3,3],"2026-08-29|koln|hoffenheim":[3,2],"2026-08-29|elversberg|leverkusen":[3,2]};
   function norm(value=""){return String(value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ß/g,"ss").replace(/ö/g,"o").replace(/ü/g,"u").replace(/ä/g,"a").replace(/\b(1\.|fc|fsv|sv|sc|tsg|rb|borussia|bayer|04|05|07|1899)\b/g," ").replace(/[^a-z0-9]+/g," ").trim()}
   function keyFor(m){return `${String(m?.matchDateTime||"").slice(0,10)}|${norm(m?.team1?.shortName||m?.team1?.teamName)}|${norm(m?.team2?.shortName||m?.team2?.teamName)}`}
@@ -20,5 +19,5 @@
     $("#tableBody").innerHTML=data.map((t,i)=>{const id=standingId(t),isFavorite=id===favorite,goals=Number(t.goals??0),against=Number(t.opponentGoals??0),diff=Number(t.goalDiff??(goals-against));return `<tr class="${isFavorite?"favorite-standing":""}" data-standing-team="${id}"><td>${i+1}</td><td><div class="club-row"><img src="${escapeHtml(t.teamIconUrl||"")}" alt=""><span>${escapeHtml(t.shortName||t.teamName)}</span>${isFavorite?'<b class="standing-favorite">★ MEIN VEREIN</b>':""}</div></td><td>${t.matches}</td><td class="wide-col">${t.won}</td><td class="wide-col">${t.draw}</td><td class="wide-col">${t.lost}</td><td>${goals}</td><td>${against}</td><td>${diff>=0?"+":""}${diff}</td><td><b>${t.points}</b></td></tr>`}).join("");const row=$("#tableBody .favorite-standing");if(row)row.onclick=()=>showView("club")
   };
   const tableStyle=document.createElement("style");tableStyle.textContent='.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.table-wrap table{min-width:690px}.table-wrap th,.table-wrap td{white-space:nowrap}.table-wrap th:nth-last-child(-n+4),.table-wrap td:nth-last-child(-n+4){text-align:center}@media(max-width:600px){.table-wrap table{min-width:650px}.table-wrap th,.table-wrap td{padding-left:8px;padding-right:8px;font-size:13px}.table-wrap .club-row img{width:32px;height:32px}.standing-favorite{display:none}}';document.head.appendChild(tableStyle);
-  const badge=document.querySelector(".developer-line b");if(badge)badge.textContent=`v${VERSION}`;const footer=document.querySelector(".app-footer span");if(footer&&!footer.textContent.includes("Fallback"))footer.insertAdjacentHTML("beforeend",' · Ergebnis-Fallback: ESPN');if(document.visibilityState==="visible"&&navigator.onLine)loadToday(true).catch(console.warn);
+  /* Version badge is owned by index.html; do not overwrite it. */const footer=document.querySelector(".app-footer span");if(footer&&!footer.textContent.includes("Fallback"))footer.insertAdjacentHTML("beforeend",' · Ergebnis-Fallback: ESPN');if(document.visibilityState==="visible"&&navigator.onLine)loadToday(true).catch(console.warn);
 })();
