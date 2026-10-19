@@ -1,4 +1,4 @@
-const APP_VERSION="1.0.13", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
+const APP_VERSION="1.0.18", API="https://api.openligadb.de", LEAGUE="bl1", SEASON=2026;
 let currentGroup=1, teams=[],leagueTable=[],favoriteClubMatches=[],notificationTimer=null,liveTimer=null,countdownTimer=null,currentMatches=[],fixtureMatches=[],fixtureFilter="all",previousScores=new Map(),changedMatches=new Set();
 let installPrompt=null;
 let officialLeagueCache={saved:0,data:[],promise:null};
@@ -122,7 +122,21 @@ async function enableNotifications(){if(!notificationsSupported())return;const e
 async function checkFavoriteUpdates(){if(localStorage.getItem("ligakompakt.notifications")!=="1"||Notification.permission!=="granted")return;const teamId=localStorage.getItem("ligakompakt.favorite");if(!teamId)return;try{const matches=(await loadOfficialClubMatches(teamId,true)).filter(m=>String(m.leagueShortcut||"").toLowerCase()===LEAGUE&&Number(m.leagueSeason)===SEASON),saved=JSON.parse(localStorage.getItem("ligakompakt.matchState")||"{}"),next={...saved};for(const m of matches){const key=String(m.matchID),score=finalScore(m),started=Date.now()>=new Date(m.matchDateTime).getTime(),previous=saved[key],pair=`${m.team1?.shortName||m.team1?.teamName} – ${m.team2?.shortName||m.team2?.teamName}`;if(previous){if(score!=="–"&&score!==previous.score)await sendNotification(`⚽ Tor · ${score}`,pair);else if(m.matchIsFinished&&!previous.finished)await sendNotification(`Abpfiff · ${score}`,pair);else if(started&&!previous.started&&!m.matchIsFinished)await sendNotification("Anpfiff",pair)}next[key]={score,started,finished:!!m.matchIsFinished}}localStorage.setItem("ligakompakt.matchState",JSON.stringify(next))}catch(e){console.warn("Spielalarm:",e)}}
 function startNotificationMonitor(){clearInterval(notificationTimer);if(localStorage.getItem("ligakompakt.notifications")==="1"&&Notification.permission==="granted"){checkFavoriteUpdates();notificationTimer=setInterval(checkFavoriteUpdates,60000)}updateNotificationUI()}
 async function checkForAppUpdate(){
-  try{const r=await fetch(`version.json?t=${Date.now()}`,{cache:"no-store"});if(!r.ok)return;const data=await r.json();if(data.version&&data.version!==APP_VERSION){$("#liveDot").textContent="Update …";const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith("ligakompakt-")).map(k=>caches.delete(k)));const reg=await navigator.serviceWorker.getRegistration();await reg?.update();if(reg?.waiting)reg.waiting.postMessage({type:"SKIP_WAITING"});setTimeout(()=>location.replace(`./?v=${encodeURIComponent(data.version)}&t=${Date.now()}`),500)}}catch(e){console.warn("Versionsprüfung:",e)}
+  // Never reload the whole app automatically: this caused an update loop on iOS.
+  try{
+    const r=await fetch(`version.json?t=${Date.now()}`,{cache:"no-store"});
+    if(!r.ok)return;
+    const data=await r.json();
+    if(data.version && data.version!==APP_VERSION){
+      const reg=await navigator.serviceWorker?.getRegistration();
+      reg?.update().catch(()=>{});
+      const dot=$("#liveDot");
+      if(dot && !dot.dataset.updateNotice){
+        dot.dataset.updateNotice="1";
+        dot.title="Neue App-Version verfügbar. Beim nächsten Öffnen aktualisieren.";
+      }
+    }
+  }catch(e){console.warn("Versionsprüfung:",e)}
 }
 function savedTips(){try{return JSON.parse(localStorage.getItem("ligakompakt.tips")||"{}")}catch{return{}}}
 function tipOutcome(m,tip){const result=finalResult(m);if(!m.matchIsFinished||!result||!tip)return"open";if(Number(tip.home)===result.pointsTeam1&&Number(tip.away)===result.pointsTeam2)return"exact";return Math.sign(Number(tip.home)-Number(tip.away))===Math.sign(result.pointsTeam1-result.pointsTeam2)?"trend":"wrong"}
