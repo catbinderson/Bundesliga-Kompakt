@@ -1,0 +1,67 @@
+{
+  "season": "2026/27",
+  "updated": "19.10.2026 (Quellenabruf)",
+  "source": "https://datencenter.dfb.de/datencenter/ranglisten/bundesliga/2026-27",
+  "players": [
+    {
+      "name": "Patrik Schick",
+      "goals": 6,
+      "assists": 1,
+      "points": 7
+    },
+    {
+      "name": "Michael Olise",
+      "goals": 5,
+      "assists": 1,
+      "points": 6
+    },
+    {
+      "name": "Harry Kane",
+      "goals": 4,
+      "assists": 2,
+      "points": 6
+    },
+    {
+      "name": "Niclas Füllkrug",
+      "goals": 6,
+      "assists": 0,
+      "points": 6
+    },
+    {
+      "name": "Phillip Tietz",
+      "goals": 5,
+      "assists": 0,
+      "points": 5
+    },
+    {
+      "name": "Luis Diaz",
+      "goals": 4,
+      "assists": 1,
+      "points": 5
+    },
+    {
+      "name": "Younes Ebnoutalib",
+      "goals": 5,
+      "assists": 0,
+      "points": 5
+    },
+    {
+      "name": "Christopher Nkunku",
+      "goals": 4,
+      "assists": 0,
+      "points": 4
+    },
+    {
+      "name": "Yuito Suzuki",
+      "goals": 4,
+      "assists": 0,
+      "points": 4
+    },
+    {
+      "name": "Michael Gregoritsch",
+      "goals": 4,
+      "assists": 0,
+      "points": 4
+    }
+  ]
+}
