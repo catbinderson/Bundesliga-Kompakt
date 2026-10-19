@@ -1,5 +1,5 @@
 (()=>{
-  const CURRENT_BUILD=32;
+  const CURRENT_BUILD=33;
   const KEY='ligakompakt.build';
   let checking=false;
 
@@ -19,7 +19,7 @@
         sessionStorage.setItem('ligakompakt.updateTarget',String(remote));
         const reg=await navigator.serviceWorker?.getRegistration();
         reg?.update().catch(()=>{});
-        setTimeout(()=>location.reload(),600);
+        // Update downloaded in background; new assets load on next app launch.
         return;
       }
       sessionStorage.removeItem('ligakompakt.updateTarget');
