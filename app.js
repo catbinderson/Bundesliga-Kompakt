@@ -58,6 +58,14 @@ function updateCountdown(){const el=$("#nextKickoff"),target=Number(el?.dataset.
 function updateFavoriteCountdown(){const el=$("#favoriteCountdown"),target=Number(el?.dataset.target);if(!el||!target)return;el.textContent=target<=Date.now()?"Anpfiff läuft":`Noch ${countdownText(target)}`}
 function renderLiveCenter(matches){const live=matches.filter(isLiveMatch),finished=matches.filter(m=>m.matchIsFinished),upcoming=matches.filter(m=>!m.matchIsFinished&&!isLiveMatch(m)&&new Date(m.matchDateTime)>new Date()).sort((a,b)=>new Date(a.matchDateTime)-new Date(b.matchDateTime));$("#liveCount").textContent=live.length;$("#finishedCount").textContent=finished.length;$("#upcomingCount").textContent=upcoming.length;const next=$("#nextKickoff");if(live.length){next.removeAttribute("data-target");next.querySelector("span").textContent="Gerade live";next.querySelector("strong").textContent=live.map(m=>`${m.team1?.shortName||m.team1?.teamName} – ${m.team2?.shortName||m.team2?.teamName}`).join(" · ")}else if(upcoming.length){const m=upcoming[0],target=new Date(m.matchDateTime).getTime();next.dataset.target=String(target);next.querySelector("span").textContent=`Nächster Anpfiff · ${m.team1?.shortName||m.team1?.teamName} – ${m.team2?.shortName||m.team2?.teamName}`;updateCountdown()}else{next.removeAttribute("data-target");next.querySelector("span").textContent="Spieltag";next.querySelector("strong").textContent="Alle Spiele beendet"}}
 function skeletons(el,count=3){el.innerHTML=Array.from({length:count},()=>'<div class="card skeleton"><i></i><i></i><i></i></div>').join("")}
+const cachedApiPaths=new Set();
+function updateApiCacheBanner(){
+  const banner=$("#networkBanner");
+  if(!banner)return;
+  if(!navigator.onLine){banner.textContent="Offline – gespeicherte Daten werden angezeigt";banner.classList.remove("hidden");return}
+  if(cachedApiPaths.size){banner.textContent="Verbindung gestört – gespeicherte Bundesliga-Daten werden angezeigt";banner.classList.remove("hidden");return}
+  banner.classList.add("hidden");
+}
 async function get(path){
   const cacheKey=`ligakompakt.api.${path}`;
   let lastError=null;
@@ -68,7 +76,14 @@ async function get(path){
       const r=await fetch(API+path,{cache:"no-store",signal:controller.signal});
       if(!r.ok)throw new Error(`HTTP ${r.status}`);
       const data=sanitizeApiData(await r.json());
-      try{localStorage.setItem(cacheKey,JSON.stringify({saved:Date.now(),data}))}catch{}
+      // The service worker can return a successful HTTP response containing offline data.
+      const isFallback=r.headers.get("x-ligakompakt-cache")==="fallback";
+      if(isFallback){cachedApiPaths.add(path)}
+      else{
+        cachedApiPaths.delete(path);
+        try{localStorage.setItem(cacheKey,JSON.stringify({saved:Date.now(),data}))}catch{}
+      }
+      updateApiCacheBanner();
       return data;
     }catch(e){lastError=e;if(attempt<3)await new Promise(resolve=>setTimeout(resolve,500*attempt))}
     finally{clearTimeout(timer)}
@@ -76,8 +91,8 @@ async function get(path){
   try{
     const cached=JSON.parse(localStorage.getItem(cacheKey)||"null");
     if(cached?.data!=null){
-      const banner=$("#networkBanner");
-      if(banner){banner.textContent=`Verbindung gestört – gespeicherte Daten für ${path} werden angezeigt`;banner.classList.remove("hidden")}
+      cachedApiPaths.add(path);
+      updateApiCacheBanner();
       return sanitizeApiData(cached.data);
     }
   }catch{}
@@ -204,8 +219,8 @@ async function loadClub(teamId,save=true){
 function setupMatchdays(){const s=$("#matchdaySelect");s.innerHTML=Array.from({length:34},(_,i)=>`<option value="${i+1}">${i+1}. Spieltag</option>`).join("");s.onchange=e=>loadFixtures(Number(e.target.value)).catch(showError);$("#previousMatchday").onclick=()=>loadFixtures(currentGroup-1).catch(showError);$("#nextMatchday").onclick=()=>loadFixtures(currentGroup+1).catch(showError);updateMatchdayNav()}
 function showError(e){console.error(e);const detail=escapeHtml(e?.message||String(e)||"Unbekannter Fehler");const target=$("#todayMatches");if(target&&!currentMatches.length)target.innerHTML=`<div class="error"><b>Datenabruf fehlgeschlagen</b><br><small>${detail}</small></div>`;$("#todaySub").textContent=`Aktualisierung fehlerhaft · ${detail}`;$("#liveDot").textContent=navigator.onLine?"Teilfehler":"Offline"}
 function showView(id){document.querySelectorAll(".nav").forEach(x=>x.classList.toggle("active",x.dataset.view===id));document.querySelectorAll(".view").forEach(x=>x.classList.toggle("active",x.id===id));window.scrollTo({top:0,behavior:"smooth"})}
-function updateNetwork(){const offline=!navigator.onLine;$("#networkBanner").classList.toggle("hidden",!offline);if(offline)$("#liveDot").textContent="Offline"}
-async function refreshAll(){$("#refreshBtn").classList.add("spinning");$("#liveDot").textContent="Lädt …";const failures=[];try{const results=await Promise.allSettled([loadToday(),loadTable(),loadTeams()]);const labels=["Live-Daten","Tabelle","Vereine"];results.forEach((r,i)=>{if(r.status==="rejected")failures.push(`${labels[i]}: ${r.reason?.message||r.reason}`)});if(results[0].status==="rejected")throw results[0].reason;setupMatchdays();$("#matchdaySelect").value=String(currentGroup);try{await loadFixtures(currentGroup)}catch(e){failures.push(`Spieltag: ${e?.message||e}`)}$("#liveDot").textContent=failures.length?"Teilweise online":(navigator.onLine?"Online":"Offline");$("#updatedAt").textContent=`Zuletzt aktualisiert: ${new Intl.DateTimeFormat("de-DE",{hour:"2-digit",minute:"2-digit"}).format(new Date())}`;if(failures.length){console.warn("LigaKompakt Teilfehler",failures);$("#todaySub").textContent=`Live-Daten aktuell · Teilfehler: ${failures.join(" | ")}`}}catch(e){showError(e)}finally{$("#refreshBtn").classList.remove("spinning")}}
+function updateNetwork(){updateApiCacheBanner();if(!navigator.onLine)$("#liveDot").textContent="Offline"}
+async function refreshAll(){$("#refreshBtn").classList.add("spinning");$("#liveDot").textContent="Lädt …";const failures=[];try{const results=await Promise.allSettled([loadToday(),loadTable(),loadTeams()]);const labels=["Live-Daten","Tabelle","Vereine"];results.forEach((r,i)=>{if(r.status==="rejected")failures.push(`${labels[i]}: ${r.reason?.message||r.reason}`)});if(results[0].status==="rejected")throw results[0].reason;setupMatchdays();$("#matchdaySelect").value=String(currentGroup);try{await loadFixtures(currentGroup)}catch(e){failures.push(`Spieltag: ${e?.message||e}`)}$("#liveDot").textContent=failures.length||cachedApiPaths.size?"Gespeicherte Daten":(navigator.onLine?"Online":"Offline");$("#updatedAt").textContent=`Zuletzt aktualisiert: ${new Intl.DateTimeFormat("de-DE",{hour:"2-digit",minute:"2-digit"}).format(new Date())}`;if(failures.length){console.warn("LigaKompakt Teilfehler",failures);$("#todaySub").textContent=`Live-Daten aktuell · Teilfehler: ${failures.join(" | ")}`}}catch(e){showError(e)}finally{$("#refreshBtn").classList.remove("spinning")}}
 document.querySelectorAll(".nav").forEach(b=>b.onclick=()=>showView(b.dataset.view));document.querySelectorAll("[data-goto]").forEach(b=>b.onclick=()=>showView(b.dataset.goto));
 document.querySelectorAll("[data-fixture-filter]").forEach(button=>button.onclick=()=>{fixtureFilter=button.dataset.fixtureFilter;renderFilteredFixtures()});
 $("#teamSelect").onchange=e=>loadClub(e.target.value).catch(showError);$("#refreshBtn").onclick=refreshAll;$("#shareAppBtn").onclick=()=>shareApp().catch(error=>{if(error?.name!=="AbortError")showError(error)});
