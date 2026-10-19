@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#07101f"><title>LigaKompakt – Cache-Reparatur</title>
+<style>body{font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;background:#07101f;color:#e9f2ff;line-height:1.5;padding:24px;margin:0}main{max-width:560px;margin:32px auto}h1{font-size:24px}button,a{font-size:17px;border-radius:12px;padding:14px 18px;display:block;margin-top:16px}button{border:0;background:#42b7ff;color:#07101f;font-weight:700;width:100%}a{color:#97d5ff}#status{white-space:pre-wrap;min-height:42px;background:#10243a;border-radius:12px;padding:14px}</style></head>
+<body><main><h1>LigaKompakt – iPhone-Reparatur</h1><p>Diese Funktion entfernt nur veraltete App-Caches und meldet die bisherige Hintergrund-App (Service Worker) ab. <strong>Deine lokal gespeicherten Tipps, Einstellungen und Favoriten bleiben erhalten.</strong></p>
+<button id="repair" type="button">App-Cache reparieren</button><p id="status" role="status">Noch nicht gestartet.</p><a href="./">Zurück zu LigaKompakt</a>
+<script>
+document.getElementById("repair").addEventListener("click",async()=>{
+ const btn=document.getElementById("repair"),st=document.getElementById("status");btn.disabled=true;st.textContent="Cache wird überprüft …";
+ try{
+   let count=0;
+   if("serviceWorker" in navigator){const registrations=await navigator.serviceWorker.getRegistrations();for(const reg of registrations){if(reg.scope.startsWith(new URL("./",location.href).href)){if(await reg.unregister())count++}}}
+   let cachesDeleted=0;
+   if("caches" in window){for(const key of await caches.keys()){if(key.startsWith("ligakompakt-")){if(await caches.delete(key))cachesDeleted++}}}
+   st.textContent="Fertig: "+count+" Hintergrund-App(s) abgemeldet, "+cachesDeleted+" Cache(s) entfernt. Deine Tipps und Einstellungen wurden nicht gelöscht. Öffne LigaKompakt jetzt neu.";
+   const a=document.createElement("a");a.href="./?cache-repair="+Date.now();a.textContent="LigaKompakt neu öffnen";st.appendChild(document.createElement("br"));st.appendChild(a);
+ }catch(err){st.textContent="Reparatur nicht vollständig: "+String(err.message||err)+". Bitte Seite neu laden und erneut versuchen."}finally{btn.disabled=false}
+});
+</script></main></body></html>
