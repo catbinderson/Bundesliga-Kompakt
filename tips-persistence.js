@@ -133,9 +133,7 @@
 
 (() => {
   async function freshJson(path) {
-    const response = await fetch(API + path, { cache: "no-store" });
-    if (!response.ok) throw new Error(`HTTP ${response.status} bei ${path}`);
-    const data = await response.json();
+    const data = await get(path);
     if (!Array.isArray(data)) throw new Error(`Ungültige API-Antwort bei ${path}`);
     return data;
   }
@@ -204,14 +202,14 @@
       await resilientFixtures(currentGroup);
 
       const partial = results.some(result => result.status === "rejected");
-      $("#liveDot").textContent = navigator.onLine ? (partial ? "Online" : "Online") : "Offline";
+      $("#liveDot").textContent = !navigator.onLine ? "Offline" : (partial || cachedApiPaths.size ? "Gespeicherte Daten" : "Online");
       $("#updatedAt").textContent = `Zuletzt aktualisiert: ${new Intl.DateTimeFormat("de-DE", { hour: "2-digit", minute: "2-digit" }).format(new Date())}`;
       results.filter(result => result.status === "rejected").forEach(result => console.warn("Teilabruf fehlgeschlagen:", result.reason));
     } catch (error) {
       console.error("Aktualisierung:", error);
       try {
         await resilientFixtures(currentGroup);
-        $("#liveDot").textContent = navigator.onLine ? "Online" : "Offline";
+        $("#liveDot").textContent = !navigator.onLine ? "Offline" : (cachedApiPaths.size ? "Gespeicherte Daten" : "Online");
       } catch {
         originalRefreshAll().catch?.(console.warn);
       }
@@ -223,9 +221,5 @@
   const refreshButton = $("#refreshBtn");
   if (refreshButton) refreshButton.onclick = refreshAll;
 
-  setTimeout(() => {
-    resilientFixtures(currentGroup).catch(error => {
-      console.warn("Automatische Spielplan-Reparatur:", error);
-    });
-  }, 300);
+  // Initial fixtures are loaded by refreshAll; no duplicate startup fetch.
 })();
