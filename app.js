@@ -74,13 +74,27 @@ function updateApiCacheBanner(){
 }
 async function get(path){
   const cacheKey=`ligakompakt.api.${path}`;
+  // The season's list of participating clubs changes very rarely.
+  // Reuse a successful copy for 24 hours, rather than fetching it on every refresh.
+  const isTeamsRequest=path.startsWith("/getavailableteams/");
+  if(isTeamsRequest){
+    try{
+      const stored=JSON.parse(localStorage.getItem(cacheKey)||"null");
+      if(Array.isArray(stored?.data)&&stored.data.length&&Date.now()-Number(stored.saved)<24*60*60*1000){
+        cachedApiPaths.delete(path);
+        cachedApiErrors.delete(path);
+        updateApiCacheBanner();
+        return sanitizeApiData(stored.data);
+      }
+    }catch{}
+  }
   let lastError=null;
   for(let attempt=1;attempt<=3;attempt++){
     const controller=new AbortController();
     const timer=setTimeout(()=>controller.abort(),10000);
     try{
       const r=await fetch(API+path,{cache:"no-store",signal:controller.signal});
-      if(!r.ok)throw new Error(`HTTP ${r.status}`);
+      if(!r.ok){const error=new Error(`HTTP ${r.status}`);error.httpStatus=r.status;throw error;}
       const data=sanitizeApiData(await r.json());
       // The service worker can return a successful HTTP response containing offline data.
       const isFallback=r.headers.get("x-ligakompakt-cache")==="fallback";
@@ -92,7 +106,12 @@ async function get(path){
       }
       updateApiCacheBanner();
       return data;
-    }catch(e){lastError=e;if(attempt<3)await new Promise(resolve=>setTimeout(resolve,500*attempt))}
+    }catch(e){
+      lastError=e;
+      // Retrying a rate-limited request immediately only increases the load.
+      if(e.httpStatus===429)break;
+      if(attempt<3)await new Promise(resolve=>setTimeout(resolve,500*attempt))
+    }
     finally{clearTimeout(timer)}
   }
   try{
