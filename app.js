@@ -59,11 +59,17 @@ function updateFavoriteCountdown(){const el=$("#favoriteCountdown"),target=Numbe
 function renderLiveCenter(matches){const live=matches.filter(isLiveMatch),finished=matches.filter(m=>m.matchIsFinished),upcoming=matches.filter(m=>!m.matchIsFinished&&!isLiveMatch(m)&&new Date(m.matchDateTime)>new Date()).sort((a,b)=>new Date(a.matchDateTime)-new Date(b.matchDateTime));$("#liveCount").textContent=live.length;$("#finishedCount").textContent=finished.length;$("#upcomingCount").textContent=upcoming.length;const next=$("#nextKickoff");if(live.length){next.removeAttribute("data-target");next.querySelector("span").textContent="Gerade live";next.querySelector("strong").textContent=live.map(m=>`${m.team1?.shortName||m.team1?.teamName} – ${m.team2?.shortName||m.team2?.teamName}`).join(" · ")}else if(upcoming.length){const m=upcoming[0],target=new Date(m.matchDateTime).getTime();next.dataset.target=String(target);next.querySelector("span").textContent=`Nächster Anpfiff · ${m.team1?.shortName||m.team1?.teamName} – ${m.team2?.shortName||m.team2?.teamName}`;updateCountdown()}else{next.removeAttribute("data-target");next.querySelector("span").textContent="Spieltag";next.querySelector("strong").textContent="Alle Spiele beendet"}}
 function skeletons(el,count=3){el.innerHTML=Array.from({length:count},()=>'<div class="card skeleton"><i></i><i></i><i></i></div>').join("")}
 const cachedApiPaths=new Set();
+const cachedApiErrors=new Map();
 function updateApiCacheBanner(){
   const banner=$("#networkBanner");
   if(!banner)return;
   if(!navigator.onLine){banner.textContent="Offline – gespeicherte Daten werden angezeigt";banner.classList.remove("hidden");return}
-  if(cachedApiPaths.size){banner.textContent="Verbindung gestört – gespeicherte Bundesliga-Daten werden angezeigt";banner.classList.remove("hidden");return}
+  if(cachedApiPaths.size){
+    const path=[...cachedApiPaths][0];
+    const reason=cachedApiErrors.get(path);
+    banner.textContent=`Gespeicherte Daten: ${path}${reason?" · "+reason:""}`;
+    banner.classList.remove("hidden");return
+  }
   banner.classList.add("hidden");
 }
 async function get(path){
@@ -78,9 +84,10 @@ async function get(path){
       const data=sanitizeApiData(await r.json());
       // The service worker can return a successful HTTP response containing offline data.
       const isFallback=r.headers.get("x-ligakompakt-cache")==="fallback";
-      if(isFallback){cachedApiPaths.add(path)}
+      if(isFallback){cachedApiPaths.add(path);cachedApiErrors.set(path,"Offline-Antwort des Service Workers")}
       else{
         cachedApiPaths.delete(path);
+        cachedApiErrors.delete(path);
         try{localStorage.setItem(cacheKey,JSON.stringify({saved:Date.now(),data}))}catch{}
       }
       updateApiCacheBanner();
@@ -92,6 +99,7 @@ async function get(path){
     const cached=JSON.parse(localStorage.getItem(cacheKey)||"null");
     if(cached?.data!=null){
       cachedApiPaths.add(path);
+      cachedApiErrors.set(path,lastError?.name==="AbortError"?"Zeitüberschreitung":String(lastError?.message||lastError||"Netzwerkfehler").slice(0,110));
       updateApiCacheBanner();
       return sanitizeApiData(cached.data);
     }

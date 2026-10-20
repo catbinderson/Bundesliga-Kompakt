@@ -1,5 +1,5 @@
 (()=>{
-  const CURRENT_BUILD=37;
+  const CURRENT_BUILD=38;
   const KEY='ligakompakt.build';
   let checking=false;
 
