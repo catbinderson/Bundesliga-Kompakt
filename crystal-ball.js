@@ -25,9 +25,9 @@
       const response=await fetch(FALLBACK,{cache:'no-store'});
       if(!response.ok)throw error;
       const data=await response.json(),teams=data?.teams||{};
-      const matches=(data?.matches||[]).map(row=>{
+      const matches=(data?.matches||[]).map((row,i)=>{
         const home=teams[String(row[1])]||[],away=teams[String(row[2])]||[];
-        return {matchDateTime:row[0],team1:{teamId:row[1],shortName:home[0],teamName:home[0],teamIconUrl:home[1]},team2:{teamId:row[2],shortName:away[0],teamName:away[0],teamIconUrl:away[1]},matchIsFinished:Boolean(row[3]),matchResults:row[4]==null||row[5]==null?[]:[{resultTypeID:2,resultName:'Endergebnis',pointsTeam1:row[4],pointsTeam2:row[5]}]};
+        return {matchDateTime:row[0],group:{groupOrderID:Math.floor(i/9)+1},team1:{teamId:row[1],shortName:home[0],teamName:home[0],teamIconUrl:home[1]},team2:{teamId:row[2],shortName:away[0],teamName:away[0],teamIconUrl:away[1]},matchIsFinished:Boolean(row[3]),matchResults:row[4]==null||row[5]==null?[]:[{resultTypeID:2,resultName:'Endergebnis',pointsTeam1:row[4],pointsTeam2:row[5]}]};
       });
       if(matches.length!==306)throw new Error('Unvollständige Ersatzdaten');
       return {matches,live:false,updated:data.generatedAt||'gesicherter Stand'};
