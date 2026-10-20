@@ -265,7 +265,18 @@ async function loadClub(teamId,save=true){
   $("#clubContent").innerHTML='<button id="subscribeCalendar" class="season-calendar-btn"><span>＋</span><span><strong>Kalender abonnieren</strong><small>Alle Spiele automatisch im Kalender</small></span></button><div class="section-head compact"><div><div class="eyebrow">AUSBLICK</div><h3>Nächstes Spiel</h3></div></div><div id="clubNext" class="stack next-match"></div><div id="opponentCheck"></div><div class="section-head compact"><div><div class="eyebrow">WEITERE TERMINE</div><h3>Danach</h3></div></div><div id="clubUpcoming" class="stack"></div><div class="section-head compact"><div><div class="eyebrow">RÜCKBLICK</div><h3>Letzte Ligaspiele</h3></div></div><div id="clubPast" class="stack"></div>';
   $("#subscribeCalendar").onclick=()=>subscribeTeamCalendar(teamId);
   renderMatches($("#clubNext"),upcoming.slice(0,1));
-  renderOpponentCheck(upcoming[0],teamId,table,matches).catch(()=>{$("#opponentCheck").innerHTML='<div class="muted opponent-unavailable">Gegnercheck derzeit nicht verfügbar.</div>'});
+  // Optional historical comparison is loaded on demand to avoid unnecessary API requests.
+  const opponentBox=$("#opponentCheck");
+  if(opponentBox){
+    if(upcoming[0]){
+      opponentBox.innerHTML='<button type="button" class="ghost-btn" id="loadOpponentCheck">Gegnercheck und direkte Duelle laden</button>';
+      opponentBox.querySelector("#loadOpponentCheck").onclick=()=>{
+        renderOpponentCheck(upcoming[0],teamId,table,matches).catch(()=>{
+          opponentBox.innerHTML='<div class="muted opponent-unavailable">Gegnercheck derzeit nicht verfügbar.</div>';
+        });
+      };
+    }else opponentBox.innerHTML="";
+  }
   renderMatches($("#clubUpcoming"),upcoming.slice(1));renderMatches($("#clubPast"),past);startNotificationMonitor();
 }
 function setupMatchdays(){const s=$("#matchdaySelect");s.innerHTML=Array.from({length:34},(_,i)=>`<option value="${i+1}">${i+1}. Spieltag</option>`).join("");s.onchange=e=>loadFixtures(Number(e.target.value)).catch(showError);$("#previousMatchday").onclick=()=>loadFixtures(currentGroup-1).catch(showError);$("#nextMatchday").onclick=()=>loadFixtures(currentGroup+1).catch(showError);updateMatchdayNav()}
