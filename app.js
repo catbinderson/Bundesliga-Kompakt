@@ -88,6 +88,20 @@ async function get(path){
       }
     }catch{}
   }
+  // A 429 response means the API requests us to slow down. Respect a short
+  // cooldown across endpoints instead of firing more requests immediately.
+  const cooldownUntil=Number(sessionStorage.getItem("ligakompakt.api429.until")||0);
+  if(Date.now()<cooldownUntil){
+    try{
+      const stored=JSON.parse(localStorage.getItem(cacheKey)||"null");
+      if(stored?.data!=null){
+        cachedApiPaths.add(path);
+        cachedApiErrors.set(path,"HTTP 429 · Abrufpause");
+        updateApiCacheBanner();
+        return sanitizeApiData(stored.data);
+      }
+    }catch{}
+  }
   let lastError=null;
   for(let attempt=1;attempt<=3;attempt++){
     const controller=new AbortController();
@@ -102,6 +116,7 @@ async function get(path){
       else{
         cachedApiPaths.delete(path);
         cachedApiErrors.delete(path);
+        sessionStorage.removeItem("ligakompakt.api429.until");
         try{localStorage.setItem(cacheKey,JSON.stringify({saved:Date.now(),data}))}catch{}
       }
       updateApiCacheBanner();
@@ -109,7 +124,10 @@ async function get(path){
     }catch(e){
       lastError=e;
       // Retrying a rate-limited request immediately only increases the load.
-      if(e.httpStatus===429)break;
+      if(e.httpStatus===429){
+        sessionStorage.setItem("ligakompakt.api429.until",String(Date.now()+2*60*1000));
+        break;
+      }
       if(attempt<3)await new Promise(resolve=>setTimeout(resolve,500*attempt))
     }
     finally{clearTimeout(timer)}

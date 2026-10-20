@@ -1,6 +1,6 @@
 // LigaKompakt v1.0.15 – robustere Live-Spielstände und Abpfiff-Erkennung
 (function(){
-  const REFRESH_MS=10000;
+  const REFRESH_MS=60000;
   const FINISH_AFTER_MS=130*60*1000;
 
   function scoreFromGoals(m){
@@ -74,7 +74,6 @@
   };
 
   const label=document.querySelector(".auto-refresh");
-  if(label)label.innerHTML='<i></i> alle 10 Sek.';
+  if(label)label.innerHTML='<i></i> alle 60 Sek.';
   startLiveCenter();
-  if(document.visibilityState==="visible"&&navigator.onLine)loadToday(true).catch(console.warn);
 })();
