@@ -72,7 +72,14 @@ function updateApiCacheBanner(){
   }
   banner.classList.add("hidden");
 }
-async function get(path){
+const apiInFlight=new Map();
+function get(path){
+  if(apiInFlight.has(path))return apiInFlight.get(path);
+  const request=getUnshared(path).finally(()=>apiInFlight.delete(path));
+  apiInFlight.set(path,request);
+  return request;
+}
+async function getUnshared(path){
   const cacheKey=`ligakompakt.api.${path}`;
   // The season's list of participating clubs changes very rarely.
   // Reuse a successful copy for 24 hours, rather than fetching it on every refresh.
@@ -90,7 +97,7 @@ async function get(path){
   }
   // A 429 response means the API requests us to slow down. Respect a short
   // cooldown across endpoints instead of firing more requests immediately.
-  const cooldownUntil=Number(sessionStorage.getItem("ligakompakt.api429.until")||0);
+  const cooldownUntil=Number(localStorage.getItem("ligakompakt.api429.until")||0);
   if(Date.now()<cooldownUntil){
     try{
       const stored=JSON.parse(localStorage.getItem(cacheKey)||"null");
@@ -101,6 +108,7 @@ async function get(path){
         return sanitizeApiData(stored.data);
       }
     }catch{}
+    throw new Error(`${path} · HTTP 429 · Abrufpause (keine gespeicherten Daten)`);
   }
   let lastError=null;
   for(let attempt=1;attempt<=3;attempt++){
@@ -116,7 +124,6 @@ async function get(path){
       else{
         cachedApiPaths.delete(path);
         cachedApiErrors.delete(path);
-        sessionStorage.removeItem("ligakompakt.api429.until");
         try{localStorage.setItem(cacheKey,JSON.stringify({saved:Date.now(),data}))}catch{}
       }
       updateApiCacheBanner();
@@ -125,7 +132,7 @@ async function get(path){
       lastError=e;
       // Retrying a rate-limited request immediately only increases the load.
       if(e.httpStatus===429){
-        sessionStorage.setItem("ligakompakt.api429.until",String(Date.now()+2*60*1000));
+        localStorage.setItem("ligakompakt.api429.until",String(Date.now()+10*60*1000));
         break;
       }
       if(attempt<3)await new Promise(resolve=>setTimeout(resolve,500*attempt))
